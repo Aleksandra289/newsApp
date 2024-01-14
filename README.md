@@ -16,7 +16,7 @@
 **Step-by-Step Guide:**
 
 1. **Create a React Application:**
-   - Set up a new React application using Create React App or your preferred method.
+   - Set up a new React/Typescript application using Vite or your preferred method.
 
 2. **Add the Styled-Components Library:**
    - Integrate the `styled-components` library into your React application.
