@@ -1,4 +1,4 @@
-import { TypographyFontSizes, TypographyFontWeight, TypographyLineHeight } from "../shared/theme/theme";
+import { TypographyFontSizes, TypographyFontWeight, TypographyLineHeight } from "../../shared/theme/theme";
 import { StyledText } from "./StyledText";
 type TextProps= {
     fontSize: TypographyFontSizes,

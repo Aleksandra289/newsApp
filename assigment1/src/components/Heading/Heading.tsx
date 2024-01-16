@@ -1,5 +1,5 @@
 import { StyledHeading } from "./StyledHeading";
-import { TypographyHeadingType, TypographyFontWeight } from "../shared/theme/theme";
+import { TypographyHeadingType, TypographyFontWeight } from "../../shared/theme/theme";
 type HeadingProps= {
     headingType: TypographyHeadingType,
     fontWeight: TypographyFontWeight,
