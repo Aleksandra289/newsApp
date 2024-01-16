@@ -5,12 +5,12 @@ export type TypographyFontWeight= keyof ThemeProps['typography']['fontWeight'];
 export type TypographyLineHeight= keyof ThemeProps['typography']['lineHeight'];
 export type TypographyHeadingType= keyof ThemeProps['typography']['headingType'];
 
-const theme={
+const theme: ThemeProps={
     typography: {
         fontSize: {
-            big: '20px',
-            medium: '16px',
-            small: '14px'
+            bold: '1.25rem',
+            semiBold: '1rem',
+            regular: '0.8rem'
         },
         fontWeight: {
             big: '700',
@@ -18,9 +18,9 @@ const theme={
             small: '400'
         },
         lineHeight: {
-            highest: '24px',
-            high: '20px',
-            low: '16px'
+            heigh: '1.5rem',
+            medium: '1.25rem',
+            low: '1rem'
         },
         headingType: {
             h1: {

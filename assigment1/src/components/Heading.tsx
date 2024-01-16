@@ -3,7 +3,7 @@ import { TypographyHeadingType, TypographyFontWeight } from "../shared/theme/the
 type HeadingProps= {
     headingType: TypographyHeadingType,
     fontWeight: TypographyFontWeight,
-    children: React.ReactNode
+    children: string
 }
 
 function Heading({headingType, fontWeight, children}: HeadingProps){

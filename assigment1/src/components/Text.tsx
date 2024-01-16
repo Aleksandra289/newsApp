@@ -4,7 +4,7 @@ type TextProps= {
     fontSize: TypographyFontSizes,
     fontWeight: TypographyFontWeight,
     lineHeight: TypographyLineHeight,
-    children: React.ReactNode;
+    children: string;
 }
 
 function Text({fontSize, fontWeight, lineHeight, children}: TextProps){

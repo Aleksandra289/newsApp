@@ -1,14 +1,10 @@
-/*type HeadingType = {
-    fontSize: string;
-    lineHeight: string;
-  };*/
 
 type ThemeProps= {
     typography: {
         fontSize: {
-            big: string,
-            medium: string,
-            small: string
+            bold: string,
+            semiBold: string,
+            regular: string
         },
         fontWeight: {
             big: string,
@@ -16,8 +12,8 @@ type ThemeProps= {
             small: string
         },
         lineHeight: {
-            highest: string,
-            high: string,
+            heigh: string,
+            medium: string,
             low: string
         }
         headingType: {

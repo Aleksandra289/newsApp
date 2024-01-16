@@ -12,8 +12,8 @@ function App() {
   <ThemeProvider>
     <GlobalStyles/>
     <h1>hello</h1>
-    <Text fontSize='big' fontWeight='big' lineHeight='low'>Text</Text>
-    <Heading headingType='h1' fontWeight='big'>jsjs</Heading>
+    <Text fontSize='bold' fontWeight='medium' lineHeight='low'>Text</Text>
+    <Heading headingType='h2' fontWeight='medium'>jsjs</Heading>
   </ThemeProvider>
   )
 }
