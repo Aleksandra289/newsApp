@@ -1,15 +1,16 @@
 
 import './App.css'
+import ThemeProvider from './shared/theme/ThemeProvider'
 import GlobalStyles from './styles/GlobalStyles'
-import Theme from './shared/theme/Theme'
+
 
 function App() {
 
   return (
-  <Theme>
+  <ThemeProvider>
     <GlobalStyles/>
     <h1>hello</h1>
-  </Theme>
+  </ThemeProvider>
   )
 }
 
