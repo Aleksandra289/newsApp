@@ -2,9 +2,9 @@
 type ThemeProps= {
     typography: {
         fontSize: {
-            bold: string,
-            semiBold: string,
-            regular: string
+            large: string,
+            medium: string,
+            small: string
         },
         fontWeight: {
             bold: string,

@@ -8,9 +8,9 @@ export type TypographyHeadingType= keyof ThemeProps['typography']['headingType']
 const theme: ThemeProps={
     typography: {
         fontSize: {
-            bold: '1.25rem',
-            semiBold: '1rem',
-            regular: '0.8rem'
+            large: '1.25rem',
+            medium: '1rem',
+            small: '0.8rem'
         },
         fontWeight: {
             bold: '700',
@@ -24,16 +24,16 @@ const theme: ThemeProps={
         },
         headingType: {
             h1: {
-                fontSize: '48px',
-                lineHeight: '56px'
+                fontSize: '3rem',
+                lineHeight: '3.5rem'
             },
             h2: {
-                fontSize: '36px',
-                lineHeight: '44px'
+                fontSize: '2.25rem',
+                lineHeight: '2.75rem'
             },
             h3: {
-                fontSize: '24px',
-                lineHeight: '28px'
+                fontSize: '1.5rem',
+                lineHeight: '1.75rem'
             }
 
         }
