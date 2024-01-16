@@ -7,12 +7,12 @@ type ThemeProps= {
             regular: string
         },
         fontWeight: {
-            big: string,
-            medium: string,
-            small: string
+            bold: string,
+            semiBold: string,
+            regular: string
         },
         lineHeight: {
-            heigh: string,
+            high: string,
             medium: string,
             low: string
         }

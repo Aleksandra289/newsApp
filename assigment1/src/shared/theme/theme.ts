@@ -13,12 +13,12 @@ const theme: ThemeProps={
             regular: '0.8rem'
         },
         fontWeight: {
-            big: '700',
-            medium: '600',
-            small: '400'
+            bold: '700',
+            semiBold: '600',
+            regular: '400'
         },
         lineHeight: {
-            heigh: '1.5rem',
+            high: '1.5rem',
             medium: '1.25rem',
             low: '1rem'
         },
