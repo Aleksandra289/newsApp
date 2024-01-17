@@ -8,6 +8,6 @@ type TextProps= {
 }
 
 function Text({fontSize, fontWeight, lineHeight, children}: TextProps){
-    return <StyledText fontSize={fontSize} fontWeight={fontWeight} lineHeight={lineHeight}>{children}</StyledText>
+    return <StyledText $fontSize={fontSize} $fontWeight={fontWeight} $lineHeight={lineHeight}>{children}</StyledText>
 }
 export default Text;
