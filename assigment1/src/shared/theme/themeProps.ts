@@ -7,6 +7,7 @@ type ThemeProps= {
             small: string
         },
         fontWeight: {
+            extraBold: string,
             bold: string,
             semiBold: string,
             regular: string
@@ -34,9 +35,9 @@ type ThemeProps= {
 
     },
     colors: {
-        circleChipColor: string;
-        backgroundChipColor: string;
-        borderChipColor: string
+        red: string;
+        white: string;
+        lightGray: string
     },
     borderRadius: {
         small: string
