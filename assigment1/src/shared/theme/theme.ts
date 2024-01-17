@@ -10,7 +10,7 @@ const theme: ThemeProps={
         fontSize: {
             large: '1.25rem',
             medium: '1rem',
-            small: '0.8rem'
+            small: '0.87rem'
         },
         fontWeight: {
             bold: '700',
