@@ -2,19 +2,19 @@ import styled from "styled-components"
 
  export const StyledDiv= styled.div`
     display: inline-flex;
-    padding: 4px 8px;
+    padding: 0.25rem 0.5rem;
     justify-content: center;
     align-items: center;
-    gap: 4px;
-    border-radius: 8px;
-    border: 1px solid #EFEFEF;
-    background: #FFF;
+    gap: 0.25rem;
+    border-radius: ${({theme})=> theme.borderRadius.small};
+    border: 0.06rem solid ${({theme})=> theme.colors.borderChipColor};
+    background: ${({theme})=> theme.colors.backgroundChipColor};
     box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.10);
 `
 
 export const StyledCircle= styled.div`
-    width: 8px;
-    height: 8px;
-    background-color: #EE2636;
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: ${({ theme }) => theme.colors.circleChipColor};
     border-radius: 50%;
 `

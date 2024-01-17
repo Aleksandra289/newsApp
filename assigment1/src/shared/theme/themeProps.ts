@@ -32,6 +32,14 @@ type ThemeProps= {
         }
         
 
+    },
+    colors: {
+        circleChipColor: string;
+        backgroundChipColor: string;
+        borderChipColor: string
+    },
+    borderRadius: {
+        small: string
     }
 } 
 export default ThemeProps;

@@ -2,13 +2,14 @@ import { StyledCircle, StyledDiv} from './StyledChip'
 import Text from '../Text/Text';
 
 type ChipProps={
-    children: string
+    children: string,
+    showCircle?: boolean
 }
 
-function Chip({children}: ChipProps){
+function Chip({children, showCircle=true}: ChipProps){
     return <StyledDiv>
         <Text fontSize='small' fontWeight='semiBold' lineHeight='medium'>{children}</Text>
-        <StyledCircle></StyledCircle>
+        {showCircle && <StyledCircle></StyledCircle>}
     </StyledDiv>
 }
 export default Chip;

@@ -37,6 +37,14 @@ const theme: ThemeProps={
             }
 
         }
+    },
+    colors: {
+        circleChipColor: '#EE2636',
+        backgroundChipColor: '#FFF',
+        borderChipColor: '#EFEFEF'
+    },
+    borderRadius: {
+        small: '0.5rem'
     }
 };
 
