@@ -5,7 +5,7 @@ export type TextProps= {
     fontWeight: TypographyFontWeight,
     lineHeight: TypographyLineHeight,
     children: string,
-    color?: ThemeColor,
+    color?: ThemeColor
 } 
 
 function Text({fontSize, fontWeight, lineHeight, children, color='black'}: TextProps){

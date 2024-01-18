@@ -5,7 +5,7 @@ export const StyledText= styled.p<{$fontSize: TypographyFontSizes, $fontWeight: 
     font-size: ${({theme, $fontSize})=> theme.typography.fontSize[$fontSize]};
     font-weight: ${({theme, $fontWeight})=> theme.typography.fontWeight[$fontWeight]};
     line-height: ${({theme, $lineHeight})=> theme.typography.lineHeight[$lineHeight]};
-    color: ${({theme, $color})=> theme.color[$color]};
+    color: ${({theme, $color})=> theme.color[$color]};  
 `
 
 
