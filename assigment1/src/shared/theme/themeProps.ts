@@ -4,7 +4,8 @@ type ThemeProps= {
         fontSize: {
             large: string,
             medium: string,
-            small: string
+            small: string,
+            xsmall: string
         },
         fontWeight: {
             extraBold: string,
