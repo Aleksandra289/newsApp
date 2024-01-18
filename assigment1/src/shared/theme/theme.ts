@@ -10,11 +10,12 @@ const theme: ThemeProps={
         fontSize: {
             large: '1.25rem',
             medium: '1rem',
-            small: '0.8rem'
+            small: '0.875rem'
         },
         fontWeight: {
-            bold: '700',
-            semiBold: '600',
+            extraBold: '700',
+            bold: '600',
+            semiBold: '500',
             regular: '400'
         },
         lineHeight: {
@@ -37,6 +38,14 @@ const theme: ThemeProps={
             }
 
         }
+    },
+    colors: {
+        red: '#EE2636',
+        white: '#FFF',
+        lightGray: '#EFEFEF'
+    },
+    borderRadius: {
+        small: '0.5rem'
     }
 };
 

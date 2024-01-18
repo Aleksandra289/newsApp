@@ -7,6 +7,7 @@ type ThemeProps= {
             small: string
         },
         fontWeight: {
+            extraBold: string,
             bold: string,
             semiBold: string,
             regular: string
@@ -32,6 +33,14 @@ type ThemeProps= {
         }
         
 
+    },
+    colors: {
+        red: string;
+        white: string;
+        lightGray: string
+    },
+    borderRadius: {
+        small: string
     }
 } 
 export default ThemeProps;
