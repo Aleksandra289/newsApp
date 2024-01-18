@@ -35,13 +35,20 @@ type ThemeProps= {
         
 
     },
-    colors: {
+    color: {
         red: string;
         white: string;
-        lightGray: string
+        lightGray: string;
+        purple: string;
+        gray: string;
+        darkGray: string;
+        violet: string;
+        darkPurple: string;
+        black: string;
     },
     borderRadius: {
-        small: string
+        small: string;
+        medium: string
     }
 } 
 export default ThemeProps;

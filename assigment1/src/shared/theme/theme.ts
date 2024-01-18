@@ -4,13 +4,15 @@ export type TypographyFontSizes= keyof ThemeProps['typography']['fontSize'];
 export type TypographyFontWeight= keyof ThemeProps['typography']['fontWeight'];
 export type TypographyLineHeight= keyof ThemeProps['typography']['lineHeight'];
 export type TypographyHeadingType= keyof ThemeProps['typography']['headingType'];
+export type ThemeColor= keyof ThemeProps['color'];
 
 const theme: ThemeProps={
     typography: {
         fontSize: {
             large: '1.25rem',
             medium: '1rem',
-            small: '0.875rem'
+            small: '0.8rem',
+            xsmall: '0.75rem'
         },
         fontWeight: {
             extraBold: '700',
@@ -39,13 +41,20 @@ const theme: ThemeProps={
 
         }
     },
-    colors: {
+    color: {
         red: '#EE2636',
         white: '#FFF',
-        lightGray: '#EFEFEF'
+        lightGray: '#EFEFEF',
+        purple: '#7E44F8',
+        gray: '#C9D2DE',
+        darkGray: '#7B828A',
+        violet: '#9867FF',
+        darkPurple: '#733CE5S',
+        black: '#000'
     },
     borderRadius: {
-        small: '0.5rem'
+        small: '0.5rem',
+        medium: '0.75rem'
     }
 };
 

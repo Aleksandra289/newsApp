@@ -19,7 +19,7 @@ function App() {
     <Chip>25/12/2023</Chip>
     <Chip showCircle={false}>25/12/2023</Chip>
     <Button size='small'>Button</Button>
-    <Button size='medium'>Disabled</Button>
+    <Button size='small' isDisabled={true}>Disabled</Button>
   </ThemeProvider>
   )
 }
