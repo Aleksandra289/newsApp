@@ -52,22 +52,22 @@ type ThemeProps= {
     },
     buttonSizes: {
         small: {
-            height: string,
+   
             padding: string,
             borderRadius: string
         },
         medium: {
-            height: string,
+     
             padding: string,
             borderRadius: string
         },
         large: {
-            height: string,
+     
             padding: string,
             borderRadius: string
         },
         extraLarge: {
-            height: string,
+       
             padding: string,
             borderRadius: string
         }

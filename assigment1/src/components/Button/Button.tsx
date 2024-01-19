@@ -1,6 +1,7 @@
 import Text from "../Text/Text";
 import { StyledButton } from "./StyledButton";
 import { ButtonSizes } from "../../shared/theme/theme";
+import { getTextSizes } from "./getTextSizes";
 
 
 type ButtonProps={
@@ -12,12 +13,10 @@ type ButtonProps={
 
 function Button({children, size, isDisabled=false}: ButtonProps){
     const textColor= isDisabled? 'darkGray' : 'white';
+    const [fSize, fWeight, lHeight]= getTextSizes(size);
 
     return <StyledButton size={size} isDisabled={isDisabled}>
-        {size==='small' && <Text fontSize="xsmall" fontWeight="bold" lineHeight="low" color={textColor}>{children}</Text>}
-        {size==='medium' && <Text fontSize="small" fontWeight="bold" lineHeight="medium" color={textColor}>{children}</Text>}
-        {size==='large' && <Text fontSize="medium" fontWeight="bold" lineHeight="high" color={textColor}>{children}</Text>}
-        {size==='extraLarge' && <Text fontSize="medium" fontWeight="bold" lineHeight="high" color={textColor}>{children}</Text>}
+        <Text fontSize={fSize} fontWeight={fWeight} lineHeight={lHeight} color={textColor}>{children}</Text>
     </StyledButton>
 }
 export default Button;
