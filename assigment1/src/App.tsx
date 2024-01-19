@@ -6,6 +6,10 @@ import Text from './components/Text/Text'
 import Heading from './components/Heading/Heading'
 import Chip from './components/Chip/Chip'
 import Button from './components/Button/Button'
+import NewPostIcon from './icons/NewPostIcon'
+import IconWrapper from './components/IconWrapper/IconWrapper'
+import HomeIcon from './icons/HomeIcon'
+import AllNewsIcon from './icons/AllNewsIcon'
 
 
 
@@ -21,6 +25,9 @@ function App() {
     <Chip showCircle={false}>25/12/2023</Chip>
     <Button size='medium'>Button</Button>
     <Button size='extraLarge' isDisabled={true}>Disabled</Button>
+    <IconWrapper icon={NewPostIcon} size='20' color='blue'></IconWrapper>
+    <IconWrapper icon={HomeIcon} size='80' color='orange'></IconWrapper>
+    <IconWrapper icon={AllNewsIcon} size='150' color='purple'></IconWrapper>
   </ThemeProvider>
   )
 }
