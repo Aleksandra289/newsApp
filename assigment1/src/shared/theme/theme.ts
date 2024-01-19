@@ -66,7 +66,6 @@ const theme: ThemeProps={
     },
    buttonSizes: {
     small: {
-
         padding: '0.5rem',
         borderRadius: '0.5rem'
     },
