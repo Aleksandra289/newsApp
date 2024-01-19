@@ -4,7 +4,8 @@ type ThemeProps= {
         fontSize: {
             large: string,
             medium: string,
-            small: string
+            small: string,
+            xsmall: string
         },
         fontWeight: {
             extraBold: string,
@@ -34,13 +35,42 @@ type ThemeProps= {
         
 
     },
-    colors: {
+    color: {
         red: string;
         white: string;
-        lightGray: string
+        lightGray: string;
+        purple: string;
+        gray: string;
+        darkGray: string;
+        violet: string;
+        darkPurple: string;
+        black: string;
     },
     borderRadius: {
-        small: string
-    }
+        small: string;
+        medium: string
+    },
+    buttonSizes: {
+        small: {
+   
+            padding: string,
+            borderRadius: string
+        },
+        medium: {
+     
+            padding: string,
+            borderRadius: string
+        },
+        large: {
+     
+            padding: string,
+            borderRadius: string
+        },
+        extraLarge: {
+       
+            padding: string,
+            borderRadius: string
+        }
+       }
 } 
 export default ThemeProps;

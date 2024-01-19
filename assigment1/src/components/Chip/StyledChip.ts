@@ -7,14 +7,14 @@ import styled from "styled-components"
     align-items: center;
     gap: 0.25rem;
     border-radius: ${({theme})=> theme.borderRadius.small};
-    border: 1px solid ${({theme})=> theme.colors.lightGray};
-    background: ${({theme})=> theme.colors.white};
+    border: 1px solid ${({theme})=> theme.color.lightGray};
+    background: ${({theme})=> theme.color.white};
     box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.10);
 `
 
 export const StyledCircle= styled.div`
     width: 0.5rem;
     height: 0.5rem;
-    background-color: ${({ theme }) => theme.colors.red};
+    background-color: ${({ theme }) => theme.color.red};
     border-radius: 50%;
 `
