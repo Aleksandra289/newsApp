@@ -50,7 +50,7 @@ const theme: ThemeProps={
         gray: '#C9D2DE',
         darkGray: '#7B828A',
         violet: '#9867FF',
-        darkPurple: '#733CE5S',
+        darkPurple: '#733CE5',
         black: '#000'
     },
     borderRadius: {

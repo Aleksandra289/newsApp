@@ -10,6 +10,7 @@ export const StyledButton= styled.button<{size: ButtonSizes, isDisabled: boolean
     border-radius: ${({theme})=> theme.borderRadius.small};
     background: ${({theme})=> theme.color.purple};
     border: none;
+  
 
     ${({size})=> css`
         padding: ${({theme})=> theme.buttonSizes[size].padding};
@@ -18,7 +19,7 @@ export const StyledButton= styled.button<{size: ButtonSizes, isDisabled: boolean
    
     &:hover {
         background: ${({ theme }) => theme.color.violet};
-        border: none;
+       
     }
 
     ${(props) =>
@@ -28,13 +29,21 @@ export const StyledButton= styled.button<{size: ButtonSizes, isDisabled: boolean
             cursor: not-allowed;
             &:hover {
                 background: ${({ theme }) => theme.color.gray};
+             &:active {
+        background: ${({theme})=> theme.color.gray};   
+
+    }
         }
       `     
     }
-
     &:active {
-        background: ${({theme})=> theme.color.darkPurple};
-        border: none;
+        background: ${({theme})=> theme.color.darkPurple};   
+
     }
+     &:focus {
+    outline: none; 
+     }
+
+    
     
 `
