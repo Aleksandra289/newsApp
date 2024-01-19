@@ -12,7 +12,7 @@ const theme: ThemeProps={
         fontSize: {
             large: '1.25rem',
             medium: '1rem',
-            small: '0.8rem',
+            small: '0.875rem',
             xsmall: '0.75rem'
         },
         fontWeight: {
@@ -59,22 +59,18 @@ const theme: ThemeProps={
     },
    buttonSizes: {
     small: {
-        height: '2rem',
         padding: '0.5rem',
         borderRadius: '0.5rem'
     },
     medium: {
-        height: '2.5rem',
         padding: '0.5rem 0.875rem',
         borderRadius: '0.75rem'
     },
     large: {
-        height: '3rem',
         padding: '0.5rem 1rem;',
         borderRadius: '0.75rem'
     },
     extraLarge: {
-        height: '3.5rem',
         padding: '0.5rem 1.5rem',
         borderRadius: '0.75rem'
     }
