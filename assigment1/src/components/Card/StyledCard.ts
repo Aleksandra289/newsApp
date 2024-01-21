@@ -1,10 +1,9 @@
 import styled from "styled-components";
 
-export const StyledCard= styled.div<{src: string}>`
-    display: flex;
+export const StyledCard= styled.div`
     position: relative;
-    flex: 1 0 0;
-    width: 18.75rem;
+    max-width: 18.75rem;
+    width: 100%;
     padding: 1rem;
     flex-direction: column;
     align-items: flex-start;
@@ -13,16 +12,16 @@ export const StyledCard= styled.div<{src: string}>`
     border: 1px solid #E6E6E6;
     background: ${({theme})=> theme.color.white};
     overflow: hidden;
+    text-align: left;
 `
 export const StyledImage= styled.img`
-    width: 16.75rem;
+    width: 100%;
     height: 10rem;
     flex-shrink: 0;
     border-radius: 0.5em;  
 `
 export const StyledTitleDiv= styled.div`
-    width: 18.75rem;
-    text-align: left;
+    width: 100%;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
@@ -30,7 +29,6 @@ export const StyledTitleDiv= styled.div`
 
 `
 export const StyledDescriptionDiv= styled.div`
-    text-align: left;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;
