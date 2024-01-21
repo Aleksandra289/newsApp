@@ -6,6 +6,7 @@ export type TypographyLineHeight= keyof ThemeProps['typography']['lineHeight'];
 export type TypographyHeadingType= keyof ThemeProps['typography']['headingType'];
 export type ThemeColor= keyof ThemeProps['color'];
 export type ButtonSizes= keyof ThemeProps['buttonSizes'];
+export type IconSizes= keyof ThemeProps['iconSizes']
 
 const theme: ThemeProps={
     typography: {
@@ -74,6 +75,13 @@ const theme: ThemeProps={
         padding: '0.5rem 1.5rem',
         borderRadius: '0.75rem'
     }
+   },
+   iconSizes: {
+    xs: '1rem',
+    s: '1.5rem',
+    m: '1.875rem',
+    l: '2.5rem',
+    xl: '3.125rem'
    }
     
 };

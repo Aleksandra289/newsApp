@@ -40,9 +40,7 @@ export const StyledButton= styled.button<{size: ButtonSizes, isDisabled: boolean
         background: ${({theme})=> theme.color.darkPurple};   
 
     }
-     &:focus {
-    outline: none; 
-     }
+   
 
     
     

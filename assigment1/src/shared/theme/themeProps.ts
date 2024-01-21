@@ -71,6 +71,13 @@ type ThemeProps= {
             padding: string,
             borderRadius: string
         }
+       },
+       iconSizes: {
+        xs: string,
+        s: string,
+        m: string,
+        l: string,
+        xl: string
        }
 } 
 export default ThemeProps;

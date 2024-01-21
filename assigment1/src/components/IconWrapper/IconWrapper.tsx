@@ -1,12 +1,15 @@
+import { ThemeColor } from "../../shared/theme/theme";
+import { IconSizes } from "../../shared/theme/theme";
+import { StyleIconWrapperDiv } from "./StyledIconWrapper";
 
 type IconWrapperProps = {
-    icon: React.ComponentType<{ size: string; color: string }>; 
-    size: string;
-    color: string;
+    icon: React.ComponentType<{ size: IconSizes; color: ThemeColor }>; 
+    size: IconSizes;
+    color: ThemeColor;
   };
   
   function IconWrapper({ icon: IconComponent, size, color }: IconWrapperProps) {
-    return <div><IconComponent size={size} color={color} /></div>;
+    return <StyleIconWrapperDiv><IconComponent size={size} color={color} /></StyleIconWrapperDiv>;
   }
   
   export default IconWrapper;
