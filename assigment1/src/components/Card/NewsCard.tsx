@@ -1,5 +1,5 @@
 import Card from "./Card";
-import { StyledChipDiv, StyledImage, StyledTitleDiv, StyledDescriptionDiv, StyledDiv } from "./StyledCard";
+import { StyledChipDiv, StyledImage, StyledTitleDiv, StyledDescriptionDiv } from "./StyledCard";
 import Chip from "../Chip/Chip";
 import Text from "../Text/Text";
 
@@ -16,7 +16,7 @@ function NewsCard({ src, title, description, chipText, isActive = true }: NewsCa
     <StyledChipDiv>
       <Chip showCircle={isActive}>{chipText}</Chip>
     </StyledChipDiv>
-    <StyledDiv>
+   
     <StyledImage src={src} alt="new pic"></StyledImage>
     
     <StyledTitleDiv>
@@ -29,7 +29,7 @@ function NewsCard({ src, title, description, chipText, isActive = true }: NewsCa
         {description}
       </Text>
     </StyledDescriptionDiv>
-    </StyledDiv>
+   
   </Card>
 }
 export default NewsCard;

@@ -17,8 +17,9 @@ export const StyledCard= styled.div<{borderRadius: BorderRadiusSizes, background
 export const StyledImage= styled.img`
     width: 100%;
     height: 10rem;
+    object-fit: cover;
     flex-shrink: 0;
-    border-radius: ${({theme})=> theme.borderRadius.small}; 
+    border-radius: ${({theme})=> theme.borderRadius.medium}; 
 `
 export const StyledTitleDiv= styled.div`
     width: 100%;
@@ -26,6 +27,8 @@ export const StyledTitleDiv= styled.div`
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
     overflow: hidden;
+    margin-top: 16px;
+    margin-bottom: 12px;
 `
 export const StyledDescriptionDiv= styled.div`
     display: -webkit-box;
@@ -40,9 +43,5 @@ export const StyledChipDiv= styled.div`
     top: 1.5625rem;
     
 `
-export const StyledDiv= styled.div`
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-`
+
 

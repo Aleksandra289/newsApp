@@ -8,7 +8,7 @@ type ChipProps={
 
 function Chip({children, showCircle=true}: ChipProps){
     return <StyledDiv>
-        <Text fontSize='small' fontWeight='semiBold' lineHeight='medium'>{children}</Text>
+        <Text fontSize='small' fontWeight='semiBold' lineHeight='low'>{children}</Text>
         {showCircle && <StyledCircle/>}
     </StyledDiv>
 }
