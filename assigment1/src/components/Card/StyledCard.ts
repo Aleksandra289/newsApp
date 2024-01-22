@@ -21,8 +21,6 @@ export const StyledImage= styled.img`
     object-fit: cover;
     flex-shrink: 0;
     border-radius: ${({theme})=> theme.borderRadius.medium}; 
-    margin-bottom: 0;
-    padding-bottom:0;
 `
 export const StyledTitleDiv= styled.div`
     width: 100%;
