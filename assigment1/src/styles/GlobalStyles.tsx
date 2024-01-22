@@ -10,6 +10,12 @@ const GlobalStyles= createGlobalStyle`
         font-family: "Inter", sans-serif;
         
     }
+    button{
+        &:focus {
+    outline: none; 
+     }
+     border: none;
+    }
 `
 
 
