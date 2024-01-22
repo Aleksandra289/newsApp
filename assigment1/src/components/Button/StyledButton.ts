@@ -9,7 +9,7 @@ export const StyledButton= styled.button<{size: ButtonSizes, isDisabled: boolean
     flex-shrink: 0;
     border-radius: ${({theme})=> theme.borderRadius.small};
     background: ${({theme})=> theme.color.purple};
-    border: none;
+   
   
 
     ${({size})=> css`
@@ -38,7 +38,6 @@ export const StyledButton= styled.button<{size: ButtonSizes, isDisabled: boolean
     }
     &:active {
         background: ${({theme})=> theme.color.darkPurple};   
-
     }
    
 

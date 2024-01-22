@@ -14,6 +14,7 @@ const GlobalStyles= createGlobalStyle`
         &:focus {
     outline: none; 
      }
+     border: none;
     }
 `
 
