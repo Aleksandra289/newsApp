@@ -6,7 +6,8 @@ export type TypographyLineHeight= keyof ThemeProps['typography']['lineHeight'];
 export type TypographyHeadingType= keyof ThemeProps['typography']['headingType'];
 export type ThemeColor= keyof ThemeProps['color'];
 export type ButtonSizes= keyof ThemeProps['buttonSizes'];
-export type IconSizes= keyof ThemeProps['iconSizes']
+export type BorderRadiusSizes= keyof ThemeProps['borderRadius'];
+export type IconSizes= keyof ThemeProps['iconSizes'];
 
 const theme: ThemeProps={
     typography: {
@@ -51,37 +52,39 @@ const theme: ThemeProps={
         gray: '#C9D2DE',
         darkGray: '#7B828A',
         violet: '#9867FF',
-        darkPurple: '#733CE5',
-        black: '#000'
+        darkPurple: '#733CE5S',
+        black: '#000',
+        whiteGray: '#E6E6E6',
+        lighterGray: '#5D5D63',
+        lighterBlack: '#181E25'
+        
     },
     borderRadius: {
         small: '0.5rem',
-        medium: '0.75rem'
+        medium: '0.75rem',
+        large: '1rem'
     },
    buttonSizes: {
     small: {
         padding: '0.5rem',
         borderRadius: '0.5rem'
     },
-    medium: {
+    medium: { 
         padding: '0.5rem 0.875rem',
         borderRadius: '0.75rem'
     },
-    large: {
+    large: { 
         padding: '0.5rem 1rem;',
         borderRadius: '0.75rem'
     },
-    extraLarge: {
+    extraLarge: {  
         padding: '0.5rem 1.5rem',
         borderRadius: '0.75rem'
     }
    },
    iconSizes: {
-    xs: '1rem',
-    s: '1.5rem',
-    m: '1.875rem',
-    l: '2.5rem',
-    xl: '3.125rem'
+    xsmall: '1rem',
+    small: '1.5rem'
    }
     
 };

@@ -45,10 +45,14 @@ type ThemeProps= {
         violet: string;
         darkPurple: string;
         black: string;
+        whiteGray: string,
+        lighterGray: string,
+        lighterBlack: string
     },
     borderRadius: {
         small: string;
-        medium: string
+        medium: string;
+        large: string;
     },
     buttonSizes: {
         small: {
@@ -73,11 +77,8 @@ type ThemeProps= {
         }
        },
        iconSizes: {
-        xs: string,
-        s: string,
-        m: string,
-        l: string,
-        xl: string
+        xsmall: string,
+        small: string
        }
 } 
 export default ThemeProps;

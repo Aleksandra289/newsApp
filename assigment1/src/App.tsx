@@ -25,9 +25,10 @@ function App() {
     <Chip showCircle={false}>25/12/2023</Chip>
     <Button size='medium'>Button</Button>
     <Button size='extraLarge' isDisabled={true}>Disabled</Button>
-    <IconWrapper icon={AllNewsIcon} size='l' color='purple'></IconWrapper>
-    <IconWrapper icon={HomeIcon} size='s' color='red'></IconWrapper>
-    <IconWrapper icon={NewPostIcon} size='m' color='violet'></IconWrapper>
+    <IconWrapper icon={AllNewsIcon} size='small' color='purple'></IconWrapper>
+    <IconWrapper icon={HomeIcon} size='small' color='red'></IconWrapper>
+    <IconWrapper icon={NewPostIcon} size='small' color='violet'></IconWrapper>
+    
   </ThemeProvider>
   )
 }
