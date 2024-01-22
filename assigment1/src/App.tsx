@@ -34,6 +34,7 @@ function App() {
     <IconWrapper icon={HomeIcon} size='small' color='red'></IconWrapper>
     <IconWrapper icon={NewPostIcon} size='small' color='violet'></IconWrapper>
     
+    <NewsCard src={image2} title='You don’t feel alive’: Ukraine veterans struggling with the trauma of war' description='Denmark’s prime minister has proclaimed Frederik X king on the balcony of Christiansborg Palace in Copenhagen, after Queen Margrethe II formally signed her abdication' chipText='25/12/2023' isActive={false}></NewsCard>
   </ThemeProvider>
   )
 }
