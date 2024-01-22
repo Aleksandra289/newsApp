@@ -10,6 +10,7 @@ import NewPostIcon from './icons/NewPostIcon'
 import IconWrapper from './components/IconWrapper/IconWrapper'
 import HomeIcon from './icons/HomeIcon'
 import AllNewsIcon from './icons/AllNewsIcon'
+import NavItem from './components/NavItem/NavItem'
 import NewsCard from './components/Cards/NewsCard/NewsCard'
 import image from './assets/047f189d5fb428569ef24e282ba652ec.png'
 import image2 from './assets/42b29177e46d46d5fa3c0ece63cec048.png'
@@ -33,6 +34,11 @@ function App() {
     <IconWrapper icon={AllNewsIcon} size='small' color='purple'></IconWrapper>
     <IconWrapper icon={HomeIcon} size='small' color='red'></IconWrapper>
     <IconWrapper icon={NewPostIcon} size='small' color='violet'></IconWrapper>
+    <br/>
+    <br/>
+    <NavItem icon={HomeIcon} title='Home' isActive={true}></NavItem>
+    <NavItem icon={AllNewsIcon} title='All news'></NavItem>
+    <NavItem icon={NewPostIcon} title='New post'></NavItem>
     
   </ThemeProvider>
   )

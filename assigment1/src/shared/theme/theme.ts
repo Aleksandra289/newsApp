@@ -56,8 +56,9 @@ const theme: ThemeProps={
         black: '#000',
         whiteGray: '#E6E6E6',
         lighterGray: '#5D5D63',
-        lighterBlack: '#181E25'
-        
+        lighterBlack: '#181E25',
+        silver: '#767B83',
+        blue: '#297BD2'
     },
     borderRadius: {
         small: '0.5rem',
