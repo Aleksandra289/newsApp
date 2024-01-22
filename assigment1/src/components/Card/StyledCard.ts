@@ -3,11 +3,12 @@ import { BorderRadiusSizes, ThemeColor } from "../../shared/theme/theme";
 
 export const StyledCard= styled.div<{borderRadius: BorderRadiusSizes, backgroundColor: ThemeColor, borderColor: ThemeColor, padding: `${number}rem`}>`
     position: relative;
+    display: flex;
+    flex-direction: column;
     max-width: 18.75rem;
     width: 100%;
     padding: ${({padding})=> padding};
     align-items: flex-start;
-    gap: 0.5rem;
     border-radius: ${({theme, borderRadius})=> theme.borderRadius[borderRadius]};
     border: 1px solid ${({theme, borderColor})=> theme.color[borderColor]};
     background: ${({theme, backgroundColor})=> theme.color[backgroundColor]};
@@ -20,6 +21,8 @@ export const StyledImage= styled.img`
     object-fit: cover;
     flex-shrink: 0;
     border-radius: ${({theme})=> theme.borderRadius.medium}; 
+    margin-bottom: 0;
+    padding-bottom:0;
 `
 export const StyledTitleDiv= styled.div`
     width: 100%;
@@ -27,8 +30,9 @@ export const StyledTitleDiv= styled.div`
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
     overflow: hidden;
-    margin-top: 16px;
-    margin-bottom: 12px;
+    margin-top: 1rem;
+    margin-bottom: 0.75rem;
+ 
 `
 export const StyledDescriptionDiv= styled.div`
     display: -webkit-box;
