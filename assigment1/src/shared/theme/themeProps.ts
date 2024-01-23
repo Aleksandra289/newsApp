@@ -49,12 +49,19 @@ type ThemeProps= {
         lighterGray: string,
         lighterBlack: string,
         silver: string,
-        blue: string
+        blue: string,
+        green: string,
+        lighterGreen: string,
+        burgundy: string,
+        lightPink: string,
+        orange: string,
+        lightOrange: string
     },
     borderRadius: {
         small: string;
         medium: string;
         large: string;
+        extraLarge: string;
     },
     buttonSizes: {
         small: {
