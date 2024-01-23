@@ -1,8 +1,7 @@
 import styled from "styled-components";
 import { ThemeColor } from "../../shared/theme/theme";
 
-
-export const StyledCircleIconDiv= styled.div<{icon: React.ComponentType, backgroundColor: ThemeColor}>`
+export const StyledCircleIconDiv= styled.div<{$backgroundColor: ThemeColor}>`
     display: inline-flex;
     width: 3rem;
     height: 3rem;
@@ -10,6 +9,6 @@ export const StyledCircleIconDiv= styled.div<{icon: React.ComponentType, backgro
     justify-content: center;
     align-items: center;
     flex-shrink: 0;
-    background-color: ${({theme, backgroundColor})=> theme.color[backgroundColor]};
+    background-color: ${({theme, $backgroundColor})=> theme.color[$backgroundColor]};
     border-radius: ${({theme})=> theme.borderRadius.extraLarge}
 `

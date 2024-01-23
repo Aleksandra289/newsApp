@@ -1,17 +1,16 @@
 import { StyledCircleIconDiv } from "./StyledCircleIcon";
 import IconWrapper from "../IconWrapper/IconWrapper";
 import { getStatusIconColor } from "./getStatusIconColor";
-
-
+import { StatusType } from "../../shared/types/status";
 
 type CircleIconProps={
-    status: React.ComponentType;
+    status: StatusType
 }
 
 function CircleIcon({status}: CircleIconProps){
-    const [iconColor, backgroundColor]= getStatusIconColor(status)
-    return <StyledCircleIconDiv icon={status} backgroundColor={backgroundColor}>
-         <IconWrapper icon={status} size='small' color={iconColor}></IconWrapper>
+    const [icon, iconColor, backgroundColor]= getStatusIconColor(status)
+    return <StyledCircleIconDiv $backgroundColor={backgroundColor}>
+         <IconWrapper icon={icon} size='small' color={iconColor}></IconWrapper>
     </StyledCircleIconDiv>
 }
 export default CircleIcon;
