@@ -47,7 +47,9 @@ type ThemeProps= {
         black: string;
         whiteGray: string,
         lighterGray: string,
-        lighterBlack: string
+        lighterBlack: string,
+        silver: string,
+        blue: string
     },
     borderRadius: {
         small: string;
