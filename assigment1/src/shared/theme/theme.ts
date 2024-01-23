@@ -61,8 +61,6 @@ const theme: ThemeProps={
         blue: '#297BD2',
         mint: '#F3FFF7',
         green: '#18B815',
-    ,
-        green: '#18B815',
         lighterGreen: '#D1FADF',
         burgundy: '#DA0000',
         lightPink: '#FAD1D1',

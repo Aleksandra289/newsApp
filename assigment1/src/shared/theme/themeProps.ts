@@ -51,7 +51,6 @@ type ThemeProps= {
         silver: string,
         blue: string,
         mint: string,
-        green: string,,
         green: string,
         lighterGreen: string,
         burgundy: string,
