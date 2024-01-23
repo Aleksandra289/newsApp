@@ -10,8 +10,9 @@ import NewPostIcon from './icons/NewPostIcon'
 import IconWrapper from './components/IconWrapper/IconWrapper'
 import HomeIcon from './icons/HomeIcon'
 import AllNewsIcon from './icons/AllNewsIcon'
-
-
+import NewsCard from './components/Cards/NewsCard/NewsCard'
+import image from './assets/047f189d5fb428569ef24e282ba652ec.png'
+import image2 from './assets/42b29177e46d46d5fa3c0ece63cec048.png'
 
 function App() {
 
@@ -23,8 +24,12 @@ function App() {
     <Heading headingType='h2' fontWeight='semiBold'>jsjs</Heading>
     <Chip>25/12/2023</Chip>
     <Chip showCircle={false}>25/12/2023</Chip>
-    <Button size='medium'>Button</Button>
-    <Button size='extraLarge' isDisabled={true}>Disabled</Button>
+    <Button size='small'>Button</Button>
+    <Button size='small' isDisabled={true}>Disabled</Button>
+    <br/>
+    <br/>
+    <NewsCard src={image} title='Denmark’s King Frederik X takes throne after Margrethe abdicates asd' description='Denmark’s prime minister has proclaimed Frederik X king on the balcony of Christiansborg Palace in Copenhagen, after Queen Margrethe II formally signed her abdication, ending her 52-year reign as the country’s lorem ipsum' chipText='25/12/2023'></NewsCard>
+    <NewsCard src={image2} title='You don’t feel alive’: Ukraine veterans struggling with the trauma of war' description='Denmark’s prime minister has proclaimed Frederik X king on the balcony of Christiansborg Palace in Copenhagen, after Queen Margrethe II formally signed her abdication' chipText='25/12/2023' isActive={false}></NewsCard>
     <IconWrapper icon={AllNewsIcon} size='small' color='purple'></IconWrapper>
     <IconWrapper icon={HomeIcon} size='small' color='red'></IconWrapper>
     <IconWrapper icon={NewPostIcon} size='small' color='violet'></IconWrapper>
