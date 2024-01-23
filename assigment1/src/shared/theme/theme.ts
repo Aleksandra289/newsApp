@@ -58,12 +58,19 @@ const theme: ThemeProps={
         lighterGray: '#5D5D63',
         lighterBlack: '#181E25',
         silver: '#767B83',
-        blue: '#297BD2'
+        blue: '#297BD2',
+        green: '#18B815',
+        lighterGreen: '#D1FADF',
+        burgundy: '#DA0000',
+        lightPink: '#FAD1D1',
+        orange: '#FFA218',
+        lightOrange: '#FAEAD1'
     },
     borderRadius: {
         small: '0.5rem',
         medium: '0.75rem',
-        large: '1rem'
+        large: '1rem',
+        extraLarge: '1.75rem'
     },
    buttonSizes: {
     small: {

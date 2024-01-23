@@ -14,6 +14,11 @@ import NavItem from './components/NavItem/NavItem'
 import NewsCard from './components/Cards/NewsCard/NewsCard'
 import image from './assets/047f189d5fb428569ef24e282ba652ec.png'
 import image2 from './assets/42b29177e46d46d5fa3c0ece63cec048.png'
+import CircleIcon from './components/CircleIcon/CircleIcon'
+import ConfirmIcon from './icons/ConfirmIcon'
+import CancelIcon from './icons/CancelIcon'
+import ExclamationMarkIcon from './icons/ExclamationMarkIcon'
+
 
 function App() {
 
@@ -39,6 +44,9 @@ function App() {
     <NavItem icon={HomeIcon} title='Home' isActive={true}></NavItem>
     <NavItem icon={AllNewsIcon} title='All news'></NavItem>
     <NavItem icon={NewPostIcon} title='New post'></NavItem>
+    <CircleIcon icon={ConfirmIcon}></CircleIcon>
+    <CircleIcon icon={CancelIcon}></CircleIcon>
+    <CircleIcon icon={ExclamationMarkIcon}></CircleIcon>
     
   </ThemeProvider>
   )
