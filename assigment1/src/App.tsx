@@ -43,7 +43,7 @@ function App() {
     <NavItem icon={HomeIcon} title='Home' isActive={true}></NavItem>
     <NavItem icon={AllNewsIcon} title='All news'></NavItem>
     <NavItem icon={NewPostIcon} title='New post'></NavItem>
-    <CircleIcon status='success'></CircleIcon>
+    <CircleIcon status='success'/>
     <CircleIcon status='error'/>
     <CircleIcon status='warning'/> 
   </ThemeProvider>
