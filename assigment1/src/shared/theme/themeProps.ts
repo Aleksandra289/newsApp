@@ -50,6 +50,8 @@ type ThemeProps= {
         lighterBlack: string,
         silver: string,
         blue: string,
+        mint: string,
+        green: string,,
         green: string,
         lighterGreen: string,
         burgundy: string,

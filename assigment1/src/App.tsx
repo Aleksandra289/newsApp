@@ -18,6 +18,7 @@ import CircleIcon from './components/CircleIcon/CircleIcon'
 
 
 
+import TrustCard from './components/Cards/TrustCard/TrustCard'
 
 function App() {
 
@@ -43,6 +44,7 @@ function App() {
     <NavItem icon={HomeIcon} title='Home' isActive={true}></NavItem>
     <NavItem icon={AllNewsIcon} title='All news'></NavItem>
     <NavItem icon={NewPostIcon} title='New post'></NavItem>
+    <TrustCard title='News Recognized for Unparalleled Objectivity' description='Our News has been acknowledged for its unparalleled commitment to objectivity, standing out in an era where unbiased reporting is increasingly valued'></TrustCard>
     <CircleIcon status='success'/>
     <CircleIcon status='error'/>
     <CircleIcon status='warning'/> 

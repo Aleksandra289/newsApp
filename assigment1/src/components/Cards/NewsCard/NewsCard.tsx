@@ -1,5 +1,5 @@
 import Card from "../Card/Card";
-import { StyledChipDiv, StyledImage, StyledTitleDiv, StyledDescriptionDiv } from "../NewsCard/StyledNewsCard";
+import { StyledChipDiv, StyledImage, StyledTitleDiv, StyledDescriptionDiv, StyledNewsCard } from "../NewsCard/StyledNewsCard";
 import Chip from "../../Chip/Chip";
 import Text from "../../Text/Text";
 
@@ -13,6 +13,7 @@ type NewsCardProps= {
 
 function NewsCard({ src, title, description, chipText, isActive = true }: NewsCardProps){
     return <Card>
+      <StyledNewsCard>
     <StyledChipDiv>
       <Chip showCircle={isActive}>{chipText}</Chip>
     </StyledChipDiv>
@@ -29,7 +30,7 @@ function NewsCard({ src, title, description, chipText, isActive = true }: NewsCa
         {description}
       </Text>
     </StyledDescriptionDiv>
-   
+    </StyledNewsCard>
   </Card>
 }
 export default NewsCard;
