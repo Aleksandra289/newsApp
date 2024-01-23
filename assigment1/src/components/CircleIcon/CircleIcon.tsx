@@ -1,10 +1,10 @@
 import { StyledCircleIconDiv } from "./StyledCircleIcon";
 import IconWrapper from "../IconWrapper/IconWrapper";
 import { getStatusIconColor } from "./getStatusIconColor";
-import { StatusType } from "../../shared/types/status";
 
-type CircleIconProps={
-    status: StatusType
+export type StatusProps= "success" | "error" | "warning"
+export type CircleIconProps={
+    status: StatusProps
 }
 
 function CircleIcon({status}: CircleIconProps){

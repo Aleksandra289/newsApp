@@ -2,9 +2,12 @@ import CancelIcon from "../../icons/CancelIcon";
 import ConfirmIcon from "../../icons/ConfirmIcon";
 import ExclamationMarkIcon from "../../icons/ExclamationMarkIcon";
 import { ThemeColor } from "../../shared/theme/theme";
-import { StatusType } from "../../shared/types/status";
+import {StatusProps } from "./CircleIcon";
 
-export function getStatusIconColor (status: StatusType) : [React.ComponentType, ThemeColor, ThemeColor]{
+
+
+
+export function getStatusIconColor (status: StatusProps) : [React.ComponentType, ThemeColor, ThemeColor]{
     switch (status){
         case 'success': 
             return [ConfirmIcon, 'green', 'lighterGreen']
