@@ -10,7 +10,7 @@ import NewPostIcon from './icons/NewPostIcon'
 import IconWrapper from './components/IconWrapper/IconWrapper'
 import HomeIcon from './icons/HomeIcon'
 import AllNewsIcon from './icons/AllNewsIcon'
-import NewsCard from './components/Card/NewsCard'
+import NewsCard from './components/Cards/NewsCard/NewsCard'
 import image from './assets/047f189d5fb428569ef24e282ba652ec.png'
 import image2 from './assets/42b29177e46d46d5fa3c0ece63cec048.png'
 

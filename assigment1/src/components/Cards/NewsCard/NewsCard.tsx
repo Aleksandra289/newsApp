@@ -1,7 +1,7 @@
-import Card from "./Card";
-import { StyledChipDiv, StyledImage, StyledTitleDiv, StyledDescriptionDiv } from "./StyledCard";
-import Chip from "../Chip/Chip";
-import Text from "../Text/Text";
+import Card from "../Card/Card";
+import { StyledChipDiv, StyledImage, StyledTitleDiv, StyledDescriptionDiv } from "../NewsCard/StyledNewsCard";
+import Chip from "../../Chip/Chip";
+import Text from "../../Text/Text";
 
 type NewsCardProps= {
     src: string;
