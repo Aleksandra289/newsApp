@@ -1,17 +1,17 @@
 import { StyledCircleIconDiv } from "./StyledCircleIcon";
 import IconWrapper from "../IconWrapper/IconWrapper";
-import ConfirmIcon from "../../icons/ConfirmIcon";
-import CancelIcon from "../../icons/CancelIcon";
+import { getStatusIconColor } from "./getStatusIconColor";
+
 
 
 type CircleIconProps={
-    icon: React.ComponentType;
+    status: React.ComponentType;
 }
 
-function CircleIcon({icon}: CircleIconProps){
-    const color= icon===ConfirmIcon ? 'green' : icon===CancelIcon ? 'burgundy' : 'orange'
-    return <StyledCircleIconDiv icon={icon}>
-         <IconWrapper icon={icon} size='small' color={color}></IconWrapper>
+function CircleIcon({status}: CircleIconProps){
+    const [iconColor, backgroundColor]= getStatusIconColor(status)
+    return <StyledCircleIconDiv icon={status} backgroundColor={backgroundColor}>
+         <IconWrapper icon={status} size='small' color={iconColor}></IconWrapper>
     </StyledCircleIconDiv>
 }
 export default CircleIcon;

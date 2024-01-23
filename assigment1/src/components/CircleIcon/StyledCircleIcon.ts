@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import ConfirmIcon from "../../icons/ConfirmIcon";
-import CancelIcon from "../../icons/CancelIcon";
+import { ThemeColor } from "../../shared/theme/theme";
 
-export const StyledCircleIconDiv= styled.div<{icon: React.ComponentType}>`
+
+export const StyledCircleIconDiv= styled.div<{icon: React.ComponentType, backgroundColor: ThemeColor}>`
     display: inline-flex;
     width: 3rem;
     height: 3rem;
@@ -10,6 +10,6 @@ export const StyledCircleIconDiv= styled.div<{icon: React.ComponentType}>`
     justify-content: center;
     align-items: center;
     flex-shrink: 0;
-    background-color: ${({ theme, icon }) => icon===ConfirmIcon ? theme.color.lighterGreen : icon===CancelIcon ? theme.color.lightPink : theme.color.lightOrange};
+    background-color: ${({theme, backgroundColor})=> theme.color[backgroundColor]};
     border-radius: ${({theme})=> theme.borderRadius.extraLarge}
 `
