@@ -49,7 +49,8 @@ function App() {
     <CircleIcon status='success'/>
     <CircleIcon status='error'/>
     <CircleIcon status='warning'/> 
-    <Headline/>
+    <Headline title='Latest News'/>
+    <Headline title="News" titleBelow=''></Headline>
   </ThemeProvider>
   )
 }
