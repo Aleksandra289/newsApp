@@ -50,7 +50,7 @@ function App() {
     <CircleIcon status='error'/>
     <CircleIcon status='warning'/> 
     <Headline title='Latest News'/>
-    <Headline title="News" titleBelow=''></Headline>
+    <Headline title="News" titleBelow=''/>
   </ThemeProvider>
   )
 }
