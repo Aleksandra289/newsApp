@@ -5,19 +5,19 @@ import { StyledNavItemDiv } from "./StyledNavItem";
 type NavItemProps={
     icon: React.ComponentType,
     title: string;
-    value: number;
-    selectedItem: number;
     isActive?: boolean;
-    onClick: (value: number)=>void
+    selected: string;
+    value: string;
+    onChangeActiveNavItem: (selectedItem: string)=>void
 }
 
-function NavItem({icon, title, value, selectedItem, onClick}: NavItemProps){
-    const isActive = selectedItem === value;
+function NavItem({icon, title, selected, value, onChangeActiveNavItem}: NavItemProps){
+   const isActive= value===selected;
     const textColor= isActive? 'blue': 'silver' 
     const textWeight= isActive? 'extraBold': 'regular' 
     const iconColor= isActive? 'blue': 'silver' 
 
-    return <StyledNavItemDiv isActive={isActive} onClick={()=> {onClick(value)}}>
+    return <StyledNavItemDiv isActive={isActive} onClick={()=> onChangeActiveNavItem(value)}>
         <IconWrapper icon={icon} size='small' color={iconColor}></IconWrapper>
         <Text fontSize="medium" fontWeight={textWeight} lineHeight="high" color={textColor}>{title}</Text> 
     </StyledNavItemDiv>

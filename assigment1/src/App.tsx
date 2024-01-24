@@ -15,14 +15,37 @@ import image from './assets/047f189d5fb428569ef24e282ba652ec.png'
 import image2 from './assets/42b29177e46d46d5fa3c0ece63cec048.png'
 import CircleIcon from './components/CircleIcon/CircleIcon'
 import Headline from './components/Headline/Headline'
-
-
-
 import TrustCard from './components/Cards/TrustCard/TrustCard'
 import Navigation from './components/Navigation/Navigation'
+import { useState } from 'react'
+const items=
+[{
+    label: "Home",
+    icon: HomeIcon,
+    value: '1',
+    url: ""
+}, 
+{
+    label: "New post",
+    icon: NewPostIcon,
+    value: '2',
+    url: ""
+},
+{
+    label: "All news",
+    icon: AllNewsIcon,
+    value: '3',
+    url: ""
+}]
 
 function App() {
+  const [activeItem, setActiveItem]= useState(items[0].value)
 
+  function onChangeActiveNavItem(selectedItem: string){
+    setActiveItem(selectedItem);
+    
+  }
+  console.log('selected item value:' +activeItem)
   return (
   <ThemeProvider>
     <GlobalStyles/>
@@ -49,7 +72,7 @@ function App() {
     <CircleIcon status='warning'/> 
     <Headline title='Latest News'/>
     <Headline title="Latest News" isAddedLineBelow={false}/>
-    <Navigation selectedItem={2}/>
+    <Navigation selected={activeItem} items={items} onChangeActiveNavItem={onChangeActiveNavItem}/>
   </ThemeProvider>
   )
 }
