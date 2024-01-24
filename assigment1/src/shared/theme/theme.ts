@@ -65,7 +65,8 @@ const theme: ThemeProps={
         burgundy: '#DA0000',
         lightPink: '#FAD1D1',
         orange: '#FFA218',
-        lightOrange: '#FAEAD1'
+        lightOrange: '#FAEAD1',
+        lightBlack: '#242424'
     },
     borderRadius: {
         small: '0.5rem',
