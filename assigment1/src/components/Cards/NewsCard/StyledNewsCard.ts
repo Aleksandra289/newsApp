@@ -1,5 +1,12 @@
 import styled from "styled-components"
 
+export const StyledNewsCard= styled.div`
+    max-width: 16.75rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+`
+
 export const StyledImage= styled.img`
     width: 100%;
     height: 10rem;

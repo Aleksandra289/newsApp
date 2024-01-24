@@ -59,6 +59,7 @@ const theme: ThemeProps={
         lighterBlack: '#181E25',
         silver: '#767B83',
         blue: '#297BD2',
+        mint: '#F3FFF7',
         green: '#18B815',
         lighterGreen: '#D1FADF',
         burgundy: '#DA0000',

@@ -5,8 +5,7 @@ export const StyledCard= styled.div<{$borderRadius: BorderRadiusSizes, $backgrou
     position: relative;
     display: flex;
     flex-direction: column;
-    max-width: 18.75rem;
-    width: 100%;
+    width: fit-content;
     padding: ${({$padding})=> $padding};
     border-radius: ${({theme, $borderRadius})=> theme.borderRadius[$borderRadius]};
     border: 1px solid ${({theme, $borderColor})=> theme.color[$borderColor]};
