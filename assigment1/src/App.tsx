@@ -15,6 +15,7 @@ import NewsCard from './components/Cards/NewsCard/NewsCard'
 import image from './assets/047f189d5fb428569ef24e282ba652ec.png'
 import image2 from './assets/42b29177e46d46d5fa3c0ece63cec048.png'
 import CircleIcon from './components/CircleIcon/CircleIcon'
+import Headline from './components/Headline/Headline'
 
 
 
@@ -48,6 +49,7 @@ function App() {
     <CircleIcon status='success'/>
     <CircleIcon status='error'/>
     <CircleIcon status='warning'/> 
+    <Headline/>
   </ThemeProvider>
   )
 }
