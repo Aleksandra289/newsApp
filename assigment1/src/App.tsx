@@ -10,7 +10,6 @@ import NewPostIcon from './icons/NewPostIcon'
 import IconWrapper from './components/IconWrapper/IconWrapper'
 import HomeIcon from './icons/HomeIcon'
 import AllNewsIcon from './icons/AllNewsIcon'
-import NavItem from './components/NavItem/NavItem'
 import NewsCard from './components/Cards/NewsCard/NewsCard'
 import image from './assets/047f189d5fb428569ef24e282ba652ec.png'
 import image2 from './assets/42b29177e46d46d5fa3c0ece63cec048.png'
@@ -20,6 +19,7 @@ import Headline from './components/Headline/Headline'
 
 
 import TrustCard from './components/Cards/TrustCard/TrustCard'
+import Navigation from './components/Navigation/Navigation'
 
 function App() {
 
@@ -42,15 +42,14 @@ function App() {
     <IconWrapper icon={NewPostIcon} size='small' color='violet'/>
     <br/>
     <br/>
-    <NavItem icon={HomeIcon} title='Home' isActive={true}/>
-    <NavItem icon={AllNewsIcon} title='All news'/>
-    <NavItem icon={NewPostIcon} title='New post'/>
+    
     <TrustCard title='News Recognized for Unparalleled Objectivity' description='Our News has been acknowledged for its unparalleled commitment to objectivity, standing out in an era where unbiased reporting is increasingly valued'/>
     <CircleIcon status='success'/>
     <CircleIcon status='error'/>
     <CircleIcon status='warning'/> 
     <Headline title='Latest News'/>
     <Headline title="Latest News" isAddedLineBelow={false}/>
+    <Navigation selectedItem={2}/>
   </ThemeProvider>
   )
 }

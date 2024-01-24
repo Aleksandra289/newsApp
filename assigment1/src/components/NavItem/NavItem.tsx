@@ -5,10 +5,13 @@ import { StyledNavItemDiv } from "./StyledNavItem";
 type NavItemProps={
     icon: React.ComponentType,
     title: string;
-    isActive?: boolean
+    value: number;
+    selectedItem: number;
+    isActive?: boolean;
 }
 
-function NavItem({icon, title, isActive=false}: NavItemProps){
+function NavItem({icon, title, value, selectedItem}: NavItemProps){
+    const isActive = selectedItem === value;
     const textColor= isActive? 'blue': 'silver' 
     const textWeight= isActive? 'extraBold': 'regular' 
     const iconColor= isActive? 'blue': 'silver' 
