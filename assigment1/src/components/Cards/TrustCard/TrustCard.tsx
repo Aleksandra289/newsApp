@@ -10,7 +10,9 @@ type TrustCardProps={
 function TrustCard({title, description }: TrustCardProps){
  return <Card borderRadius="large" backgroundColor="mint" borderColor="green" padding='1rem'>
   <StyledIconAndText>
-  <CircleIcon status="success"/>
+
+      <CircleIcon status="success"/>
+
     <StyledTextDiv>
       <StyledTitle>
          <Text fontSize="medium" fontWeight="extraBold" lineHeight="medium" color="lighterBlack">{title}</Text>

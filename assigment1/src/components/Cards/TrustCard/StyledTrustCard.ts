@@ -7,7 +7,7 @@ export const StyledTextDiv= styled.div`
     align-items: flex-start;
     gap: 0.5rem;
     align-self: stretch;
-    width: 24.8125rem;
+    width: 100%;
     height: 4.75rem;
     
 `
@@ -22,7 +22,5 @@ export const StyledDescription= styled.div`
 `
 export const StyledIconAndText= styled.div`
     display: flex;
-    align-items: flex-start;
-    gap: 16px;
-    flex: 1 0 0;
+    gap: 1rem;  
 `
