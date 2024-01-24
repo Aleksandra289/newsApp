@@ -30,8 +30,12 @@ type NavigationProps={
 
 function Navigation({selectedItem}: NavigationProps){
 
+    function onClickNavItemHandler(value: number){
+        console.log('clicked on item with value ' + value)
+    }
+
     const mappedArray= items.map((item)=>{
-        return <NavItem key={item.value} icon={item.icon} title={item.label} value={item.value} selectedItem={selectedItem}/>
+        return <NavItem key={item.value} icon={item.icon} title={item.label} value={item.value} selectedItem={selectedItem} onClick={onClickNavItemHandler}/>
     })
     
     return <StyledNavDiv>
