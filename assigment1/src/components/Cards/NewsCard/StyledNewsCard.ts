@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 export const StyledNewsCard= styled.div`
-    max-width: 18.75rem;
+    max-width: 16.875rem;
     width: 100%;
 `
 

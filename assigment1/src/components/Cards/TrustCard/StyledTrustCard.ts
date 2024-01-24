@@ -8,7 +8,7 @@ export const StyledTextDiv= styled.div`
     gap: 0.5rem;
     align-self: stretch;
     width: 24.8125rem;
-    height: 4,75rem;
+    height: 4.75rem;
     
 `
 export const StyledTitle= styled.div`

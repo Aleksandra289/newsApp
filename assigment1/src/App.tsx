@@ -34,17 +34,17 @@ function App() {
     <Button size='small' isDisabled={true}>Disabled</Button>
     <br/>
     <br/>
-    <NewsCard src={image} title='Denmark’s King Frederik X takes throne after Margrethe abdicates asd' description='Denmark’s prime minister has proclaimed Frederik X king on the balcony of Christiansborg Palace in Copenhagen, after Queen Margrethe II formally signed her abdication, ending her 52-year reign as the country’s lorem ipsum' chipText='25/12/2023'></NewsCard>
-    <NewsCard src={image2} title='You don’t feel alive’: Ukraine veterans struggling with the trauma of war' description='Denmark’s prime minister has proclaimed Frederik X king on the balcony of Christiansborg Palace in Copenhagen, after Queen Margrethe II formally signed her abdication' chipText='25/12/2023' isActive={false}></NewsCard>
-    <IconWrapper icon={AllNewsIcon} size='small' color='purple'></IconWrapper>
-    <IconWrapper icon={HomeIcon} size='small' color='red'></IconWrapper>
-    <IconWrapper icon={NewPostIcon} size='small' color='violet'></IconWrapper>
+    <NewsCard src={image} title='Denmark’s King Frederik X takes throne after Margrethe abdicates asd' description='Denmark’s prime minister has proclaimed Frederik X king on the balcony of Christiansborg Palace in Copenhagen, after Queen Margrethe II formally signed her abdication, ending her 52-year reign as the country’s lorem ipsum' chipText='25/12/2023'/>
+    <NewsCard src={image2} title='You don’t feel alive’: Ukraine veterans struggling with the trauma of war' description='Denmark’s prime minister has proclaimed Frederik X king on the balcony of Christiansborg Palace in Copenhagen, after Queen Margrethe II formally signed her abdication' chipText='25/12/2023' isActive={false}/>
+    <IconWrapper icon={AllNewsIcon} size='small' color='purple'/>
+    <IconWrapper icon={HomeIcon} size='small' color='red'/>
+    <IconWrapper icon={NewPostIcon} size='small' color='violet'/>
     <br/>
     <br/>
-    <NavItem icon={HomeIcon} title='Home' isActive={true}></NavItem>
-    <NavItem icon={AllNewsIcon} title='All news'></NavItem>
-    <NavItem icon={NewPostIcon} title='New post'></NavItem>
-    <TrustCard title='News Recognized for Unparalleled Objectivity' description='Our News has been acknowledged for its unparalleled commitment to objectivity, standing out in an era where unbiased reporting is increasingly valued'></TrustCard>
+    <NavItem icon={HomeIcon} title='Home' isActive={true}/>
+    <NavItem icon={AllNewsIcon} title='All news'/>
+    <NavItem icon={NewPostIcon} title='New post'/>
+    <TrustCard title='News Recognized for Unparalleled Objectivity' description='Our News has been acknowledged for its unparalleled commitment to objectivity, standing out in an era where unbiased reporting is increasingly valued'/>
     <CircleIcon status='success'/>
     <CircleIcon status='error'/>
     <CircleIcon status='warning'/> 

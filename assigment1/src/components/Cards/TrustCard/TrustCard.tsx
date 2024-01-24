@@ -1,17 +1,16 @@
 import Card from "../Card/Card";
 import { StyledTextDiv, StyledTitle, StyledDescription, StyledIconAndText } from "./StyledTrustCard";
 import Text from "../../Text/Text";
-import CircleIcon, { StatusProps } from "../../CircleIcon/CircleIcon";
+import CircleIcon from "../../CircleIcon/CircleIcon";
 type TrustCardProps={
   title: string;
   description: string,
-  status?: StatusProps
 }
 
-function TrustCard({title, description, status="success", }: TrustCardProps){
+function TrustCard({title, description }: TrustCardProps){
  return <Card borderRadius="large" backgroundColor="mint" borderColor="green" padding='1rem'>
   <StyledIconAndText>
-  <CircleIcon status={status}></CircleIcon>
+  <CircleIcon status="success"/>
     <StyledTextDiv>
       <StyledTitle>
          <Text fontSize="medium" fontWeight="extraBold" lineHeight="medium" color="lighterBlack">{title}</Text>
