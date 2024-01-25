@@ -18,34 +18,19 @@ import Headline from './components/Headline/Headline'
 import TrustCard from './components/Cards/TrustCard/TrustCard'
 import Navigation from './components/Navigation/Navigation'
 import { useState } from 'react'
-const items=
-[{
-    label: "Home",
-    icon: HomeIcon,
-    value: '1',
-    url: ""
-}, 
-{
-    label: "New post",
-    icon: NewPostIcon,
-    value: '2',
-    url: ""
-},
-{
-    label: "All news",
-    icon: AllNewsIcon,
-    value: '3',
-    url: ""
-}]
+import { items } from './shared/data/navigation/items'
+import { ItemProps } from './shared/types/arrayItem'
+
+
 
 function App() {
-  const [activeItem, setActiveItem]= useState(items[0].value)
+  const [activeItem, setActiveItem]= useState<ItemProps>(items[0]);
 
-  function onChangeActiveNavItem(selectedItem: string){
+  function onChangeActiveNavItem(selectedItem: ItemProps){
     setActiveItem(selectedItem);
     
   }
-  console.log('selected item value:' +activeItem)
+
   return (
   <ThemeProvider>
     <GlobalStyles/>
@@ -72,7 +57,7 @@ function App() {
     <CircleIcon status='warning'/> 
     <Headline title='Latest News'/>
     <Headline title="Latest News" isAddedLineBelow={false}/>
-    <Navigation selected={activeItem} items={items} onChangeActiveNavItem={onChangeActiveNavItem}/>
+    <Navigation selectedItem={activeItem} items={items} onChangeActiveNavItem={onChangeActiveNavItem}/>
   </ThemeProvider>
   )
 }

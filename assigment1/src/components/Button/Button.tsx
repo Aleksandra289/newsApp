@@ -15,7 +15,7 @@ function Button({children, size, isDisabled=false}: ButtonProps){
     const textColor= isDisabled? 'darkGray' : 'white';
     const [fSize, fWeight, lHeight]= getTextSizes(size);
 
-    return <StyledButton size={size} isDisabled={isDisabled}>
+    return <StyledButton size={size} $isDisabled={isDisabled}>
         <Text fontSize={fSize} fontWeight={fWeight} lineHeight={lHeight} color={textColor}>{children}</Text>
     </StyledButton>
 }

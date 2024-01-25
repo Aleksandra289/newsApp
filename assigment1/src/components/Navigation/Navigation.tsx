@@ -1,28 +1,24 @@
 import NavItem from "../NavItem/NavItem";
 import { StyledNavDiv } from "./StyledNavigation";
-
-type ItemProps={
-    label: string;
-    icon: React.ComponentType;
-    value: string
-    url: string
-}
+import { ItemProps } from "../../shared/types/arrayItem";
+import { useMemo } from "react";
 
 type NavigationProps={
-    selected: string,
+    selectedItem: ItemProps,
     items: ItemProps[],
-    onChangeActiveNavItem: (selectedItem: string)=>void
+    onChangeActiveNavItem: (selectedItem: ItemProps)=>void
 }
 
-function Navigation({selected, items, onChangeActiveNavItem}: NavigationProps){
+function Navigation({selectedItem, items, onChangeActiveNavItem}: NavigationProps){
 
-
-    const mappedArray= items.map((item)=>{
-        return <NavItem key={item.value} icon={item.icon} title={item.label} selected={selected} value={item.value} onChangeActiveNavItem={onChangeActiveNavItem}/>
-    })
+     const mappedArrayToNavItems= useMemo(()=>{
+        return items.map((item)=>{
+            return <NavItem key={item.value} icon={item.icon} title={item.label} isActive={selectedItem===item} item={item} onChangeActiveNavItem={onChangeActiveNavItem}/>
+        })
+    }, [items, selectedItem, onChangeActiveNavItem]) 
     
     return <StyledNavDiv>
-        {mappedArray}
+        {mappedArrayToNavItems}
     </StyledNavDiv>
 }
 export default Navigation;

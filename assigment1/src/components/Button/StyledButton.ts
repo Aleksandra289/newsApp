@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { css } from "styled-components";
 import  { ButtonSizes } from "../../shared/theme/theme";
 
-export const StyledButton= styled.button<{size: ButtonSizes, isDisabled: boolean}>`
+export const StyledButton= styled.button<{size: ButtonSizes, $isDisabled: boolean}>`
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -23,7 +23,7 @@ export const StyledButton= styled.button<{size: ButtonSizes, isDisabled: boolean
     }
 
     ${(props) =>
-        props.isDisabled &&
+        props.$isDisabled &&
         css`
             background: ${({theme})=> theme.color.gray};
             cursor: not-allowed;
