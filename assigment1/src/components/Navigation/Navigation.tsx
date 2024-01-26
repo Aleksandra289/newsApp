@@ -1,6 +1,6 @@
 import NavItem from "../NavItem/NavItem";
 import { StyledNavDiv } from "./StyledNavigation";
-import { ItemProps } from "../../shared/types/arrayItem";
+import { ItemProps } from "../../shared/types/navItem";
 import { useMemo } from "react";
 
 type NavigationProps={

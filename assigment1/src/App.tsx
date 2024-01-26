@@ -19,7 +19,7 @@ import TrustCard from './components/Cards/TrustCard/TrustCard'
 import Navigation from './components/Navigation/Navigation'
 import { useState } from 'react'
 import { items } from './shared/data/navigation/items'
-import { ItemProps } from './shared/types/arrayItem'
+import { ItemProps } from './shared/types/navItem'
 
 
 
