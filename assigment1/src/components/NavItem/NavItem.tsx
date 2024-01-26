@@ -13,7 +13,6 @@ type NavItemProps={
 
 function NavItem({icon, title, isActive=false, item, onChangeActiveNavItem}: NavItemProps){
     const textColor= isActive? 'blue': 'silver' 
-    //const textWeight= isActive? 'extraBold': 'regular' 
     const iconColor= isActive? 'blue': 'silver' 
 
     return <StyledNavItemDiv $isActive={isActive} onClick={()=> onChangeActiveNavItem(item)}>
