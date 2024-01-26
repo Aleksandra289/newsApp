@@ -6,10 +6,10 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 gap: 0.5rem;
-width: 75px;
+width: 4.6875rem;
 cursor: pointer;
 `
 export const StyledTextWrapper= styled.div`
-    max-width: 100px;
+    max-width: 6.25rem;
     overflow: hidden;
 `
