@@ -13,12 +13,12 @@ type NavItemProps={
 
 function NavItem({icon, title, isActive=false, item, onChangeActiveNavItem}: NavItemProps){
     const textColor= isActive? 'blue': 'silver' 
-    const textWeight= isActive? 'extraBold': 'regular' 
+    //const textWeight= isActive? 'extraBold': 'regular' 
     const iconColor= isActive? 'blue': 'silver' 
 
     return <StyledNavItemDiv $isActive={isActive} onClick={()=> onChangeActiveNavItem(item)}>
         <IconWrapper icon={icon} size='small' color={iconColor}></IconWrapper>
-        <Text fontSize="medium" fontWeight={textWeight} lineHeight="high" color={textColor}>{title}</Text> 
+        <Text fontSize="medium" fontWeight="regular" lineHeight="high" color={textColor}>{title}</Text> 
     </StyledNavItemDiv>
 }
 export default NavItem;

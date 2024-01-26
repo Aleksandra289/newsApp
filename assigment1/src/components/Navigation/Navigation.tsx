@@ -11,14 +11,14 @@ type NavigationProps={
 
 function Navigation({selectedItem, items, onChangeActiveNavItem}: NavigationProps){
 
-     const mappedArrayToNavItems= useMemo(()=>{
+     const navItems= useMemo(()=>{
         return items.map((item)=>{
             return <NavItem key={item.value} icon={item.icon} title={item.label} isActive={selectedItem===item} item={item} onChangeActiveNavItem={onChangeActiveNavItem}/>
         })
     }, [items, selectedItem, onChangeActiveNavItem]) 
     
     return <StyledNavDiv>
-        {mappedArrayToNavItems}
+        {navItems}
     </StyledNavDiv>
 }
 export default Navigation;
