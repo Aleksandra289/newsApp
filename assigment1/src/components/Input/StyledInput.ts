@@ -1,14 +1,15 @@
 import styled, { css } from "styled-components";
 
 export const StyledInputDiv= styled.div`
+    position: relative;
     display: flex;
-    width: 21.25rem;
+    width: 100%;
+    height: 4.75rem;
     flex-direction: column;
     align-items: flex-start;
 `
 export const StyledInput= styled.input<{error: string | undefined, disabled: boolean | undefined}>`
     display: flex;
-    height: 3.5rem;
     padding: 1rem 1.25rem;
     align-items: center;
     gap: 0.625rem;
@@ -34,6 +35,8 @@ export const StyledInput= styled.input<{error: string | undefined, disabled: boo
     
 `
 export const StyledtextDiv= styled.div`
+    position: absolute;
+    bottom: 4.75rem;
     display: flex;
     padding: 0 0.5rem;
     align-items: flex-start;

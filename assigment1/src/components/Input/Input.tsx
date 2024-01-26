@@ -1,18 +1,14 @@
 import { StyledInputDiv, StyledInput, StyledtextDiv, StyledErrorDiv } from "./StyledInput";
 import Text from "../Text/Text";
-import { useState, ChangeEvent } from "react";
+import { useState, InputHTMLAttributes } from "react";
 
 
-type InputType={
-    label: string,
-    placeholder: string,
-    userInput: string
-    error?: string,
-    isDisabled?: boolean
-    onChangeHandler: (e: ChangeEvent<HTMLInputElement>)=>void
+interface InputType extends InputHTMLAttributes<HTMLInputElement> {
+    label: string;
+    error?: string;
 }
 
-function Input({label, placeholder, userInput, error, isDisabled, onChangeHandler}: InputType){
+function Input({label, placeholder, value, error, disabled, onChange}: InputType){
 
     const [isFocused, setIsFocused]= useState(false);
   
@@ -26,12 +22,12 @@ function Input({label, placeholder, userInput, error, isDisabled, onChangeHandle
     }
  
     return <StyledInputDiv>
-        {!isDisabled && 
+        {!disabled && 
         <StyledtextDiv>
             {isFocused &&<Text fontSize="xsmall" fontWeight="regular" lineHeight="low" color={error? 'redish': "purple"}>{label}</Text>}
-            {!isFocused && userInput && !error && <Text fontSize="xsmall" fontWeight="regular" lineHeight="low" color='silver'>{label}</Text>}                     
+            {!isFocused && value && !error && <Text fontSize="xsmall" fontWeight="regular" lineHeight="low" color='silver'>{label}</Text>}                     
         </StyledtextDiv> }
-        <StyledInput type="text" placeholder={placeholder} onFocus={onFocusHandler} onBlur={onBlurHandler} onChange={onChangeHandler} error={error} disabled={isDisabled}></StyledInput>
+        <StyledInput type="text" placeholder={placeholder} onFocus={onFocusHandler} onBlur={onBlurHandler} onChange={onChange} error={error} disabled={disabled}></StyledInput>
         <StyledErrorDiv>
         {error && <Text fontSize="xsmall" fontWeight="regular" lineHeight="low" color='redish'>{error}</Text>}
         </StyledErrorDiv>

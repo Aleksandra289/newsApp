@@ -52,10 +52,10 @@ function App() {
     <CircleIcon status='error'/>
     <CircleIcon status='warning'/> 
     <Headline title='Latest News'/>
-    <Headline title="Latest News" isAddedLineBelow={false}/> 
-    <Input label='Text field' placeholder='Text' onChangeHandler={onChangeHandler} userInput={userInput}/>
-    <Input label='Text field' placeholder='Text' onChangeHandler={onChangeHandler} userInput={userInput} error='Error text'/> 
-    <Input label='Text field' placeholder='Text' onChangeHandler={onChangeHandler} userInput={userInput} isDisabled={true}/>
+    <Headline title="Latest News" isAddedLineBelow={false}/>
+    <Input label='Text field' placeholder='Text' onChange={onChangeHandler} value={userInput}/>
+    <Input label='Text field' placeholder='Text' onChange={onChangeHandler} value={userInput} error='Error text'/> 
+    <Input label='Text field' placeholder='Text' onChange={onChangeHandler} value={userInput} disabled={true}/>
   </ThemeProvider>
   )
 }
