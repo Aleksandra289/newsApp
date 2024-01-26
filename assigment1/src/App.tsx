@@ -22,24 +22,14 @@ import { items } from './shared/data/navigation/items'
 import { ItemProps } from './shared/types/navItem'
 
 
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import { routes } from './Routes/routes'
-import Home from './pages/Home'
-import AllNews from './pages/AllNews'
-import NewPost from './pages/NewPost'
+import Router from './Router/Router'
 
 function App() {
 
   return (
   <ThemeProvider>
     <GlobalStyles/>
-    <BrowserRouter>   
-    <Routes>
-      <Route path={routes.home} element={<Home/>}></Route> 
-      <Route path={routes.newPost} element={<NewPost/>}></Route> 
-      <Route path={routes.allNews} element={<AllNews/>}></Route> 
-     </Routes>  
-    </BrowserRouter>
+    <Router/>
     <h1>hello</h1>
     <Text fontSize='small' fontWeight='bold' lineHeight='low'>Text</Text>
     <Heading headingType='h2' fontWeight='semiBold'>jsjs</Heading>
