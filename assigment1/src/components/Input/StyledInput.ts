@@ -1,12 +1,11 @@
 import styled, { css } from "styled-components";
 
 export const StyledInputDiv= styled.div`
-    position: relative;
     display: flex;
     width: 100%;
-    height: 4.75rem;
     flex-direction: column;
     align-items: flex-start;
+    
 `
 export const StyledInput= styled.input<{error: string | undefined, disabled: boolean | undefined}>`
     display: flex;
@@ -17,6 +16,8 @@ export const StyledInput= styled.input<{error: string | undefined, disabled: boo
     border-radius: ${({theme})=> theme.borderRadius.medium};
     border: 1px solid #C9D2DE;
     background: #FFF;
+    font-size: ${({theme})=> theme.typography.fontSize.medium};
+    line-height: ${({theme})=> theme.typography.lineHeight.high};
     &::placeholder {
         font-size: ${({theme})=> theme.typography.fontSize.medium};
         font-weight: ${({theme})=> theme.typography.fontWeight.regular};
@@ -35,19 +36,19 @@ export const StyledInput= styled.input<{error: string | undefined, disabled: boo
     
 `
 export const StyledtextDiv= styled.div`
-    position: absolute;
-    bottom: 4.75rem;
     display: flex;
     padding: 0 0.5rem;
     align-items: flex-start;
     gap: 0.625rem;
-    align-self: stretch;
+    align-self: stretch;   
+    min-height: 1rem;
+    margin-bottom: 0.25rem;
 `
+
 export const StyledErrorDiv= styled.div`
     display: flex;
-    height: 1.25rem;
     padding: 0.25rem 0.5rem 0 0.5rem;
     align-items: flex-start;
-    gap: 1rem;
     align-self: stretch;
+    min-height: 0.75rem;
 `

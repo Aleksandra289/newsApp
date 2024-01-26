@@ -22,12 +22,13 @@ function Input({label, placeholder, value, error, disabled, onChange}: InputType
     }
  
     return <StyledInputDiv>
-        {!disabled && 
+      
         <StyledtextDiv>
-            {isFocused &&<Text fontSize="xsmall" fontWeight="regular" lineHeight="low" color={error? 'redish': "purple"}>{label}</Text>}
-            {!isFocused && value && !error && <Text fontSize="xsmall" fontWeight="regular" lineHeight="low" color='silver'>{label}</Text>}                     
-        </StyledtextDiv> }
+            {isFocused && !disabled && <Text fontSize="xsmall" fontWeight="regular" lineHeight="low" color={error? 'redish': "purple"}>{label}</Text>}
+            {!isFocused && value && !error && !disabled && <Text fontSize="xsmall" fontWeight="regular" lineHeight="low" color='silver'>{label}</Text>}                     
+        </StyledtextDiv> 
         <StyledInput type="text" placeholder={placeholder} onFocus={onFocusHandler} onBlur={onBlurHandler} onChange={onChange} error={error} disabled={disabled}></StyledInput>
+   
         <StyledErrorDiv>
         {error && <Text fontSize="xsmall" fontWeight="regular" lineHeight="low" color='redish'>{error}</Text>}
         </StyledErrorDiv>
