@@ -10,7 +10,7 @@ const GlobalStyles= createGlobalStyle`
         font-family: "Inter", sans-serif;
         
     }
-    button{
+    button, input{
         &:focus {
     outline: none; 
      }

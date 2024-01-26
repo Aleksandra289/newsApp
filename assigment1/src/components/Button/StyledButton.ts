@@ -36,7 +36,7 @@ export const StyledButton= styled.button<{size: ButtonSizes, $isDisabled: boolea
         }
       `     
     }
-    &:active {
+    &:focus {
         background: ${({theme})=> theme.color.darkPurple};   
     }
    

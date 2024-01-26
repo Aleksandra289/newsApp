@@ -66,7 +66,10 @@ const theme: ThemeProps={
         lightPink: '#FAD1D1',
         orange: '#FFA218',
         lightOrange: '#FAEAD1',
-        lightBlack: '#242424'
+        lightBlack: '#242424',
+        faded: '#7B828A',
+        redish: '#FF4242',
+        ashy: '#F3F4F8'
     },
     borderRadius: {
         small: '0.5rem',

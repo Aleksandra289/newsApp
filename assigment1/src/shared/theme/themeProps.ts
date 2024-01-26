@@ -57,7 +57,10 @@ type ThemeProps= {
         lightPink: string,
         orange: string,
         lightOrange: string,
-        lightBlack: string
+        lightBlack: string,
+        faded: string,
+        redish: string,
+        ashy: string
     },
     borderRadius: {
         small: string;
