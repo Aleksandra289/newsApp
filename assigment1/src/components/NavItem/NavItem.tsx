@@ -16,11 +16,11 @@ function NavItem({icon, title, isActive=false, item, onChangeActiveNavItem}: Nav
     const iconColor= isActive? 'blue': 'silver' 
     const textWeight= isActive? 'extraBold': 'regular'
 
-    return <StyledNavItemDiv $isActive={isActive} onClick={()=> onChangeActiveNavItem(item)}>
-        <IconWrapper icon={icon} size='small' color={iconColor}></IconWrapper>
-        <StyledTextWrapper>
-            <Text fontSize="medium" fontWeight={textWeight} lineHeight="high" color={textColor}>{title}</Text> 
-        </StyledTextWrapper>
+    return <StyledNavItemDiv $isActive={isActive} onClick={()=> onChangeActiveNavItem(item)}> 
+            <IconWrapper icon={icon} size='small' color={iconColor}></IconWrapper>
+            <StyledTextWrapper>
+                <Text fontSize="medium" fontWeight={textWeight} lineHeight="high" color={textColor}>{title}</Text> 
+            </StyledTextWrapper>
     </StyledNavItemDiv>
 }
 export default NavItem;
