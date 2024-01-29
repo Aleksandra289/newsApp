@@ -8,7 +8,7 @@ interface InputType extends InputHTMLAttributes<HTMLInputElement> {
     error?: string;
 }
 
-function Input({label, placeholder, value, error, disabled, onChange}: InputType){
+function Input({label, placeholder, value, error, disabled, onChange, ...rest}: InputType){
 
     const [isFocused, setIsFocused]= useState(false);
   
@@ -27,7 +27,7 @@ function Input({label, placeholder, value, error, disabled, onChange}: InputType
             {isFocused && !disabled && <Text fontSize="xsmall" fontWeight="regular" lineHeight="low" color={error? 'redish': "purple"}>{label}</Text>}
             {!isFocused && value && !error && !disabled && <Text fontSize="xsmall" fontWeight="regular" lineHeight="low" color='silver'>{label}</Text>}                     
         </StyledTextDiv> 
-        <StyledInput type="text" placeholder={placeholder} onFocus={onFocusHandler} onBlur={onBlurHandler} onChange={onChange} $error={error} disabled={disabled} value={value} $isFocused={isFocused}></StyledInput>
+        <StyledInput type="text" placeholder={placeholder} onFocus={onFocusHandler} onBlur={onBlurHandler} onChange={onChange} $error={error} disabled={disabled} value={value} $isFocused={isFocused} {...rest}/>
    
         <StyledErrorDiv>
             {error && <Text fontSize="xsmall" fontWeight="regular" lineHeight="low" color='redish'>{error}</Text>}

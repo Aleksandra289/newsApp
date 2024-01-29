@@ -14,7 +14,7 @@ export const StyledInput= styled.input<{$error: string | undefined, disabled: bo
     gap: 0.625rem;
     align-self: stretch;
     border-radius: ${({theme})=> theme.borderRadius.medium};
-    border: 1px solid #C9D2DE;
+    border: 1px solid ${({theme})=> theme.color.gray};
     background: #FFF;
     font-size: ${({theme})=> theme.typography.fontSize.medium};
     line-height: ${({theme})=> theme.typography.lineHeight.high};
