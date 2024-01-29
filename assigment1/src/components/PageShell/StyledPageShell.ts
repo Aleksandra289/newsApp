@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StyledPageShellDiv= styled.div`
+export const StyledPageShellDiv= styled.main`
     display: flex;
     flex-direction: column;
     align-items: flex-start;

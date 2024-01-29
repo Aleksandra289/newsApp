@@ -5,7 +5,7 @@ import { items } from "../shared/data/navigation/items";
 import Navigation from "../components/Navigation/Navigation";
 import { useNavigate } from "react-router-dom";
 import PageShell from "../components/PageShell/PageShell";
-import { StyledLayoutDiv } from "./StyledLayout";
+import { StyledLayoutNavDiv, StyledLayoutDiv } from "./StyledLayout";
 
 export default function Layout() {
     const [activeItem, setActiveItem]= useState<ItemProps>(items[0]);
@@ -16,13 +16,16 @@ export default function Layout() {
       navigate(selectedItem.url);
     }
   return (  
+    <>
+    <StyledLayoutNavDiv>
+      <Navigation selectedItem={activeItem} items={items} onChangeActiveNavItem={onChangeActiveNavItem}/>    
+    </StyledLayoutNavDiv> 
     <StyledLayoutDiv>
-        <header>
-            <Navigation selectedItem={activeItem} items={items} onChangeActiveNavItem={onChangeActiveNavItem}/>
-        </header>
         <PageShell>
             <Outlet/>
         </PageShell>
     </StyledLayoutDiv>
+    
+    </>
   )
 }
