@@ -24,7 +24,7 @@ function App() {
   return (
   <ThemeProvider>
     <GlobalStyles/>
-   <RouterProvider router={router}></RouterProvider>
+   <RouterProvider router={router}/>
     <h1>hello</h1>
     <Text fontSize='small' fontWeight='bold' lineHeight='low'>Text</Text>
     <Heading headingType='h2' fontWeight='semiBold'>jsjs</Heading>
