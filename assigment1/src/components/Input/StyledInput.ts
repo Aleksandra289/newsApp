@@ -7,7 +7,7 @@ export const StyledInputDiv= styled.div`
     align-items: flex-start;
     
 `
-export const StyledInput= styled.input<{error: string | undefined, disabled: boolean | undefined, isFocused: boolean}>`
+export const StyledInput= styled.input<{$error: string | undefined, disabled: boolean | undefined, $isFocused: boolean}>`
     display: flex;
     padding: 1rem 1.25rem;
     align-items: center;
@@ -26,12 +26,12 @@ export const StyledInput= styled.input<{error: string | undefined, disabled: boo
         
     }
     &:focus {
-        border: ${({theme, error})=> error ? css`1px solid ${theme.color.redish}` : `1px solid ${theme.color.purple}`};
+        border: ${({theme, $error})=> $error ? css`1px solid ${theme.color.redish}` : `1px solid ${theme.color.purple}`};
         &::placeholder{
             font-weight: ${({theme})=> theme.typography.fontWeight.semiBold};
         }
     }
-    ${({error, theme})=> error && css`border: 1px solid ${theme.color.redish}`}
+    ${({$error, theme})=> $error && css`border: 1px solid ${theme.color.redish}`}
     ${({disabled, theme})=> disabled  && css` border: 1px solid ${theme.color.gray} ; background: ${theme.color.ashy} ; cursor: not-allowed`};
     
 `
@@ -50,5 +50,5 @@ export const StyledErrorDiv= styled.div`
     padding: 0.25rem 0.5rem 0 0.5rem;
     align-items: flex-start;
     align-self: stretch;
-    min-height: 0.75rem;
+    min-height: 1.25rem;
 `
