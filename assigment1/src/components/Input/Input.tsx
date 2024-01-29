@@ -1,4 +1,4 @@
-import { StyledInputDiv, StyledInput, StyledtextDiv, StyledErrorDiv } from "./StyledInput";
+import { StyledInputDiv, StyledInput, StyledTextDiv, StyledErrorDiv } from "./StyledInput";
 import Text from "../Text/Text";
 import { useState, InputHTMLAttributes } from "react";
 
@@ -23,11 +23,11 @@ function Input({label, placeholder, value, error, disabled, onChange}: InputType
  
     return <StyledInputDiv>
       
-        <StyledtextDiv>
+        <StyledTextDiv>
             {isFocused && !disabled && <Text fontSize="xsmall" fontWeight="regular" lineHeight="low" color={error? 'redish': "purple"}>{label}</Text>}
             {!isFocused && value && !error && !disabled && <Text fontSize="xsmall" fontWeight="regular" lineHeight="low" color='silver'>{label}</Text>}                     
-        </StyledtextDiv> 
-        <StyledInput type="text" placeholder={placeholder} onFocus={onFocusHandler} onBlur={onBlurHandler} onChange={onChange} error={error} disabled={disabled}></StyledInput>
+        </StyledTextDiv> 
+        <StyledInput type="text" placeholder={placeholder} onFocus={onFocusHandler} onBlur={onBlurHandler} onChange={onChange} error={error} disabled={disabled} value={value} isFocused={isFocused}></StyledInput>
    
         <StyledErrorDiv>
         {error && <Text fontSize="xsmall" fontWeight="regular" lineHeight="low" color='redish'>{error}</Text>}

@@ -7,7 +7,7 @@ export const StyledInputDiv= styled.div`
     align-items: flex-start;
     
 `
-export const StyledInput= styled.input<{error: string | undefined, disabled: boolean | undefined}>`
+export const StyledInput= styled.input<{error: string | undefined, disabled: boolean | undefined, isFocused: boolean}>`
     display: flex;
     padding: 1rem 1.25rem;
     align-items: center;
@@ -35,7 +35,7 @@ export const StyledInput= styled.input<{error: string | undefined, disabled: boo
     ${({disabled, theme})=> disabled  && css` border: 1px solid ${theme.color.gray} ; background: ${theme.color.ashy} ; cursor: not-allowed`};
     
 `
-export const StyledtextDiv= styled.div`
+export const StyledTextDiv= styled.div`
     display: flex;
     padding: 0 0.5rem;
     align-items: flex-start;

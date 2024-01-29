@@ -11,7 +11,7 @@ const GlobalStyles= createGlobalStyle`
         
     }
     input{
-        font-family: "Inter", sans-serif;
+        font-family: inherit;
     }
     button, input{
         &:focus {
