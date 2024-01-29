@@ -1,23 +1,24 @@
 import HomeIcon from "../../../icons/HomeIcon"
 import NewPostIcon from "../../../icons/NewPostIcon"
 import AllNewsIcon from "../../../icons/AllNewsIcon"
+import { routes } from "../../../Router/routes"
 
 export const items=
 [{
     label: "Home",
     icon: HomeIcon,
     value: '1',
-    url: ""
+    url: routes.home
 }, 
 {
     label: "New post",
     icon: NewPostIcon,
     value: '2',
-    url: ""
+    url: routes.newPost
 },
 {
     label: "All news",
     icon: AllNewsIcon,
     value: '3',
-    url: ""
+    url: routes.allNews
 }]

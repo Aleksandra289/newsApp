@@ -16,24 +16,15 @@ import image2 from './assets/42b29177e46d46d5fa3c0ece63cec048.png'
 import CircleIcon from './components/CircleIcon/CircleIcon'
 import Headline from './components/Headline/Headline'
 import TrustCard from './components/Cards/TrustCard/TrustCard'
-import Navigation from './components/Navigation/Navigation'
-import { useState } from 'react'
-import { items } from './shared/data/navigation/items'
-import { ItemProps } from './shared/types/navItem'
-
-
+import { RouterProvider } from 'react-router-dom'
+import { router } from './Router/Router'
 
 function App() {
-  const [activeItem, setActiveItem]= useState<ItemProps>(items[0]);
-
-  function onChangeActiveNavItem(selectedItem: ItemProps){
-    setActiveItem(selectedItem);
-    
-  }
-
+ 
   return (
   <ThemeProvider>
     <GlobalStyles/>
+   <RouterProvider router={router}/>
     <h1>hello</h1>
     <Text fontSize='small' fontWeight='bold' lineHeight='low'>Text</Text>
     <Heading headingType='h2' fontWeight='semiBold'>jsjs</Heading>
@@ -56,8 +47,7 @@ function App() {
     <CircleIcon status='error'/>
     <CircleIcon status='warning'/> 
     <Headline title='Latest News'/>
-    <Headline title="Latest News" isAddedLineBelow={false}/>
-    <Navigation selectedItem={activeItem} items={items} onChangeActiveNavItem={onChangeActiveNavItem}/>
+    <Headline title="Latest News" isAddedLineBelow={false}/> 
   </ThemeProvider>
   )
 }
