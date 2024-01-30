@@ -15,7 +15,7 @@ export const StyledInput= styled.input<{$error: string | undefined, disabled: bo
     align-self: stretch;
     border-radius: ${({theme})=> theme.borderRadius.medium};
     border: 1px solid ${({theme})=> theme.color.gray};
-    background: #FFF;
+    background: ${({theme})=> theme.color.white};
     font-size: ${({theme})=> theme.typography.fontSize.medium};
     line-height: ${({theme})=> theme.typography.lineHeight.high};
     &::placeholder {
