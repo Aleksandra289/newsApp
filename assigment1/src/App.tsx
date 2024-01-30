@@ -15,12 +15,17 @@ import image from './assets/047f189d5fb428569ef24e282ba652ec.png'
 import image2 from './assets/42b29177e46d46d5fa3c0ece63cec048.png'
 import CircleIcon from './components/CircleIcon/CircleIcon'
 import Headline from './components/Headline/Headline'
+import Input from './components/Input/Input'
+import { useState, ChangeEvent } from 'react'
 import TrustCard from './components/Cards/TrustCard/TrustCard'
 import { RouterProvider } from 'react-router-dom'
 import { router } from './Router/Router'
 
 function App() {
- 
+  const [userInput, setUserInput]= useState("");
+  function onChangeHandler(e: ChangeEvent<HTMLInputElement>){
+    setUserInput(e.target.value);
+} 
   return (
   <ThemeProvider>
     <GlobalStyles/>
@@ -47,7 +52,10 @@ function App() {
     <CircleIcon status='error'/>
     <CircleIcon status='warning'/> 
     <Headline title='Latest News'/>
-    <Headline title="Latest News" isAddedLineBelow={false}/> 
+    <Headline title="Latest News" isAddedLineBelow={false}/>
+    <Input label='Text field' placeholder='Text' onChange={onChangeHandler} value={userInput}/>
+    <Input label='Text field' placeholder='Text' onChange={onChangeHandler} value={userInput} error='Error text'/> 
+    <Input label='Text field' placeholder='Text' onChange={onChangeHandler} value={userInput} disabled={true}/>
   </ThemeProvider>
   )
 }
