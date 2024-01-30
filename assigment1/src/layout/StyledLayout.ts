@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StyledLayoutDiv = styled.div`
+export const StyledLayout = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
