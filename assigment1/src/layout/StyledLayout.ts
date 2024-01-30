@@ -5,5 +5,4 @@ export const StyledLayoutDiv = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 1.25rem;
-  padding-bottom: 2.5rem;
 `;
