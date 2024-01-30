@@ -7,4 +7,5 @@ export const StyledNavDiv= styled.div`
     align-items: center;
     gap: 7.5rem;
     box-shadow: 0px 4px 20px 0px rgba(16, 24, 40, 0.10);
+    width: 100%
 `
