@@ -6,6 +6,7 @@ import Navigation from "../components/Navigation/Navigation";
 import { useNavigate } from "react-router-dom";
 import PageShell from "../components/PageShell/PageShell";
 import { StyledLayoutDiv } from "./StyledLayout";
+import { StyledPageShellWrapperDiv } from "../components/PageShell/StyledPageShell";
 
 export default function Layout() {
   const [activeItem, setActiveItem] = useState<ItemProps>(items[0]);
@@ -22,9 +23,11 @@ export default function Layout() {
         items={items}
         onChangeActiveNavItem={onChangeActiveNavItem}
       />
-      <PageShell>
-        <Outlet />
-      </PageShell>
+      <StyledPageShellWrapperDiv>
+        <PageShell>
+          <Outlet />
+        </PageShell>
+      </StyledPageShellWrapperDiv>
     </StyledLayoutDiv>
   );
 }
