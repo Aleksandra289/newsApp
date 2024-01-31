@@ -15,7 +15,7 @@ function Navigation({
   onChangeActiveNavItem
 }: NavigationProps) {
   const navItems = useMemo(() => {
-    const itemsArray = items.map((item) => (
+    return items.map((item) => (
       <NavItem
         key={item.value}
         icon={item.icon}
@@ -25,7 +25,6 @@ function Navigation({
         onChangeActiveNavItem={onChangeActiveNavItem}
       />
     ));
-    return itemsArray;
   }, [items, selectedItem, onChangeActiveNavItem]);
 
   return <StyledNavDiv>{navItems}</StyledNavDiv>;

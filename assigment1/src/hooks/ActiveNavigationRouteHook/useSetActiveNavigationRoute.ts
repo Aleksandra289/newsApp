@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import { ItemProps } from "../shared/types/navItem";
-import { items } from "../shared/data/navigation/items";
+import { ItemProps } from "../../shared/types/navItem";
+import { items } from "../../shared/data/navigation/items";
 
 export function useSetActiveNavigationRoute() {
   const [activeItem, setActiveItem] = useState<ItemProps>(items[0]);

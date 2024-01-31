@@ -6,14 +6,14 @@ import { useNavigate } from "react-router-dom";
 import PageShell from "../components/PageShell/PageShell";
 import { StyledLayout } from "./StyledLayout";
 import { StyledPageShellWrapper } from "../components/PageShell/StyledPageShell";
-import { useSetActiveNavigationRoute } from "../custumeHook/useSetActiveNavigationRoute";
-import { useNavigateForSlash } from "../custumeHook/useNavigateForSlash";
+import { useSetActiveNavigationRoute } from "../hooks/ActiveNavigationRouteHook/useSetActiveNavigationRoute";
+import { useRouteValidationCheck } from "../hooks/RouteValidationHook/useRouteValidationCheck";
 
 export default function Layout() {
   const { activeItem, setActiveItem } = useSetActiveNavigationRoute();
   const navigate = useNavigate();
 
-  useNavigateForSlash();
+  useRouteValidationCheck();
 
   function onChangeActiveNavItem(selectedItem: ItemProps) {
     setActiveItem(selectedItem);
