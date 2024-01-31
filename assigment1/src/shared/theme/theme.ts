@@ -74,7 +74,7 @@ const theme: ThemeProps = {
     ashy: "#F3F4F8",
     pale: "#F1F1F1",
     turquoise: "#2249AF",
-    classicBlue: "#2d99e7"
+    classicBlue: "#2D99E7"
   },
   borderRadius: {
     small: "0.5rem",
