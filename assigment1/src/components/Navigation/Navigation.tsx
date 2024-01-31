@@ -15,18 +15,17 @@ function Navigation({
   onChangeActiveNavItem
 }: NavigationProps) {
   const navItems = useMemo(() => {
-    return items.map((item) => {
-      return (
-        <NavItem
-          key={item.value}
-          icon={item.icon}
-          title={item.label}
-          isActive={selectedItem === item}
-          item={item}
-          onChangeActiveNavItem={onChangeActiveNavItem}
-        />
-      );
-    });
+    const itemsArray = items.map((item) => (
+      <NavItem
+        key={item.value}
+        icon={item.icon}
+        title={item.label}
+        isActive={selectedItem === item}
+        item={item}
+        onChangeActiveNavItem={onChangeActiveNavItem}
+      />
+    ));
+    return itemsArray;
   }, [items, selectedItem, onChangeActiveNavItem]);
 
   return <StyledNavDiv>{navItems}</StyledNavDiv>;
