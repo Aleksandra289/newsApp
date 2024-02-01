@@ -2,19 +2,17 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 export function useRouteValidationCheck() {
+  const { pathname } = window.location;
   const navigate = useNavigate();
-  const { protocol, host, pathname } = window.location;
-  const url = `${protocol}//${host}`;
 
   useEffect(() => {
-    const multipleSlashes = new RegExp(url + "/(/)+");
+    const url = window.location.href;
 
-    if (multipleSlashes.test(window.location.href)) {
-      window.location.href = url;
-    }
-    if (pathname !== "/" && pathname.endsWith("/")) {
+    if (/^\/allnews\/+$/.test(pathname) || /^\/newpost\/+$/.test(pathname)) {
       const newPathname = pathname.replace(/\/+$/, "");
       navigate(newPathname);
+    } else if (pathname !== "/" && pathname.endsWith("/")) {
+      window.location.href = url.replace(/\/+$/, "");
     }
-  }, [pathname, navigate, url]);
+  }, [pathname, navigate]);
 }
