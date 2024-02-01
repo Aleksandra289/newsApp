@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { ThemeColor } from "../../shared/theme/theme";
+import { brakepoints } from "../../shared/breakpoints/breakpoints";
 
 export const StyledBannerDiv = styled.div<{
   $firstGradientColor?: ThemeColor;
@@ -8,7 +9,7 @@ export const StyledBannerDiv = styled.div<{
   width: 100%;
   border-radius: 1rem;
   padding: 1.5rem;
-  padding-right: 24px;
+  padding-right: 1.5rem;
   background: linear-gradient(
     271deg,
     ${({ $firstGradientColor, theme }) => theme.color[$firstGradientColor!]} -8.54%,
@@ -16,19 +17,15 @@ export const StyledBannerDiv = styled.div<{
       103.39%
   );
 
-  @media screen and (min-width: 44rem) {
-    padding-right: 1.5rem;
-    transition: padding-right 0.5s ease;
-  }
-  @media screen and (min-width: 77.5rem) {
+  @media ${brakepoints.tablet.tabletSm} {
     padding-right: 4rem;
   }
 `;
 export const StyledTextDiv = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   gap: 1rem;
+  text-align: left;
 `;
 export const StyledImg = styled.img`
   height: 5.9375rem;
@@ -36,4 +33,5 @@ export const StyledImg = styled.img`
 export const StyledTextAndImg = styled.div`
   display: flex;
   justify-content: space-between;
+  gap: 1rem;
 `;
