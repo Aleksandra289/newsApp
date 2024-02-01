@@ -2,6 +2,8 @@ import notFoundImage from "../../assets/Frame 56544.png";
 import { StyledNotFound, StyledWrapper, ButtonWrapper } from "./StyledNotFound";
 import Text from "../Text/Text";
 import Button from "../Button/Button";
+import { useNavigate } from "react-router-dom";
+import { routes } from "../../Router/routes";
 
 type NotFoundProps = {
   title: string;
@@ -9,6 +11,11 @@ type NotFoundProps = {
 };
 
 function NotFound({ title, description }: NotFoundProps) {
+  const navigate = useNavigate();
+
+  function onClickButtonHandler() {
+    navigate(routes.root);
+  }
   return (
     <StyledWrapper>
       <StyledNotFound>
@@ -25,7 +32,7 @@ function NotFound({ title, description }: NotFoundProps) {
           {description}
         </Text>
         <ButtonWrapper>
-          <Button size="extraLarge" color="blue">
+          <Button size="extraLarge" color="blue" onClick={onClickButtonHandler}>
             Back home
           </Button>
         </ButtonWrapper>

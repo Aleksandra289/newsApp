@@ -9,19 +9,26 @@ type ButtonProps = {
   isDisabled?: boolean;
   width?: string;
   color?: ThemeColor;
+  onClick?: () => void;
 };
 
 function Button({
   children,
   size,
   isDisabled = false,
-  color = "purple"
+  color = "purple",
+  onClick
 }: ButtonProps) {
   const textColor = isDisabled ? "darkGray" : "white";
   const [fSize, fWeight, lHeight] = getTextSizes(size);
 
   return (
-    <StyledButton size={size} $isDisabled={isDisabled} color={color}>
+    <StyledButton
+      size={size}
+      $isDisabled={isDisabled}
+      color={color}
+      onClick={onClick}
+    >
       <Text
         fontSize={fSize}
         fontWeight={fWeight}
