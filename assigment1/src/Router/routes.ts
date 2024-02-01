@@ -1,1 +1,1 @@
-export const routes= {root: '/', newPost: '/newpost', allNews: '/allnews'};
+export const routes = { root: "/", newPost: "/newpost", allNews: "/allnews" };
