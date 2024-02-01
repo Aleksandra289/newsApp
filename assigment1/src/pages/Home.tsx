@@ -54,6 +54,7 @@ function Home() {
         onChange={onChangeHandler}
         error="Error"
       ></Input>
+      <Button size="extraLarge">Button</Button>
     </>
   );
 }

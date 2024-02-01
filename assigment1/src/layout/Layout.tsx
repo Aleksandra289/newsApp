@@ -19,13 +19,21 @@ export default function Layout() {
     setActiveItem(selectedItem);
     navigate(selectedItem.url);
   }
+
+  const knownRoute =
+    pathname === routes.root ||
+    pathname === routes.allNews ||
+    pathname === routes.newPost;
+
   return (
     <StyledLayout>
-      <Navigation
-        selectedItem={activeItem}
-        items={items}
-        onChangeActiveNavItem={onChangeActiveNavItem}
-      />
+      {knownRoute && (
+        <Navigation
+          selectedItem={activeItem}
+          items={items}
+          onChangeActiveNavItem={onChangeActiveNavItem}
+        />
+      )}
       <StyledPageShellWrapper>
         <PageShell>
           <Outlet />
