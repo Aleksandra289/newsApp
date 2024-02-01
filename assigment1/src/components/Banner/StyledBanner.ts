@@ -7,33 +7,31 @@ export const StyledBannerDiv = styled.div<{
 }>`
   width: 100%;
   border-radius: 1rem;
+  padding: 1.5rem;
+  padding-right: 24px;
   background: linear-gradient(
     271deg,
-    ${({ $firstGradientColor, theme }) =>
-        $firstGradientColor
-          ? theme.color[$firstGradientColor]
-          : theme.color.turquoise} -8.54%,
-    ${({ $secondGradientColor, theme }) =>
-        $secondGradientColor
-          ? theme.color[$secondGradientColor]
-          : theme.color.classicBlue}
+    ${({ $firstGradientColor, theme }) => theme.color[$firstGradientColor!]} -8.54%,
+    ${({ $secondGradientColor, theme }) => theme.color[$secondGradientColor!]}
       103.39%
   );
+
+  @media screen and (min-width: 44rem) {
+    padding-right: 1.5rem;
+    transition: padding-right 0.5s ease;
+  }
+  @media screen and (min-width: 77.5rem) {
+    padding-right: 4rem;
+  }
 `;
 export const StyledTextDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 1rem;
-  padding-left: 1.5rem;
-  padding-top: 1.5rem;
-  padding-bottom: 3.4375rem;
 `;
 export const StyledImg = styled.img`
   height: 5.9375rem;
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
-  margin-right: 4%;
 `;
 export const StyledTextAndImg = styled.div`
   display: flex;

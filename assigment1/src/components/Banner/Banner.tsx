@@ -10,7 +10,7 @@ import { ThemeColor } from "../../shared/theme/theme";
 type BannerProps = {
   title: string;
   description: string;
-  src: string;
+  image: string;
   firstGradientColor?: ThemeColor;
   secondGradientColor?: ThemeColor;
 };
@@ -18,7 +18,7 @@ type BannerProps = {
 export default function Banner({
   title,
   description,
-  src,
+  image,
   firstGradientColor = "turquoise",
   secondGradientColor = "classicBlue"
 }: BannerProps) {
@@ -46,7 +46,7 @@ export default function Banner({
             {description}
           </Text>
         </StyledTextDiv>
-        <StyledImg src={src} alt="news"></StyledImg>
+        <StyledImg src={image} alt="news"></StyledImg>
       </StyledTextAndImg>
     </StyledBannerDiv>
   );
