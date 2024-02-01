@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { regexTrailingSlashes } from "../../shared/regex/regex";
+import { removeTrailingSlashes } from "../../shared/regex/removeTrailingSlashes";
 
 export function useRouteValidationCheck() {
   const { pathname } = window.location;
@@ -9,7 +9,7 @@ export function useRouteValidationCheck() {
   useEffect(() => {
     if (pathname !== "/" && pathname.endsWith("/")) {
       const pathnameWithoutTrailingSlashes = pathname.replace(
-        regexTrailingSlashes,
+        removeTrailingSlashes,
         ""
       );
 
