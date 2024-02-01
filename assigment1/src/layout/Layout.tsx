@@ -6,8 +6,8 @@ import { useNavigate } from "react-router-dom";
 import PageShell from "../components/PageShell/PageShell";
 import { StyledLayout } from "./StyledLayout";
 import { StyledPageShellWrapper } from "../components/PageShell/StyledPageShell";
-import { useSetActiveNavigationRoute } from "../hooks/ActiveNavigationRouteHook/useSetActiveNavigationRoute";
-import { useRouteValidationCheck } from "../hooks/RouteValidationHook/useRouteValidationCheck";
+import { useSetActiveNavigationRoute } from "../hooks/useActiveNavigationRoute/useSetActiveNavigationRoute";
+import { useRouteValidationCheck } from "../hooks/useRouteValidation/useRouteValidationCheck";
 
 export default function Layout() {
   const { activeItem, setActiveItem } = useSetActiveNavigationRoute();
