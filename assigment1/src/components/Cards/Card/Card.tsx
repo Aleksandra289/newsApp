@@ -15,7 +15,7 @@ function Card({
   borderRadius = "large",
   backgroundColor = "white",
   borderColor = "whiteGray",
-  padding = "0.9375rem"
+  padding = "1rem"
 }: CardProps) {
   return (
     <StyledCard

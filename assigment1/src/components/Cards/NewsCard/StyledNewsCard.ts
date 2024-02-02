@@ -1,5 +1,7 @@
 import styled from "styled-components";
-
+export const NewsCardWrapper = styled.div`
+  max-width: 16.3125rem;
+`;
 export const StyledNewsCard = styled.div`
   width: 16.4375rem;
   display: flex;
