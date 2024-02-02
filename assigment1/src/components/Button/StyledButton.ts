@@ -23,6 +23,13 @@ export const StyledButton = styled.button<{
   &:hover {
     background: ${({ theme }) => theme.color.violet};
   }
+  ${(props) =>
+    !props.$isDisabled &&
+    css`
+      &:active {
+        background: ${({ theme }) => theme.color.darkPurple};
+      }
+    `}
 
   ${(props) =>
     props.$isDisabled &&
@@ -31,12 +38,6 @@ export const StyledButton = styled.button<{
       cursor: not-allowed;
       &:hover {
         background: ${({ theme }) => theme.color.gray};
-        &:active {
-          background: ${({ theme }) => theme.color.gray};
-        }
       }
     `}
-  &:focus {
-    background: ${({ theme }) => theme.color.darkPurple};
-  }
 `;

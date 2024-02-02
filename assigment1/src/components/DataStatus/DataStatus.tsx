@@ -1,16 +1,24 @@
-import notFoundImage from "../../assets/Frame 56544.png";
-import { StyledNotFound, StyledWrapper, ButtonWrapper } from "./StyledNotFound";
+import Error404Icon from "../../icons/Error404Icon";
+import {
+  StyledWrapper,
+  StyledNotFound,
+  ButtonWrapper
+} from "./StyledDataStatus";
 import Text from "../Text/Text";
 import Button from "../Button/Button";
 import { useNavigate } from "react-router-dom";
 import { routes } from "../../Router/routes";
 
-type NotFoundProps = {
+type DataStatusProps = {
   title: string;
   description: string;
+  buttonText: string;
 };
-
-function NotFound({ title, description }: NotFoundProps) {
+export default function DataStatus({
+  title,
+  description,
+  buttonText
+}: DataStatusProps) {
   const navigate = useNavigate();
 
   function onClickButtonHandler() {
@@ -19,7 +27,7 @@ function NotFound({ title, description }: NotFoundProps) {
   return (
     <StyledWrapper>
       <StyledNotFound>
-        <img src={notFoundImage} alt="error 404"></img>
+        <Error404Icon />
         <Text fontSize="extraLarge" fontWeight="extraBold" lineHeight="higher">
           {title}
         </Text>
@@ -33,11 +41,10 @@ function NotFound({ title, description }: NotFoundProps) {
         </Text>
         <ButtonWrapper>
           <Button size="extraLarge" color="blue" onClick={onClickButtonHandler}>
-            Back home
+            {buttonText}
           </Button>
         </ButtonWrapper>
       </StyledNotFound>
     </StyledWrapper>
   );
 }
-export default NotFound;
