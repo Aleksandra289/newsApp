@@ -1,4 +1,3 @@
-import Error404Icon from "../../icons/Error404Icon";
 import {
   StyledWrapper,
   StyledNotFound,
@@ -6,28 +5,25 @@ import {
 } from "./StyledDataStatus";
 import Text from "../Text/Text";
 import Button from "../Button/Button";
-import { useNavigate } from "react-router-dom";
-import { routes } from "../../Router/routes";
 
 type DataStatusProps = {
   title: string;
   description: string;
   buttonText: string;
+  icon: React.ComponentType;
+  onClick: () => void;
 };
 export default function DataStatus({
   title,
   description,
-  buttonText
+  buttonText,
+  icon: DataStatusIconComponent,
+  onClick
 }: DataStatusProps) {
-  const navigate = useNavigate();
-
-  function onClickButtonHandler() {
-    navigate(routes.root);
-  }
   return (
     <StyledWrapper>
       <StyledNotFound>
-        <Error404Icon />
+        <DataStatusIconComponent />
         <Text fontSize="extraLarge" fontWeight="extraBold" lineHeight="higher">
           {title}
         </Text>
@@ -40,7 +36,7 @@ export default function DataStatus({
           {description}
         </Text>
         <ButtonWrapper>
-          <Button size="extraLarge" color="blue" onClick={onClickButtonHandler}>
+          <Button size="extraLarge" color="blue" onClick={onClick}>
             {buttonText}
           </Button>
         </ButtonWrapper>

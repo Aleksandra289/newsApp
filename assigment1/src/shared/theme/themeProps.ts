@@ -63,6 +63,7 @@ type ThemeProps = {
     pale: string;
     turquoise: string;
     classicBlue: string;
+    grayish: string;
   };
   borderRadius: {
     small: string;
