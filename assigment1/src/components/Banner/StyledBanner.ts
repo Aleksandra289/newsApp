@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { ThemeColor } from "../../shared/theme/theme";
-import { brakepoints } from "../../shared/breakpoints/breakpoints";
+import { breakpoints } from "../../shared/breakpoints/breakpoints";
 
 export const StyledBannerDiv = styled.div<{
   $firstGradientColor?: ThemeColor;
@@ -17,7 +17,7 @@ export const StyledBannerDiv = styled.div<{
       103.39%
   );
 
-  @media ${brakepoints.tablet.tabletSm} {
+  @media ${breakpoints.tablet} {
     padding-right: 4rem;
   }
 `;

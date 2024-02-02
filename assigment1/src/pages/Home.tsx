@@ -6,6 +6,8 @@ import TrustCard from "../components/Cards/TrustCard/TrustCard";
 import { useState } from "react";
 import Input from "../components/Input/Input";
 import { ChangeEvent } from "react";
+import Banner from "../components/Banner/Banner";
+import image3 from "../assets/slikaaa 1.png";
 
 function Home() {
   const [userInput, setUserInput] = useState("");
@@ -15,6 +17,11 @@ function Home() {
   return (
     <>
       <h1>hello</h1>
+      <Banner
+        title="The best news always available"
+        description="On all devices, always on time"
+        image={image3}
+      />
       <NewsCard
         src={image}
         title="Denmark’s King Frederik X takes throne after Margrethe abdicates asd"
