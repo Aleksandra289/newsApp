@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledNewsCard = styled.div`
-  width: 16.75rem;
+  width: 16.4375rem;
   display: flex;
   flex-direction: column;
 `;
@@ -32,4 +32,14 @@ export const StyledChipDiv = styled.div`
   position: absolute;
   right: 1.5625rem;
   top: 1.5625rem;
+`;
+export const LatestNewsWrapper = styled.div`
+  display: flex;
+  gap: 1.25rem;
+  width: 100%;
+  overflow-x: scroll;
+  float: left;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;
