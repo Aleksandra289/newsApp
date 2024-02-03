@@ -2,6 +2,7 @@ import Text from "../Text/Text";
 import { StyledButton } from "./StyledButton";
 import { ButtonSizes, ThemeColor } from "../../shared/theme/theme";
 import { getTextSizes } from "./getTextSizes";
+import { memo } from "react";
 
 type ButtonProps = {
   children: string;
@@ -12,7 +13,7 @@ type ButtonProps = {
   onClick?: () => void;
 };
 
-function Button({
+function ButtonComponent({
   children,
   size,
   isDisabled = false,
@@ -40,4 +41,5 @@ function Button({
     </StyledButton>
   );
 }
+const Button = memo(ButtonComponent);
 export default Button;

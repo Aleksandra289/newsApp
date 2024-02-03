@@ -1,6 +1,6 @@
 import {
   StyledWrapper,
-  StyledNotFound,
+  DataStatusWrapper,
   ButtonWrapper
 } from "./StyledDataStatus";
 import Text from "../Text/Text";
@@ -22,7 +22,7 @@ export default function DataStatus({
 }: DataStatusProps) {
   return (
     <StyledWrapper>
-      <StyledNotFound>
+      <DataStatusWrapper>
         <DataStatusIconComponent />
         <Text fontSize="extraLarge" fontWeight="extraBold" lineHeight="higher">
           {title}
@@ -40,7 +40,7 @@ export default function DataStatus({
             {buttonText}
           </Button>
         </ButtonWrapper>
-      </StyledNotFound>
+      </DataStatusWrapper>
     </StyledWrapper>
   );
 }

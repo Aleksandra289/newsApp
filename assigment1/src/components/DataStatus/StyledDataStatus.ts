@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StyledNotFound = styled.div`
+export const DataStatusWrapper = styled.div`
   display: flex;
   width: 37.5rem;
   flex-direction: column;
@@ -15,7 +15,7 @@ export const StyledWrapper = styled.div`
   overflow-y: auto;
   justify-content: center;
   align-items: center;
-  padding: 2.625rem 5.25rem;
+  padding: 2.5rem 5.25rem;
 `;
 export const ButtonWrapper = styled.div`
   max-width: 25rem;
