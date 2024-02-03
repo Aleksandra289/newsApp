@@ -1,9 +1,8 @@
 import styled from "styled-components";
-export const NewsCardWrapper = styled.div`
-  max-width: 16.3125rem;
-`;
+
 export const StyledNewsCard = styled.div`
-  width: 16.4375rem;
+  min-width: 16.313rem;
+  width: 100%;
   display: flex;
   flex-direction: column;
 `;
@@ -39,8 +38,7 @@ export const LatestNewsWrapper = styled.div`
   display: flex;
   gap: 1.25rem;
   width: 100%;
-  overflow-x: scroll;
-  float: left;
+  overflow-x: auto;
   &::-webkit-scrollbar {
     display: none;
   }

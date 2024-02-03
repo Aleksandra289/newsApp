@@ -1,3 +1,4 @@
+//TODO - remove this file once we get the real data
 import image1 from "../../../assets/047f189d5fb428569ef24e282ba652ec.png";
 import image2 from "../../../assets/42b29177e46d46d5fa3c0ece63cec048.png";
 import image3 from "../../../assets/5d7d3e81978b9f629d80591af77b22c9.png";

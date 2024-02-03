@@ -16,5 +16,4 @@ export const StyledCard = styled.div<{
     theme.borderRadius[$borderRadius]};
   border: 1px solid ${({ theme, $borderColor }) => theme.color[$borderColor]};
   background: ${({ theme, $backgroundColor }) => theme.color[$backgroundColor]};
-  text-align: left;
 `;
