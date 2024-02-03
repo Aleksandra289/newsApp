@@ -1,4 +1,4 @@
-import { latestNews } from "../shared/data/latestNews/latestNews";
+import { latestNews } from "../shared/data/latestNews/mockedLatestNews";
 import NewsCard from "../components/Cards/NewsCard/NewsCard";
 import { LatestNewsWrapper } from "../components/Cards/NewsCard/StyledNewsCard";
 import Headline from "../components/Headline/Headline";
