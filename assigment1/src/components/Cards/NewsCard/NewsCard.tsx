@@ -4,8 +4,7 @@ import {
   StyledImage,
   StyledTitleDiv,
   StyledDescriptionDiv,
-  StyledNewsCard,
-  NewsCardWrapper
+  StyledNewsCard
 } from "../NewsCard/StyledNewsCard";
 import Chip from "../../Chip/Chip";
 import Text from "../../Text/Text";
@@ -27,36 +26,34 @@ function NewsCard({
 }: NewsCardProps) {
   return (
     <Card>
-      <NewsCardWrapper>
-        <StyledNewsCard>
-          <StyledChipDiv>
-            <Chip showCircle={isActive}>{chipText}</Chip>
-          </StyledChipDiv>
+      <StyledNewsCard>
+        <StyledChipDiv>
+          <Chip showCircle={isActive}>{chipText}</Chip>
+        </StyledChipDiv>
 
-          <StyledImage src={src} alt="new pic"></StyledImage>
+        <StyledImage src={src} alt="new pic"></StyledImage>
 
-          <StyledTitleDiv>
-            <Text
-              fontSize="large"
-              fontWeight="bold"
-              lineHeight="high"
-              color="lighterBlack"
-            >
-              {title}
-            </Text>
-          </StyledTitleDiv>
-          <StyledDescriptionDiv>
-            <Text
-              fontSize="medium"
-              fontWeight="regular"
-              lineHeight="medium"
-              color="lighterGray"
-            >
-              {description}
-            </Text>
-          </StyledDescriptionDiv>
-        </StyledNewsCard>
-      </NewsCardWrapper>
+        <StyledTitleDiv>
+          <Text
+            fontSize="large"
+            fontWeight="bold"
+            lineHeight="high"
+            color="lighterBlack"
+          >
+            {title}
+          </Text>
+        </StyledTitleDiv>
+        <StyledDescriptionDiv>
+          <Text
+            fontSize="medium"
+            fontWeight="regular"
+            lineHeight="medium"
+            color="lighterGray"
+          >
+            {description}
+          </Text>
+        </StyledDescriptionDiv>
+      </StyledNewsCard>
     </Card>
   );
 }
