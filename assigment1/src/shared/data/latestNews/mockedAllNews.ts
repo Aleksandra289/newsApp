@@ -4,7 +4,7 @@ import image2 from "../../../assets/42b29177e46d46d5fa3c0ece63cec048.png";
 import image3 from "../../../assets/5d7d3e81978b9f629d80591af77b22c9.png";
 import image4 from "../../../assets/f63b1a2efef900a06ea843087f7eee4b.png";
 
-export const mockedAlltNews = [
+export const mockedAllNews = [
   {
     src: image1,
     title:
