@@ -1,19 +1,19 @@
 import styled from "styled-components";
 import { css } from "styled-components";
-import { ButtonSizes, ThemeColor } from "../../shared/theme/theme";
+import { ButtonSizes } from "../../shared/theme/theme";
 
 export const StyledButton = styled.button<{
   size: ButtonSizes;
   $isDisabled: boolean;
-  color: ThemeColor;
 }>`
   display: inline-flex;
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
   border-radius: ${({ theme }) => theme.borderRadius.small};
-  background: ${({ theme, color }) => theme.color[color]};
+  background: ${({ theme }) => theme.color.purple};
   width: 100%;
+  cursor: pointer;
 
   ${({ size }) => css`
     padding: ${({ theme }) => theme.buttonSizes[size].padding};
