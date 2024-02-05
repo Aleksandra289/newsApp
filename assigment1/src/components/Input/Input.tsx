@@ -1,9 +1,8 @@
+import { StyledInputDiv, StyledInput } from "./StyledInput";
 import {
-  StyledInputDiv,
-  StyledInput,
   StyledTextDiv,
   StyledErrorDiv
-} from "./StyledInput";
+} from "../../styles/InputAndTextAreaStyles";
 import Text from "../Text/Text";
 import { useState, InputHTMLAttributes, forwardRef, Ref } from "react";
 

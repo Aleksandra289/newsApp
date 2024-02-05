@@ -1,7 +1,10 @@
 import { StyledTextArea, StyledTextAreaDiv } from "./StyledTextArea";
 import Text from "../components/Text/Text";
 import { useState, TextareaHTMLAttributes, forwardRef, LegacyRef } from "react";
-import { StyledErrorDiv, StyledTextDiv } from "../components/Input/StyledInput";
+import {
+  StyledErrorDiv,
+  StyledTextDiv
+} from "../styles/InputAndTextAreaStyles";
 interface TextAreaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
   label: string;
   error?: string;
