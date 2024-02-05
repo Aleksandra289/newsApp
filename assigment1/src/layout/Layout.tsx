@@ -19,6 +19,7 @@ export default function Layout() {
     setActiveItem(selectedItem);
     navigate(selectedItem.url);
   }
+
   return (
     <StyledLayout>
       <Navigation
