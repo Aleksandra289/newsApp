@@ -8,6 +8,7 @@ const GlobalStyles = createGlobalStyle`
     }
     body{
         font-family: "Inter", sans-serif;
+        overflow-x: hidden;
         
     }
     input{
