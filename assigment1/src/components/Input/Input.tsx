@@ -1,10 +1,8 @@
 import {
   StyledArea,
   StyledTextDiv,
-  StyledErrorDiv,
-  StyledTextWrapper,
-  Wrapper
-} from "../Input/StyledInput";
+  StyledErrorDiv
+} from "../../styles/InputAndTextAreaStyles";
 import Text from "../Text/Text";
 import { InputHTMLAttributes, forwardRef, Ref } from "react";
 

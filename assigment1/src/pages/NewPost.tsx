@@ -6,31 +6,16 @@ import {
 } from "./StyledNewPost";
 import Text from "../components/Text/Text";
 import Input from "../components/Input/Input";
-import TextArea from "../TextArea/TextArea";
+import TextArea from "../components/TextArea/TextArea";
 import Button from "../components/Button/Button";
 import { useForm } from "react-hook-form";
 import { DevTool } from "@hookform/devtools";
 import { useEffect } from "react";
-import { z } from "zod";
+import { FormType, FormSchema, FormNames } from "../schema/createNewPostSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 
-const FormSchema = z.object({
-  headline: z.string().min(1, "Headline is required."),
-  fullStory: z.string().min(1, "Full story is required."),
-  link: z.string().min(1, "Link is required.")
-});
-
-type FormType = z.infer<typeof FormSchema>;
-
 function NewPost() {
-  const form = useForm<FormType>({
-    defaultValues: {
-      headline: "",
-      fullStory: "",
-      link: ""
-    },
-    resolver: zodResolver(FormSchema)
-  });
+  const form = useForm<FormType>({ resolver: zodResolver(FormSchema) });
   const { register, control, handleSubmit, formState, reset } = form;
   const { errors, isSubmitSuccessful } = formState;
 
@@ -42,6 +27,11 @@ function NewPost() {
       reset();
     }
   }, [reset, isSubmitSuccessful]);
+  const formNames: FormNames<FormType> = {
+    headline: "headline",
+    fullStory: "fullStory",
+    link: "link"
+  };
   return (
     <StyledNewPostWrapper>
       <StyledTitleAndFormWrapper>
@@ -53,20 +43,21 @@ function NewPost() {
         <StyledForm>
           <Input
             label="Headline"
-            error={errors.headline?.message}
+            error={errors[formNames.headline]?.message}
             placeholder="Title"
-            {...register("headline")}
+            {...register(formNames.headline)}
           />
           <TextArea
             label="Full story"
-            error={errors.fullStory?.message}
-            {...register("fullStory")}
+            error={errors[formNames.fullStory]?.message}
+            {...register(formNames.fullStory)}
           />
+          <Input label="dssd"></Input>
           <Input
             label="Link"
             placeholder="URL"
-            error={errors.link?.message}
-            {...register("link")}
+            error={errors[formNames.link]?.message}
+            {...register(formNames.link)}
           />
           <Button
             type="submit"
@@ -76,6 +67,7 @@ function NewPost() {
             Create post
           </Button>
         </StyledForm>
+
         <DevTool control={control}></DevTool>
       </StyledTitleAndFormWrapper>
     </StyledNewPostWrapper>
