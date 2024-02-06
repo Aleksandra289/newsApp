@@ -7,3 +7,8 @@ export const StyledAllNewsContainer = styled.div`
   width: 100%;
   margin-bottom: 1rem;
 `;
+export const StyledAllNewsWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+`;

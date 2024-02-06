@@ -1,8 +1,4 @@
-import {
-  StyledWrapper,
-  DataStatusWrapper,
-  ButtonWrapper
-} from "./StyledDataStatus";
+import { DataStatusWrapper, ButtonWrapper } from "./StyledDataStatus";
 import Text from "../Text/Text";
 import Button from "../Button/Button";
 
@@ -21,26 +17,24 @@ export default function DataStatus({
   onClick
 }: DataStatusProps) {
   return (
-    <StyledWrapper>
-      <DataStatusWrapper>
-        <DataStatusIconComponent />
-        <Text fontSize="extraLarge" fontWeight="extraBold" lineHeight="higher">
-          {title}
-        </Text>
-        <Text
-          fontSize="medium"
-          fontWeight="regular"
-          lineHeight="medium"
-          color="grayish"
-        >
-          {description}
-        </Text>
-        <ButtonWrapper>
-          <Button size="extraLarge" color="blue" onClick={onClick}>
-            {buttonText}
-          </Button>
-        </ButtonWrapper>
-      </DataStatusWrapper>
-    </StyledWrapper>
+    <DataStatusWrapper>
+      <DataStatusIconComponent />
+      <Text fontSize="extraLarge" fontWeight="extraBold" lineHeight="higher">
+        {title}
+      </Text>
+      <Text
+        fontSize="medium"
+        fontWeight="regular"
+        lineHeight="medium"
+        color="grayish"
+      >
+        {description}
+      </Text>
+      <ButtonWrapper>
+        <Button size="extraLarge" onClick={onClick}>
+          {buttonText}
+        </Button>
+      </ButtonWrapper>
+    </DataStatusWrapper>
   );
 }

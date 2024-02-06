@@ -1,4 +1,4 @@
-function NewPost(){
-    return <p>new post</p>
+function NewPost() {
+  return <p>new post</p>;
 }
 export default NewPost;
