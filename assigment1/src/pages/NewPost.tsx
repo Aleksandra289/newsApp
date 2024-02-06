@@ -52,7 +52,6 @@ function NewPost() {
             error={errors[formNames.fullStory]?.message}
             {...register(formNames.fullStory)}
           />
-          <Input label="dssd"></Input>
           <Input
             label="Link"
             placeholder="URL"
