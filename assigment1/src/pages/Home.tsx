@@ -8,8 +8,7 @@ import { LatestNewsWrapper, HomeButtonWrapper } from "./StyledHome";
 import NewsHeaderList from "../components/NewsHeaderList/NewsHeaderList";
 import Button from "../components/Button/Button";
 import { mockedAllNews } from "../shared/data/latestNews/mockedAllNews";
-//vidi za onaj gap gde treba, ostalo je okej
-//tj pitaj za card zasto bi se bilo sta spolja stavljalo jer se zna za allnews npr da chip nece biti aktivan
+
 function Home() {
   const mappedLatestNews = latestNews.map((item) => {
     return (
