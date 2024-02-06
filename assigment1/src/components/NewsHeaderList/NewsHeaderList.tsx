@@ -4,17 +4,7 @@ import {
 } from "./StyledNewsHeaderList";
 import Headline from "../Headline/Headline";
 import NewsCard from "../Cards/NewsCard/NewsCard";
-type NewsType = {
-  src: string;
-  title: string;
-  description: string;
-  chipText: string;
-  isActive: boolean;
-};
-type NewsHeaderListType = {
-  headlineTitle: string;
-  newsList: NewsType[];
-};
+import { NewsHeaderListType } from "../../shared/types/newsHeaderListTypes";
 
 export default function NewsHeaderList({
   headlineTitle,

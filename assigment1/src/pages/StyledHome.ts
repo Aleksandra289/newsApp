@@ -10,7 +10,5 @@ export const LatestNewsWrapper = styled.div`
 `;
 
 export const HomeButtonWrapper = styled.div`
-  display: flex;
-  justify-content: center;
   margin: auto;
 `;
