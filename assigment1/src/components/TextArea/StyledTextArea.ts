@@ -1,8 +1,10 @@
 import styled from "styled-components";
 import { sharedStyles } from "../../styles/SharedInputAndTextAreaStyles";
-export const StyledArea = styled.input<{
+
+export const StyledArea = styled.textarea<{
   $error: string;
 }>`
+  height: 8rem;
   ${sharedStyles}
 `;
 export const StyledTextDiv = styled.div`
@@ -22,7 +24,6 @@ export const StyledWrapperDiv = styled.div`
   align-items: flex-start;
   ${StyledTextDiv} {
     order: 1;
-    height: 1rem;
   }
   ${StyledArea} {
     order: 2;
@@ -33,12 +34,10 @@ export const StyledWrapperDiv = styled.div`
 
   ${StyledArea}:not(:focus):placeholder-shown + ${StyledTextDiv} {
     display: none;
-    min-height: 1rem;
   }
   ${StyledArea}:not(:focus):not(:placeholder-shown) + ${StyledTextDiv} {
     :first-child {
       color: ${({ theme }) => theme.color.silver};
-      min-height: 1rem;
     }
   }
   ${StyledArea}:disabled {

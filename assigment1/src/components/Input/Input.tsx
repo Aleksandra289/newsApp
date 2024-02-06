@@ -1,10 +1,11 @@
-import { StyledInputDiv, StyledInput } from "./StyledInput";
 import {
+  StyledArea,
+  StyledWrapperDiv,
   StyledTextDiv,
   StyledErrorDiv
-} from "../../styles/InputAndTextAreaStyles";
+} from "../Input/StyledInput";
 import Text from "../Text/Text";
-import { useState, InputHTMLAttributes, forwardRef, Ref } from "react";
+import { InputHTMLAttributes, forwardRef, Ref } from "react";
 
 interface InputType extends InputHTMLAttributes<HTMLInputElement> {
   label: string;
@@ -15,54 +16,28 @@ interface InputType extends InputHTMLAttributes<HTMLInputElement> {
 
 const Input = forwardRef(
   (
-    { label, error = "", value, disabled = false, ...restProps }: InputType,
+    { label, error = "", disabled = false, ...restProps }: InputType,
     ref: Ref<HTMLInputElement>
   ) => {
-    const [isFocused, setIsFocused] = useState(false);
-
-    function onFocusHandler() {
-      setIsFocused(true);
-    }
-
-    function onBlurHandler() {
-      setIsFocused(false);
-    }
-
     return (
-      <StyledInputDiv>
-        <StyledTextDiv>
-          {isFocused && !disabled && (
-            <Text
-              fontSize="xsmall"
-              fontWeight="regular"
-              lineHeight="low"
-              color={error ? "redish" : "purple"}
-            >
-              {label}
-            </Text>
-          )}
-          {!isFocused && value && !error && !disabled && (
-            <Text
-              fontSize="xsmall"
-              fontWeight="regular"
-              lineHeight="low"
-              color="silver"
-            >
-              {label}
-            </Text>
-          )}
-        </StyledTextDiv>
-        <StyledInput
+      <StyledWrapperDiv>
+        <StyledArea
           type="text"
-          onFocus={onFocusHandler}
-          onBlur={onBlurHandler}
           $error={error}
           disabled={disabled}
-          $isFocused={isFocused}
           ref={ref}
           {...restProps}
         />
-
+        <StyledTextDiv>
+          <Text
+            fontSize="xsmall"
+            fontWeight="regular"
+            lineHeight="low"
+            color={error ? "redish" : "purple"}
+          >
+            {label}
+          </Text>
+        </StyledTextDiv>
         <StyledErrorDiv>
           {error && (
             <Text
@@ -75,7 +50,7 @@ const Input = forwardRef(
             </Text>
           )}
         </StyledErrorDiv>
-      </StyledInputDiv>
+      </StyledWrapperDiv>
     );
   }
 );
