@@ -5,6 +5,7 @@ export const StyledArea = styled.textarea<{
   $error: string;
 }>`
   height: 8rem;
+  resize: none;
   ${sharedStyles}
 `;
 export const StyledTextDiv = styled.div`
