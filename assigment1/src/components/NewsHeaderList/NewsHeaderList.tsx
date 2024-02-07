@@ -1,7 +1,4 @@
-import {
-  StyledAllNewsContainer,
-  StyledAllNewsWrapper
-} from "./StyledNewsHeaderList";
+import { StyledAllNewsContainer } from "./StyledNewsHeaderList";
 import Headline from "../Headline/Headline";
 import NewsCard from "../Cards/NewsCard/NewsCard";
 import { NewsHeaderListType } from "../../shared/types/newsHeaderListTypes";
@@ -21,9 +18,9 @@ export default function NewsHeaderList({
     />
   ));
   return (
-    <StyledAllNewsWrapper>
+    <>
       <Headline title={headlineTitle} isAddedLineBelow={false} />
       <StyledAllNewsContainer>{mappedMockedAllNews}</StyledAllNewsContainer>
-    </StyledAllNewsWrapper>
+    </>
   );
 }

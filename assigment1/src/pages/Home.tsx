@@ -8,6 +8,7 @@ import { LatestNewsWrapper, HomeButtonWrapper } from "./StyledHome";
 import NewsHeaderList from "../components/NewsHeaderList/NewsHeaderList";
 import Button from "../components/Button/Button";
 import { mockedAllNews } from "../shared/data/latestNews/mockedAllNews";
+import { StyledAllNewsWrapper } from "./StyledHome";
 
 function Home() {
   const mappedLatestNews = latestNews.map((item) => {
@@ -37,8 +38,9 @@ function Home() {
         title="News Recognized for Unparalleled Objectivity"
         description="Our News has been acknowledged for its unparalleled commitment to objectivity, standing out in an era where unbiased reporting is increasingly valued"
       />
-
-      <NewsHeaderList headlineTitle="All news" newsList={mockedAllNews} />
+      <StyledAllNewsWrapper>
+        <NewsHeaderList headlineTitle="All news" newsList={mockedAllNews} />
+      </StyledAllNewsWrapper>
       <HomeButtonWrapper>
         <Button size="extraLarge">View all news</Button>
       </HomeButtonWrapper>

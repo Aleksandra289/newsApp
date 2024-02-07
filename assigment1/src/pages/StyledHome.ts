@@ -12,3 +12,6 @@ export const LatestNewsWrapper = styled.div`
 export const HomeButtonWrapper = styled.div`
   margin: auto;
 `;
+export const StyledAllNewsWrapper = styled.div`
+  margin-bottom: 1rem;
+`;
