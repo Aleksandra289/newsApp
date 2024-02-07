@@ -13,13 +13,21 @@ import { DevTool } from "@hookform/devtools";
 import { useEffect } from "react";
 import { FormType, FormSchema, FormNames } from "../schema/createNewPostSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useNewsStore } from "../store/store";
 
 function NewPost() {
   const form = useForm<FormType>({ resolver: zodResolver(FormSchema) });
   const { register, control, handleSubmit, formState, reset } = form;
   const { errors, isSubmitSuccessful } = formState;
 
+  const { addNews } = useNewsStore();
+
   function onClickHandler(data: FormType) {
+    addNews({
+      title: data.headline,
+      description: data.fullStory,
+      url: data.link
+    });
     console.log("Form submitted", data);
   }
   useEffect(() => {
