@@ -5,9 +5,11 @@ export const StyledArea = styled.input<{
 }>`
   ${sharedStyles}
 `;
+export const StyledTextWrapper = styled.div`
+  min-height: 1.3rem;
+`;
 export const StyledTextDiv = styled.div`
   padding: 0 0.5rem;
-  min-height: 1rem;
   margin-bottom: 0.25rem;
 `;
 
@@ -20,6 +22,7 @@ export const StyledWrapperDiv = styled.div`
   width: 100%;
   flex-direction: column;
   align-items: flex-start;
+  justify-content: center;
   ${StyledTextDiv} {
     order: 1;
     height: 1rem;
@@ -31,11 +34,11 @@ export const StyledWrapperDiv = styled.div`
     order: 3;
   }
 
-  ${StyledArea}:not(:focus):placeholder-shown + ${StyledTextDiv} {
+  ${StyledArea}:not(:focus):placeholder-shown + ${StyledTextWrapper} > ${StyledTextDiv} {
     display: none;
     min-height: 1rem;
   }
-  ${StyledArea}:not(:focus):not(:placeholder-shown) + ${StyledTextDiv} {
+  ${StyledArea}:not(:focus):not(:placeholder-shown) + ${StyledTextWrapper} > ${StyledTextDiv} {
     :first-child {
       color: ${({ theme }) => theme.color.silver};
       min-height: 1rem;

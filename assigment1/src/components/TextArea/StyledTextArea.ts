@@ -1,3 +1,8 @@
+import {
+  StyledTextWrapper,
+  StyledTextDiv,
+  StyledErrorDiv
+} from "../Input/StyledInput";
 import styled from "styled-components";
 import { sharedStyles } from "../../styles/SharedInputAndTextAreaStyles";
 
@@ -8,16 +13,7 @@ export const StyledArea = styled.textarea<{
   resize: none;
   ${sharedStyles}
 `;
-export const StyledTextDiv = styled.div`
-  padding: 0 0.5rem;
-  min-height: 1rem;
-  margin-bottom: 0.25rem;
-`;
 
-export const StyledErrorDiv = styled.div`
-  padding: 0.25rem 0.5rem 0 0.5rem;
-  min-height: 1.25rem;
-`;
 export const StyledWrapperDiv = styled.div`
   display: flex;
   width: 100%;
@@ -33,10 +29,10 @@ export const StyledWrapperDiv = styled.div`
     order: 3;
   }
 
-  ${StyledArea}:not(:focus):placeholder-shown + ${StyledTextDiv} {
+  ${StyledArea}:not(:focus):placeholder-shown + ${StyledTextWrapper} > ${StyledTextDiv} {
     display: none;
   }
-  ${StyledArea}:not(:focus):not(:placeholder-shown) + ${StyledTextDiv} {
+  ${StyledArea}:not(:focus):not(:placeholder-shown) + ${StyledTextWrapper} > ${StyledTextDiv} {
     :first-child {
       color: ${({ theme }) => theme.color.silver};
     }

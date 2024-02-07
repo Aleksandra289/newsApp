@@ -1,9 +1,9 @@
+import { StyledArea, StyledWrapperDiv } from "./StyledTextArea";
 import {
-  StyledWrapperDiv,
+  StyledTextWrapper,
   StyledTextDiv,
   StyledErrorDiv
-} from "../TextArea/StyledTextArea";
-import { StyledArea } from "./StyledTextArea";
+} from "../Input/StyledInput";
 import Text from "../Text/Text";
 import { TextareaHTMLAttributes, forwardRef, LegacyRef } from "react";
 
@@ -26,17 +26,18 @@ const TextArea = forwardRef(
             ref={ref}
             {...restProps}
           />
-          <StyledTextDiv>
-            <Text
-              fontSize="xsmall"
-              fontWeight="regular"
-              lineHeight="low"
-              color={error ? "redish" : "purple"}
-            >
-              {label}
-            </Text>
-          </StyledTextDiv>
-
+          <StyledTextWrapper>
+            <StyledTextDiv>
+              <Text
+                fontSize="xsmall"
+                fontWeight="regular"
+                lineHeight="low"
+                color={error ? "redish" : "purple"}
+              >
+                {label}
+              </Text>
+            </StyledTextDiv>
+          </StyledTextWrapper>
           <StyledErrorDiv>
             {error && (
               <Text
