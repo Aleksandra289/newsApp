@@ -43,18 +43,25 @@ export const inputTextareaStyles = css<{ $error: string }>`
     css`
       border: 1px solid ${theme.color.redish};
     `}
-  :not(:focus):placeholder-shown  ${StyledTextWrapper} > ${StyledTextDiv} {
+
+  &:not(:focus):placeholder-shown + ${StyledTextWrapper} > ${StyledTextDiv} {
     display: none;
-    min-height: 1rem;
   }
-  :not(:focus):not(:placeholder-shown)
+  &:not(:focus):not(:placeholder-shown)
     + ${StyledTextWrapper}
     > ${StyledTextDiv} {
-    :first-child {
-      color: ${({ theme }) => theme.color.silver};
-      min-height: 1rem;
-    }
+    ${({ $error }) =>
+      !$error
+        ? css`
+            :first-child {
+              color: ${({ theme }) => theme.color.silver};
+            }
+          `
+        : css`
+            display: none;
+          `}
   }
+
   :disabled {
     &::placeholder {
       color: ${({ theme }) => theme.color.gray};
