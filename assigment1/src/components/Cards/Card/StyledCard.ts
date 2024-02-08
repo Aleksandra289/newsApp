@@ -8,7 +8,7 @@ export const StyledCard = styled.div<{
   $padding: `${number}rem`;
 }>`
   position: relative;
-  width: fit-content;
+  width: auto;
   padding: ${({ $padding }) => $padding};
   border-radius: ${({ theme, $borderRadius }) =>
     theme.borderRadius[$borderRadius]};

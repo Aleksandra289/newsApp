@@ -34,12 +34,3 @@ export const StyledChipDiv = styled.div`
   right: 1.5625rem;
   top: 1.5625rem;
 `;
-export const LatestNewsWrapper = styled.div`
-  display: flex;
-  gap: 1.25rem;
-  width: 100%;
-  overflow-x: auto;
-  &::-webkit-scrollbar {
-    display: none;
-  }
-`;
