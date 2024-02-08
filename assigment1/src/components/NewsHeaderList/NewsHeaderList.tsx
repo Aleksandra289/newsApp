@@ -1,16 +1,12 @@
-import {
-  StyledAllNewsContainer,
-  StyledAllNewsWrapper
-} from "./StyledNewsHeaderList";
+import { StyledAllNewsContainer } from "./StyledNewsHeaderList";
 import Headline from "../Headline/Headline";
-import { NewsHeaderList } from "./newsHeaderList";
+import { NewsHeaderListProps } from "./newsHeaderListTypes";
 import NewsCard from "../Cards/NewsCard/NewsCard";
-import React from "react";
 
 export default function NewsHeaderList({
   headlineTitle,
   newsList
-}: NewsHeaderList) {
+}: NewsHeaderListProps) {
   const mappedMockedAllNews = newsList.map((item) => (
     <NewsCard
       key={item.src}
@@ -22,9 +18,9 @@ export default function NewsHeaderList({
     />
   ));
   return (
-    <StyledAllNewsWrapper>
+    <>
       <Headline title={headlineTitle} isAddedLineBelow={false} />
       <StyledAllNewsContainer>{mappedMockedAllNews}</StyledAllNewsContainer>
-    </StyledAllNewsWrapper>
+    </>
   );
 }
