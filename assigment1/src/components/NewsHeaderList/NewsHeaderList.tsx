@@ -4,20 +4,22 @@ import {
 } from "./StyledNewsHeaderList";
 import Headline from "../Headline/Headline";
 import NewsCard from "../Cards/NewsCard/NewsCard";
-import { NewsHeaderListType } from "../../shared/types/newsHeaderList";
+import { NewsHeaderListProps } from "../../shared/types/newsHeaderList";
 
 export default function NewsHeaderList({
   headlineTitle,
   newsList
-}: NewsHeaderListType) {
+}: NewsHeaderListProps) {
+  const date = new Date();
+  const formattedDate = date.toLocaleDateString("en-GB");
   const mappedMockedAllNews = newsList.map((item) => (
     <NewsCard
-      key={item.src}
-      src={item.src}
+      key={item.url}
+      src={item.url}
       title={item.title}
       description={item.description}
-      chipText={item.chipText}
-      isActive={item.isActive}
+      chipText={formattedDate}
+      isActive={false}
     />
   ));
   return (

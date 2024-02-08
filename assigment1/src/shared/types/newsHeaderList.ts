@@ -1,11 +1,11 @@
-type NewsType = {
-  src: string;
+type News = {
+  url: string;
   title: string;
   description: string;
-  chipText: string;
-  isActive: boolean;
+  chipText?: string;
+  isActive?: boolean;
 };
-export type NewsHeaderListType = {
+export type NewsHeaderListProps = {
   headlineTitle: string;
-  newsList: NewsType[];
+  newsList: News[];
 };
