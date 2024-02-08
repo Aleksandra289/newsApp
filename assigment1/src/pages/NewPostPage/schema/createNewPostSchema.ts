@@ -1,19 +1,16 @@
 import { z } from "zod";
+import { FormNames } from "../../../shared/types/newPostFormNames";
 
 export const newPostSchema = z.object({
-  headline: z.string().min(5, "Headline is required."),
-  fullStory: z.string().min(1, "Full story is required."),
-  link: z.string().min(1, "Link is required.")
+  title: z.string().min(5, "Title is required."),
+  description: z.string().min(1, "Description is required."),
+  url: z.string().min(1, "Url is required.")
 });
 
 export type NewPostData = z.infer<typeof newPostSchema>;
 
-export type FormNames<T> = {
-  [name in keyof T]: name;
-};
-
 export const formNames: FormNames<NewPostData> = {
-  headline: "headline",
-  fullStory: "fullStory",
-  link: "link"
+  title: "title",
+  description: "description",
+  url: "url"
 };

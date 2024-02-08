@@ -19,13 +19,16 @@ import {
 import { zodResolver } from "@hookform/resolvers/zod";
 
 function NewPost() {
-  const form = useForm<NewPostData>({
+  const {
+    register,
+    control,
+    handleSubmit,
+    formState: { errors, isSubmitSuccessful },
+    reset
+  } = useForm<NewPostData>({
     resolver: zodResolver(newPostSchema),
     mode: "onChange"
   });
-  const { register, control, handleSubmit, formState, reset } = form;
-  const { errors, isSubmitSuccessful } = formState;
-
   function onClickHandler(data: NewPostData) {
     console.log("Form submitted", data);
   }
@@ -46,20 +49,20 @@ function NewPost() {
         <StyledForm>
           <Input
             label="Headline"
-            error={errors[formNames.headline]?.message}
+            error={errors[formNames.title]?.message}
             placeholder="Title"
-            {...register(formNames.headline)}
+            {...register(formNames.title)}
           />
           <TextArea
             label="Full story"
-            error={errors[formNames.fullStory]?.message}
-            {...register(formNames.fullStory)}
+            error={errors[formNames.description]?.message}
+            {...register(formNames.description)}
           />
           <Input
             label="Link"
             placeholder="URL"
-            error={errors[formNames.link]?.message}
-            {...register(formNames.link)}
+            error={errors[formNames.url]?.message}
+            {...register(formNames.url)}
           />
           <Button
             type="submit"

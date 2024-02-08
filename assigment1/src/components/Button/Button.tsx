@@ -3,11 +3,11 @@ import { StyledButton } from "./StyledButton";
 import { ButtonSizes } from "../../shared/theme/theme";
 import { getTextSizes } from "./getTextSizes";
 import { memo, ButtonHTMLAttributes } from "react";
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+type ButtonProps = {
   children: string;
   size: ButtonSizes;
   width?: string;
-}
+} & ButtonHTMLAttributes<HTMLButtonElement>;
 
 function ButtonComponent({ children, size, ...restProps }: ButtonProps) {
   const textColor = restProps.disabled ? "darkGray" : "white";
