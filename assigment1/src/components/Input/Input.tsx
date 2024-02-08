@@ -1,9 +1,9 @@
 import {
   StyledArea,
-  StyledWrapperDiv,
   StyledTextDiv,
   StyledErrorDiv,
-  StyledTextWrapper
+  StyledTextWrapper,
+  Wrapper
 } from "../Input/StyledInput";
 import Text from "../Text/Text";
 import { InputHTMLAttributes, forwardRef, Ref } from "react";
@@ -19,7 +19,7 @@ const Input = forwardRef(
     ref: Ref<HTMLInputElement>
   ) => {
     return (
-      <StyledWrapperDiv>
+      <Wrapper>
         <StyledErrorDiv>
           {error && (
             <Text
@@ -51,7 +51,7 @@ const Input = forwardRef(
             </Text>
           </StyledTextDiv>
         </StyledTextWrapper>
-      </StyledWrapperDiv>
+      </Wrapper>
     );
   }
 );

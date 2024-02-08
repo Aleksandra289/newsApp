@@ -19,7 +19,10 @@ import {
 import { zodResolver } from "@hookform/resolvers/zod";
 
 function NewPost() {
-  const form = useForm<NewPostData>({ resolver: zodResolver(newPostSchema) });
+  const form = useForm<NewPostData>({
+    resolver: zodResolver(newPostSchema),
+    mode: "onChange"
+  });
   const { register, control, handleSubmit, formState, reset } = form;
   const { errors, isSubmitSuccessful } = formState;
 

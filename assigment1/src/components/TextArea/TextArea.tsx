@@ -1,16 +1,17 @@
-import { StyledArea, StyledWrapperDiv } from "./StyledTextArea";
+import { StyledArea } from "./StyledTextArea";
 import {
   StyledTextWrapper,
   StyledTextDiv,
-  StyledErrorDiv
+  StyledErrorDiv,
+  Wrapper
 } from "../Input/StyledInput";
 import Text from "../Text/Text";
 import { TextareaHTMLAttributes, forwardRef, LegacyRef } from "react";
-export type HeightType = `${number}rem`;
+export type Height = `${number}rem`;
 interface TextAreaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
   label: string;
   error?: string;
-  height?: HeightType;
+  height?: Height;
 }
 
 const TextArea = forwardRef(
@@ -19,41 +20,39 @@ const TextArea = forwardRef(
     ref: LegacyRef<HTMLTextAreaElement>
   ) => {
     return (
-      <>
-        <StyledWrapperDiv>
-          <StyledErrorDiv>
-            {error && (
-              <Text
-                fontSize="xsmall"
-                fontWeight="regular"
-                lineHeight="low"
-                color="redish"
-              >
-                {error}
-              </Text>
-            )}
-          </StyledErrorDiv>
-          <StyledArea
-            placeholder="Description"
-            $error={error}
-            ref={ref}
-            height={height}
-            {...restProps}
-          />
-          <StyledTextWrapper>
-            <StyledTextDiv>
-              <Text
-                fontSize="xsmall"
-                fontWeight="regular"
-                lineHeight="low"
-                color={error ? "redish" : "purple"}
-              >
-                {label}
-              </Text>
-            </StyledTextDiv>
-          </StyledTextWrapper>
-        </StyledWrapperDiv>
-      </>
+      <Wrapper>
+        <StyledErrorDiv>
+          {error && (
+            <Text
+              fontSize="xsmall"
+              fontWeight="regular"
+              lineHeight="low"
+              color="redish"
+            >
+              {error}
+            </Text>
+          )}
+        </StyledErrorDiv>
+        <StyledArea
+          placeholder="Description"
+          $error={error}
+          ref={ref}
+          height={height}
+          {...restProps}
+        />
+        <StyledTextWrapper>
+          <StyledTextDiv>
+            <Text
+              fontSize="xsmall"
+              fontWeight="regular"
+              lineHeight="low"
+              color={error ? "redish" : "purple"}
+            >
+              {label}
+            </Text>
+          </StyledTextDiv>
+        </StyledTextWrapper>
+      </Wrapper>
     );
   }
 );

@@ -14,7 +14,7 @@ function ButtonComponent({ children, size, ...restProps }: ButtonProps) {
   const [fSize, fWeight, lHeight] = getTextSizes(size);
 
   return (
-    <StyledButton size={size} disabled={!!restProps.disabled} {...restProps}>
+    <StyledButton size={size} {...restProps}>
       <Text
         fontSize={fSize}
         fontWeight={fWeight}
