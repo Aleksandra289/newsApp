@@ -11,8 +11,6 @@ import { InputHTMLAttributes, forwardRef, Ref } from "react";
 interface InputType extends InputHTMLAttributes<HTMLInputElement> {
   label: string;
   error?: string;
-  value?: string;
-  disabled?: boolean;
 }
 
 const Input = forwardRef(
@@ -22,6 +20,18 @@ const Input = forwardRef(
   ) => {
     return (
       <StyledWrapperDiv>
+        <StyledErrorDiv>
+          {error && (
+            <Text
+              fontSize="xsmall"
+              fontWeight="regular"
+              lineHeight="low"
+              color="redish"
+            >
+              {error}
+            </Text>
+          )}
+        </StyledErrorDiv>
         <StyledArea
           type="text"
           $error={error}
@@ -41,18 +51,6 @@ const Input = forwardRef(
             </Text>
           </StyledTextDiv>
         </StyledTextWrapper>
-        <StyledErrorDiv>
-          {error && (
-            <Text
-              fontSize="xsmall"
-              fontWeight="regular"
-              lineHeight="low"
-              color="redish"
-            >
-              {error}
-            </Text>
-          )}
-        </StyledErrorDiv>
       </StyledWrapperDiv>
     );
   }

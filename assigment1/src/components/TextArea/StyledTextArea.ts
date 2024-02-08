@@ -1,25 +1,17 @@
-import { StyledTextDiv, StyledErrorDiv } from "../Input/StyledInput";
 import styled from "styled-components";
-import { sharedStyles } from "../../styles/SharedInputAndTextAreaStyles";
-import { styledWrapper } from "../Input/StyledInput";
+import { sharedInputAndTextAreaStyles } from "../../shared/styles/SharedInputAndTextAreaStyles";
+import { inputTextareaStyles } from "../Input/StyledInput";
+import { HeightType } from "./TextArea";
 
 export const StyledArea = styled.textarea<{
   $error: string;
+  height: HeightType;
 }>`
-  height: 8rem;
+  height: ${(props) => props.height};
   resize: none;
-  ${sharedStyles}
+  ${sharedInputAndTextAreaStyles}
 `;
 
 export const StyledWrapperDiv = styled.div`
-  ${styledWrapper}
-  ${StyledTextDiv} {
-    order: 1;
-  }
-  ${StyledArea} {
-    order: 2;
-  }
-  ${StyledErrorDiv} {
-    order: 3;
-  }
+  ${inputTextareaStyles}
 `;

@@ -4,11 +4,11 @@ import {
   createRoutesFromElements
 } from "react-router-dom";
 import { routes } from "./routes";
-import Home from "../pages/Home";
-import NewPost from "../pages/NewPost";
-import AllNews from "../pages/AllNews";
+import Home from "../pages/HomePage/Home";
+import NewPost from "../pages/NewPostPage/NewPost";
+import AllNews from "../pages/AllNewsPage/AllNews";
 import Layout from "../layout/Layout";
-import NotFound from "../pages/NotFound";
+import NotFound from "../pages/NotFoundPage/NotFound";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(

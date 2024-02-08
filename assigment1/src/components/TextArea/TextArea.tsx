@@ -6,24 +6,38 @@ import {
 } from "../Input/StyledInput";
 import Text from "../Text/Text";
 import { TextareaHTMLAttributes, forwardRef, LegacyRef } from "react";
-
+export type HeightType = `${number}rem`;
 interface TextAreaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
   label: string;
   error?: string;
+  height?: HeightType;
 }
 
 const TextArea = forwardRef(
   (
-    { label, error = "", ...restProps }: TextAreaProps,
+    { label, error = "", height = "8rem", ...restProps }: TextAreaProps,
     ref: LegacyRef<HTMLTextAreaElement>
   ) => {
     return (
       <>
         <StyledWrapperDiv>
+          <StyledErrorDiv>
+            {error && (
+              <Text
+                fontSize="xsmall"
+                fontWeight="regular"
+                lineHeight="low"
+                color="redish"
+              >
+                {error}
+              </Text>
+            )}
+          </StyledErrorDiv>
           <StyledArea
             placeholder="Description"
             $error={error}
             ref={ref}
+            height={height}
             {...restProps}
           />
           <StyledTextWrapper>
@@ -38,18 +52,6 @@ const TextArea = forwardRef(
               </Text>
             </StyledTextDiv>
           </StyledTextWrapper>
-          <StyledErrorDiv>
-            {error && (
-              <Text
-                fontSize="xsmall"
-                fontWeight="regular"
-                lineHeight="low"
-                color="redish"
-              >
-                {error}
-              </Text>
-            )}
-          </StyledErrorDiv>
         </StyledWrapperDiv>
       </>
     );

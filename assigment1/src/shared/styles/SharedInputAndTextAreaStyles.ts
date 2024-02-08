@@ -1,6 +1,6 @@
 import { css } from "styled-components";
 
-export const sharedStyles = css<{ $error: string }>`
+export const sharedInputAndTextAreaStyles = css<{ $error: string }>`
   display: flex;
   padding: 1rem 1.25rem;
   align-items: center;

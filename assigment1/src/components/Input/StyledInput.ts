@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import { sharedStyles } from "../../styles/SharedInputAndTextAreaStyles";
+import { sharedInputAndTextAreaStyles } from "../../shared/styles/SharedInputAndTextAreaStyles";
 import { css } from "styled-components";
 export const StyledArea = styled.input<{
   $error: string;
 }>`
-  ${sharedStyles}
+  ${sharedInputAndTextAreaStyles}
 `;
 export const StyledTextWrapper = styled.div`
   min-height: 1.3rem;
@@ -19,10 +19,11 @@ export const StyledErrorDiv = styled.div`
   min-height: 1.25rem;
 `;
 
-export const styledWrapper = css`
+export const inputTextareaStyles = css`
   display: flex;
   width: 100%;
-  flex-direction: column;
+  //i ispravi za button da bude kao ovo sto je
+  flex-direction: column-reverse;
   align-items: flex-start;
   justify-content: center;
   :not(:focus):placeholder-shown + ${StyledTextWrapper} > ${StyledTextDiv} {
@@ -47,15 +48,5 @@ export const styledWrapper = css`
   }
 `;
 export const StyledWrapperDiv = styled.div`
-  ${styledWrapper}
-  ${StyledTextDiv} {
-    order: 1;
-    height: 1rem;
-  }
-  ${StyledArea} {
-    order: 2;
-  }
-  ${StyledErrorDiv} {
-    order: 3;
-  }
+  ${inputTextareaStyles}
 `;

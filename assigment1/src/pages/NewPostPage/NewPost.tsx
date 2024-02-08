@@ -4,22 +4,26 @@ import {
   StyledTitle,
   StyledForm
 } from "./StyledNewPost";
-import Text from "../components/Text/Text";
-import Input from "../components/Input/Input";
-import TextArea from "../components/TextArea/TextArea";
-import Button from "../components/Button/Button";
+import Text from "../../components/Text/Text";
+import Input from "../../components/Input/Input";
+import TextArea from "../../components/TextArea/TextArea";
+import Button from "../../components/Button/Button";
 import { useForm } from "react-hook-form";
 import { DevTool } from "@hookform/devtools";
 import { useEffect } from "react";
-import { FormType, FormSchema, FormNames } from "../schema/createNewPostSchema";
+import {
+  NewPostData,
+  newPostSchema,
+  formNames
+} from "./schema/createNewPostSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 function NewPost() {
-  const form = useForm<FormType>({ resolver: zodResolver(FormSchema) });
+  const form = useForm<NewPostData>({ resolver: zodResolver(newPostSchema) });
   const { register, control, handleSubmit, formState, reset } = form;
   const { errors, isSubmitSuccessful } = formState;
 
-  function onClickHandler(data: FormType) {
+  function onClickHandler(data: NewPostData) {
     console.log("Form submitted", data);
   }
   useEffect(() => {
@@ -27,11 +31,7 @@ function NewPost() {
       reset();
     }
   }, [reset, isSubmitSuccessful]);
-  const formNames: FormNames<FormType> = {
-    headline: "headline",
-    fullStory: "fullStory",
-    link: "link"
-  };
+
   return (
     <StyledNewPostWrapper>
       <StyledTitleAndFormWrapper>
