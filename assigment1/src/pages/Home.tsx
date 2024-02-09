@@ -1,5 +1,5 @@
 import NewsCard from "../components/Cards/NewsCard/NewsCard";
-import { LatestNewsWrapper } from "../components/Cards/NewsCard/StyledNewsCard";
+import { LatestNewsWrapper } from "./StyledHome";
 import Headline from "../components/Headline/Headline";
 import { useNewsStore } from "../store/store";
 import { useEffect, useState } from "react";

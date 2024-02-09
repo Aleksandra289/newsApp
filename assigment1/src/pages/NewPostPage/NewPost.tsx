@@ -17,6 +17,7 @@ import {
   formNames
 } from "./schema/createNewPostSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useNewsStore } from "../../store/store";
 
 function NewPost() {
   const {
@@ -29,7 +30,13 @@ function NewPost() {
     resolver: zodResolver(newPostSchema),
     mode: "onChange"
   });
+  const { addNews } = useNewsStore();
   function onClickHandler(data: NewPostData) {
+    addNews({
+      title: data.title,
+      description: data.description,
+      url: data.url
+    });
     console.log("Form submitted", data);
   }
   useEffect(() => {
