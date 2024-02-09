@@ -1,6 +1,6 @@
 import { create } from "zustand";
-import { produce } from "immer";
 import { persist } from "zustand/middleware";
+import { immer } from "zustand/middleware/immer";
 export type News = {
   title: string;
   description: string;
@@ -13,15 +13,13 @@ type StoreProps = {
 
 export const useNewsStore = create<StoreProps>()(
   persist(
-    (set) => ({
+    immer((set) => ({
       newsList: [],
       addNews: (news) =>
-        set(
-          produce((state) => {
-            state.newsList.push(news);
-          })
-        )
-    }),
+        set((state) => {
+          state.newsList.push(news);
+        })
+    })),
     {
       name: "news-local-storage"
     }

@@ -9,18 +9,16 @@ import Button from "../../components/Button/Button";
 import { mockedAllNews } from "../../shared/data/latestNews/mockedAllNews";
 import { StyledAllNewsWrapper } from "./StyledHome";
 import { useNewsStore } from "../../store/store";
-import { useEffect, useState } from "react";
-import { News } from "../../store/store";
+import { getFormattedDate } from "../../helpers/getFormattedDate";
 
 function Home() {
   const { newsList } = useNewsStore();
-  const [latestN, setLatestN] = useState<News[]>([]);
-  const date = new Date();
-  const formattedDate = date.toLocaleDateString("en-US");
-  useEffect(() => {
-    setLatestN(newsList.slice(-4));
-  }, [newsList]);
-  const mappedLatestNews = latestN.map((item) => {
+
+  const formattedDate = getFormattedDate();
+
+  const latestData = newsList.slice(-4);
+
+  const mappedLatestNews = latestData.map((item) => {
     return (
       <NewsCard
         key={item.url}

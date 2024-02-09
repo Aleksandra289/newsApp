@@ -4,16 +4,20 @@ import {
   StyledTitle,
   StyledForm
 } from "./StyledNewPost";
-import Text from "../components/Text/Text";
-import Input from "../components/Input/Input";
-import TextArea from "../components/TextArea/TextArea";
-import Button from "../components/Button/Button";
+import Text from "../../components/Text/Text";
+import Input from "../../components/Input/Input";
+import TextArea from "../../components/TextArea/TextArea";
+import Button from "../../components/Button/Button";
 import { useForm } from "react-hook-form";
 import { DevTool } from "@hookform/devtools";
 import { useEffect } from "react";
-import { FormType, FormSchema, FormNames } from "../schema/createNewPostSchema";
+import {
+  FormType,
+  FormSchema,
+  FormNames
+} from "../../schema/createNewPostSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useNewsStore } from "../store/store";
+import { useNewsStore } from "../../store/store";
 
 function NewPost() {
   const form = useForm<FormType>({ resolver: zodResolver(FormSchema) });
@@ -60,7 +64,6 @@ function NewPost() {
             error={errors[formNames.fullStory]?.message}
             {...register(formNames.fullStory)}
           />
-          <Input label="dssd"></Input>
           <Input
             label="Link"
             placeholder="URL"
