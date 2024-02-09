@@ -25,6 +25,7 @@ function NewPost() {
   const { errors, isSubmitSuccessful } = formState;
 
   const { addNews } = useNewsStore();
+  console.log("helloo");
 
   function onClickHandler(data: FormType) {
     addNews({
