@@ -2,27 +2,19 @@ import Text from "../Text/Text";
 import { StyledButton } from "./StyledButton";
 import { ButtonSizes } from "../../shared/theme/theme";
 import { getTextSizes } from "./getTextSizes";
-import { memo } from "react";
-
+import { memo, ButtonHTMLAttributes } from "react";
 type ButtonProps = {
   children: string;
   size: ButtonSizes;
-  isDisabled?: boolean;
   width?: string;
-  onClick?: () => void;
-};
+} & ButtonHTMLAttributes<HTMLButtonElement>;
 
-function ButtonComponent({
-  children,
-  size,
-  isDisabled = false,
-  onClick
-}: ButtonProps) {
-  const textColor = isDisabled ? "darkGray" : "white";
+function ButtonComponent({ children, size, ...restProps }: ButtonProps) {
+  const textColor = restProps.disabled ? "darkGray" : "white";
   const [fSize, fWeight, lHeight] = getTextSizes(size);
 
   return (
-    <StyledButton size={size} $isDisabled={isDisabled} onClick={onClick}>
+    <StyledButton size={size} {...restProps}>
       <Text
         fontSize={fSize}
         fontWeight={fWeight}

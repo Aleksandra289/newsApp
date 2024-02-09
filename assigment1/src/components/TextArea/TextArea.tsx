@@ -1,22 +1,23 @@
+import { StyledArea } from "./StyledTextArea";
 import {
-  StyledArea,
+  StyledTextWrapper,
   StyledTextDiv,
   StyledErrorDiv,
-  StyledTextWrapper,
   Wrapper
 } from "../Input/StyledInput";
 import Text from "../Text/Text";
-import { InputHTMLAttributes, forwardRef, Ref } from "react";
-
-type InputProps = {
+import { TextareaHTMLAttributes, forwardRef, Ref } from "react";
+import { Height } from "../../shared/types/height";
+type TextAreaProps = {
   label: string;
   error?: string;
-} & InputHTMLAttributes<HTMLInputElement>;
+  height?: Height;
+} & TextareaHTMLAttributes<HTMLTextAreaElement>;
 
-const Input = forwardRef(
+const TextArea = forwardRef(
   (
-    { label, error = "", disabled = false, ...restProps }: InputProps,
-    ref: Ref<HTMLInputElement>
+    { label, error = "", height = "8rem", ...restProps }: TextAreaProps,
+    ref: Ref<HTMLTextAreaElement>
   ) => {
     return (
       <Wrapper>
@@ -33,10 +34,10 @@ const Input = forwardRef(
           )}
         </StyledErrorDiv>
         <StyledArea
-          type="text"
+          placeholder="Description"
           $error={error}
-          disabled={disabled}
           ref={ref}
+          $height={height}
           {...restProps}
         />
         <StyledTextWrapper>
@@ -55,4 +56,4 @@ const Input = forwardRef(
     );
   }
 );
-export default Input;
+export default TextArea;

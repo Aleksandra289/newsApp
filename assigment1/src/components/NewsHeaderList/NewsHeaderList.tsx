@@ -1,12 +1,12 @@
 import { StyledAllNewsContainer } from "./StyledNewsHeaderList";
 import Headline from "../Headline/Headline";
+import { NewsHeaderListProps } from "./newsHeaderListTypes";
 import NewsCard from "../Cards/NewsCard/NewsCard";
-import { NewsHeaderList } from "./newsHeaderListTypes";
 
 export default function NewsHeaderList({
   headlineTitle,
   newsList
-}: NewsHeaderList) {
+}: NewsHeaderListProps) {
   const mappedMockedAllNews = newsList.map((item) => (
     <NewsCard
       key={item.src}

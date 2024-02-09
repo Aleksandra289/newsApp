@@ -11,10 +11,10 @@ const GlobalStyles = createGlobalStyle`
         overflow-x: hidden;
         
     }
-    input{
+    input, textarea{
         font-family: inherit;
     }
-    button, input{
+    button, input, textarea{
         &:focus {
     outline: none; 
      }

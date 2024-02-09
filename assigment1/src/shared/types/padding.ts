@@ -1,1 +1,1 @@
-export type PaddingType= `${number}rem`;
+export type Padding = `${number}rem`;

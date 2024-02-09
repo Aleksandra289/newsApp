@@ -4,7 +4,6 @@ import { ButtonSizes } from "../../shared/theme/theme";
 
 export const StyledButton = styled.button<{
   size: ButtonSizes;
-  $isDisabled: boolean;
 }>`
   display: inline-flex;
   justify-content: center;
@@ -23,21 +22,17 @@ export const StyledButton = styled.button<{
   &:hover {
     background: ${({ theme }) => theme.color.violet};
   }
-  ${(props) =>
-    !props.$isDisabled &&
-    css`
-      &:active {
-        background: ${({ theme }) => theme.color.darkPurple};
-      }
-    `}
+  &:not(:disabled) {
+    &:active {
+      background: ${({ theme }) => theme.color.darkPurple};
+    }
+  }
 
-  ${(props) =>
-    props.$isDisabled &&
-    css`
+  &:disabled {
+    background: ${({ theme }) => theme.color.gray};
+    cursor: not-allowed;
+    &:hover {
       background: ${({ theme }) => theme.color.gray};
-      cursor: not-allowed;
-      &:hover {
-        background: ${({ theme }) => theme.color.gray};
-      }
-    `}
+    }
+  }
 `;

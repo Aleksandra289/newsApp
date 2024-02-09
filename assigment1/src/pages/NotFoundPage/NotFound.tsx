@@ -1,8 +1,8 @@
-import DataStatus from "../components/DataStatus/DataStatus";
-import Error404Icon from "../icons/Error404Icon";
+import DataStatus from "../../components/DataStatus/DataStatus";
+import Error404Icon from "../../icons/Error404Icon";
 import { useNavigate } from "react-router-dom";
-import { routes } from "../Router/routes";
-import { PageWrapper } from "./StyledNotFound";
+import { routes } from "../../Router/routes";
+import { PageWrapper } from "../StyledNotFound";
 
 export default function NotFound() {
   const navigate = useNavigate();

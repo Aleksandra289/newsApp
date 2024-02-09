@@ -5,7 +5,7 @@ type News = {
   chipText: string;
   isActive: boolean;
 };
-export type NewsHeaderList = {
+export type NewsHeaderListProps = {
   headlineTitle: string;
   newsList: News[];
 };
