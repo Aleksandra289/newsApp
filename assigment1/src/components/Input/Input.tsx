@@ -8,14 +8,14 @@ import {
 import Text from "../Text/Text";
 import { InputHTMLAttributes, forwardRef, Ref } from "react";
 
-type InputType = {
+type InputProps = {
   label: string;
   error?: string;
 } & InputHTMLAttributes<HTMLInputElement>;
 
 const Input = forwardRef(
   (
-    { label, error = "", disabled = false, ...restProps }: InputType,
+    { label, error = "", disabled = false, ...restProps }: InputProps,
     ref: Ref<HTMLInputElement>
   ) => {
     return (

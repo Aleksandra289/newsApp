@@ -7,7 +7,7 @@ import {
 } from "../Input/StyledInput";
 import Text from "../Text/Text";
 import { TextareaHTMLAttributes, forwardRef, Ref } from "react";
-export type Height = `${number}rem`;
+import { Height } from "../../shared/types/height";
 type TextAreaProps = {
   label: string;
   error?: string;
