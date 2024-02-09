@@ -5,6 +5,7 @@ export type News = {
   title: string;
   description: string;
   url: string;
+  date: string;
 };
 type StoreProps = {
   newsList: News[];

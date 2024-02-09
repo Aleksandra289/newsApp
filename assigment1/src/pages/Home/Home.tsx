@@ -9,12 +9,9 @@ import Button from "../../components/Button/Button";
 import { mockedAllNews } from "../../shared/data/latestNews/mockedAllNews";
 import { StyledAllNewsWrapper } from "./StyledHome";
 import { useNewsStore } from "../../store/store";
-import { getFormattedDate } from "../../helpers/getFormattedDate";
 
 function Home() {
   const { newsList } = useNewsStore();
-
-  const formattedDate = getFormattedDate();
 
   const latestData = newsList.slice(-4);
 
@@ -25,7 +22,7 @@ function Home() {
         src={item.url}
         title={item.title}
         description={item.description}
-        chipText={formattedDate}
+        chipText={item.date}
         isActive={true}
       />
     );

@@ -11,13 +11,10 @@ import Button from "../../components/Button/Button";
 import { useForm } from "react-hook-form";
 import { DevTool } from "@hookform/devtools";
 import { useEffect } from "react";
-import {
-  FormType,
-  FormSchema,
-  FormNames
-} from "../../schema/createNewPostSchema";
+import { FormType, FormSchema, FormNames } from "./schema/createNewPostSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useNewsStore } from "../../store/store";
+import { getFormattedDate } from "../../helpers/getFormattedDate";
 
 function NewPost() {
   const form = useForm<FormType>({ resolver: zodResolver(FormSchema) });
@@ -25,15 +22,14 @@ function NewPost() {
   const { errors, isSubmitSuccessful } = formState;
 
   const { addNews } = useNewsStore();
-  console.log("helloo");
 
   function onClickHandler(data: FormType) {
     addNews({
       title: data.headline,
       description: data.fullStory,
-      url: data.link
+      url: data.link,
+      date: getFormattedDate()
     });
-    console.log("Form submitted", data);
   }
   useEffect(() => {
     if (isSubmitSuccessful) {
