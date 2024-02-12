@@ -8,10 +8,11 @@ export default function NewsHeaderList({
   headlineTitle,
   newsList
 }: NewsHeaderListProps) {
+  const date = getFormattedDate(new Date());
   const mappedMockedAllNews = newsList.map((item) => (
     <NewsCard
-      key={item.url}
-      src={item.url}
+      key={item.article_id}
+      src={item.image_url}
       title={item.title}
       description={item.description}
       chipText={getFormattedDate(new Date())}
