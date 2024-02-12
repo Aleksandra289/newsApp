@@ -11,12 +11,11 @@ import Button from "../../components/Button/Button";
 import { useForm } from "react-hook-form";
 import { DevTool } from "@hookform/devtools";
 import { useEffect } from "react";
-import {
-  NewPostData,
-  newPostSchema,
-  formNames
-} from "./schema/createNewPostSchema";
+import { FormType, FormSchema } from "./schema/createNewPostSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useNewsStore } from "../../store/store";
+import { getFormattedDate } from "../../helpers/getFormattedDate";
+import { formNames } from "./schema/createNewPostSchema";
 
 function NewPost() {
   const {
@@ -25,12 +24,20 @@ function NewPost() {
     handleSubmit,
     formState: { errors, isSubmitSuccessful },
     reset
-  } = useForm<NewPostData>({
-    resolver: zodResolver(newPostSchema),
+  } = useForm<FormType>({
+    resolver: zodResolver(FormSchema),
     mode: "onChange"
   });
-  function onClickHandler(data: NewPostData) {
-    console.log("Form submitted", data);
+
+  const { addNews } = useNewsStore();
+
+  function onClickHandler(data: FormType) {
+    addNews({
+      title: data.headline,
+      description: data.fullStory,
+      url: data.link,
+      date: getFormattedDate(new Date())
+    });
   }
   useEffect(() => {
     if (isSubmitSuccessful) {
@@ -49,20 +56,20 @@ function NewPost() {
         <StyledForm>
           <Input
             label="Headline"
-            error={errors[formNames.title]?.message}
+            error={errors[formNames.headline]?.message}
             placeholder="Title"
-            {...register(formNames.title)}
+            {...register(formNames.headline)}
           />
           <TextArea
             label="Full story"
-            error={errors[formNames.description]?.message}
-            {...register(formNames.description)}
+            error={errors[formNames.fullStory]?.message}
+            {...register(formNames.fullStory)}
           />
           <Input
             label="Link"
             placeholder="URL"
-            error={errors[formNames.url]?.message}
-            {...register(formNames.url)}
+            error={errors[formNames.link]?.message}
+            {...register(formNames.link)}
           />
           <Button
             type="submit"

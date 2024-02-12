@@ -1,4 +1,3 @@
-import { latestNews } from "../../shared/data/latestNews/mockedLatestNews";
 import Headline from "../../components/Headline/Headline";
 import TrustCard from "../../components/Cards/TrustCard/TrustCard";
 import Banner from "../../components/Banner/Banner";
@@ -9,17 +8,22 @@ import NewsHeaderList from "../../components/NewsHeaderList/NewsHeaderList";
 import Button from "../../components/Button/Button";
 import { mockedAllNews } from "../../shared/data/latestNews/mockedAllNews";
 import { StyledAllNewsWrapper } from "./StyledHome";
+import { useNewsStore } from "../../store/store";
 
 function Home() {
-  const mappedLatestNews = latestNews.map((item) => {
+  const { newsList } = useNewsStore();
+
+  const latestData = newsList.slice(-4);
+
+  const mappedLatestNews = latestData.map((item) => {
     return (
       <NewsCard
-        key={item.src}
-        src={item.src}
+        key={item.url}
+        src={item.url}
         title={item.title}
         description={item.description}
-        chipText={item.chipText}
-        isActive={item.isActive}
+        chipText={item.date}
+        isActive={true}
       />
     );
   });

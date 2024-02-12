@@ -4,7 +4,7 @@ import {
   StyledErrorDiv,
   StyledTextWrapper,
   Wrapper
-} from "../Input/StyledInput";
+} from "./StyledInput";
 import Text from "../Text/Text";
 import { InputHTMLAttributes, forwardRef, Ref } from "react";
 
