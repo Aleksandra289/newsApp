@@ -1,5 +1,5 @@
-import { useNewsStore } from "../store/store";
-import NewsHeaderList from "../components/NewsHeaderList/NewsHeaderList";
+import { useNewsStore } from "../../store/store";
+import NewsHeaderList from "../../components/NewsHeaderList/NewsHeaderList";
 
 function AllNews() {
   const { newsList } = useNewsStore();

@@ -6,7 +6,6 @@ import NewsCard from "../../components/Cards/NewsCard/NewsCard";
 import { LatestNewsWrapper, HomeButtonWrapper } from "./StyledHome";
 import NewsHeaderList from "../../components/NewsHeaderList/NewsHeaderList";
 import Button from "../../components/Button/Button";
-import { mockedAllNews } from "../../shared/data/latestNews/mockedAllNews";
 import { StyledAllNewsWrapper } from "./StyledHome";
 import { useNewsStore } from "../../store/store";
 
@@ -41,7 +40,7 @@ function Home() {
         description="Our News has been acknowledged for its unparalleled commitment to objectivity, standing out in an era where unbiased reporting is increasingly valued"
       />
       <StyledAllNewsWrapper>
-        <NewsHeaderList headlineTitle="All news" newsList={mockedAllNews} />
+        <NewsHeaderList headlineTitle="All news" newsList={newsList} />
       </StyledAllNewsWrapper>
       <HomeButtonWrapper>
         <Button size="extraLarge">View all news</Button>
