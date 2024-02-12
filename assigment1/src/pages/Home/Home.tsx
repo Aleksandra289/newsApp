@@ -11,13 +11,18 @@ import { useQuery } from "react-query";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { getFormattedDate } from "../../helpers/getFormattedDate";
-import LoadingError from "../../components/LoadingError/LoadingError";
-import Loading from "../../components/Loading/Loading";
 import { News } from "../../shared/types/news";
+import { useNavigate } from "react-router-dom";
+import { routes } from "../../Router/routes";
+import { LoadingWrapper } from "./StyledHome";
+import DataStatus from "../../components/DataStatus/DataStatus";
+import LoadingErrorIcon from "../../icons/LoadingErrorIcon";
+import LoadingIcon from "../../icons/LoadingIcon";
 function Home() {
   const [fetchedData, setFetchedData] = useState<News[]>([]);
   const [showAllData, setShowAllData] = useState(false);
   const { isLoading, error, data } = useQuery("newsData", fetchData);
+  const navigate = useNavigate();
 
   async function fetchData() {
     const url =
@@ -33,8 +38,28 @@ function Home() {
     }
   }, [data]);
 
-  if (isLoading) return <Loading />;
-  if (error) return <LoadingError />;
+  function onClickHandler() {
+    navigate(routes.root);
+  }
+
+  if (isLoading)
+    return (
+      <LoadingWrapper>
+        <LoadingIcon />
+      </LoadingWrapper>
+    );
+  if (error)
+    return (
+      <LoadingWrapper>
+        <DataStatus
+          title="Something went wrong!"
+          description="An error occurred while attempting to retrieve data from the server."
+          buttonText="Back home"
+          icon={LoadingErrorIcon}
+          onClick={onClickHandler}
+        />
+      </LoadingWrapper>
+    );
 
   const latestData = fetchedData.slice(-4);
   const date = getFormattedDate(new Date());
