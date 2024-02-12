@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { FormNames } from "../../../shared/types/formNames";
 
 export const FormSchema = z.object({
   headline: z.string().min(1, "Headline is required."),
@@ -8,6 +9,8 @@ export const FormSchema = z.object({
 
 export type FormType = z.infer<typeof FormSchema>;
 
-export type FormNames<T> = {
-  [name in keyof T]: name;
+export const formNames: FormNames<FormType> = {
+  headline: "headline",
+  fullStory: "fullStory",
+  link: "link"
 };

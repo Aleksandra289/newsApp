@@ -11,15 +11,20 @@ import Button from "../../components/Button/Button";
 import { useForm } from "react-hook-form";
 import { DevTool } from "@hookform/devtools";
 import { useEffect } from "react";
-import { FormType, FormSchema, FormNames } from "./schema/createNewPostSchema";
+import { FormType, FormSchema } from "./schema/createNewPostSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useNewsStore } from "../../store/store";
 import { getFormattedDate } from "../../helpers/getFormattedDate";
+import { formNames } from "./schema/createNewPostSchema";
 
 function NewPost() {
-  const form = useForm<FormType>({ resolver: zodResolver(FormSchema) });
-  const { register, control, handleSubmit, formState, reset } = form;
-  const { errors, isSubmitSuccessful } = formState;
+  const {
+    register,
+    control,
+    handleSubmit,
+    formState: { errors, isSubmitSuccessful },
+    reset
+  } = useForm<FormType>({ resolver: zodResolver(FormSchema) });
 
   const { addNews } = useNewsStore();
 
@@ -28,7 +33,7 @@ function NewPost() {
       title: data.headline,
       description: data.fullStory,
       url: data.link,
-      date: getFormattedDate()
+      date: getFormattedDate(new Date())
     });
   }
   useEffect(() => {
@@ -36,11 +41,7 @@ function NewPost() {
       reset();
     }
   }, [reset, isSubmitSuccessful]);
-  const formNames: FormNames<FormType> = {
-    headline: "headline",
-    fullStory: "fullStory",
-    link: "link"
-  };
+
   return (
     <StyledNewPostWrapper>
       <StyledTitleAndFormWrapper>
