@@ -8,6 +8,7 @@ import NewsHeaderList from "../../components/NewsHeaderList/NewsHeaderList";
 import Button from "../../components/Button/Button";
 import { StyledAllNewsWrapper } from "./StyledHome";
 import { useNewsStore } from "../../store/store";
+import { getFormattedDate } from "../../helpers/getFormattedDate";
 
 function Home() {
   const { newsList } = useNewsStore();
@@ -21,7 +22,7 @@ function Home() {
         src={item.url}
         title={item.title}
         description={item.description}
-        chipText={item.date}
+        chipText={getFormattedDate(new Date())}
         isActive={true}
       />
     );
