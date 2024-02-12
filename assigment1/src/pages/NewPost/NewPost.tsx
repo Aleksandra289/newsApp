@@ -24,7 +24,10 @@ function NewPost() {
     handleSubmit,
     formState: { errors, isSubmitSuccessful },
     reset
-  } = useForm<FormType>({ resolver: zodResolver(FormSchema) });
+  } = useForm<FormType>({
+    resolver: zodResolver(FormSchema),
+    mode: "onChange"
+  });
 
   const { addNews } = useNewsStore();
 
