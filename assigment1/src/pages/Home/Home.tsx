@@ -8,62 +8,36 @@ import NewsHeaderList from "../../components/NewsHeaderList/NewsHeaderList";
 import Button from "../../components/Button/Button";
 import { StyledAllNewsWrapper } from "./StyledHome";
 import { useQuery } from "react-query";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { getFormattedDate } from "../../helpers/getFormattedDate";
-import { News } from "../../shared/types/news";
 import { useNavigate } from "react-router-dom";
 import { routes } from "../../Router/routes";
-import { LoadingWrapper } from "./StyledHome";
-import DataStatus from "../../components/DataStatus/DataStatus";
-import LoadingErrorIcon from "../../icons/LoadingErrorIcon";
-import LoadingIcon from "../../icons/LoadingIcon";
-import axios from "axios";
-import { config } from "../../config/config";
+import { axiosInstance } from "../../api/axiosInstance";
+import { News } from "../../shared/types/news";
+import PageStateContainer from "../../components/PageStateContainer/PageStateContainer";
+import { queryKeys } from "../../enums/queryKeys";
 function Home() {
-  const [fetchedData, setFetchedData] = useState<News[]>([]);
   const [showAllData, setShowAllData] = useState(false);
-  const { isLoading, error, data } = useQuery("newsData", fetchData, {
-    staleTime: 2 * (60 * 1000)
-  });
+  const { isLoading, isError, data } = useQuery(queryKeys.newsDataKey, () =>
+    axiosInstance.get("").then((response) => response.data.results)
+  );
   const navigate = useNavigate();
-  async function fetchData() {
-    const { apiKey, apiUrl, language, includeImage } = config;
-    const url = `${apiUrl}?apikey=${apiKey}&image=${includeImage}&language=${language}`;
-
-    const response = await axios.get(url);
-    return response.data.results;
-  }
-  useEffect(() => {
-    if (data) {
-      setFetchedData(data);
-    }
-  }, [data]);
 
   function onClickHandler() {
     navigate(routes.root);
   }
-
-  if (isLoading)
+  if (isLoading || isError) {
     return (
-      <LoadingWrapper>
-        <LoadingIcon />
-      </LoadingWrapper>
+      <PageStateContainer
+        isLoading={isLoading}
+        isError={isError}
+        onClickHandler={onClickHandler}
+      />
     );
-  if (error)
-    return (
-      <LoadingWrapper>
-        <DataStatus
-          title="Something went wrong!"
-          description="An error occurred while attempting to retrieve data from the server."
-          buttonText="Back home"
-          icon={LoadingErrorIcon}
-          onClick={onClickHandler}
-        />
-      </LoadingWrapper>
-    );
+  }
 
-  const latestData = fetchedData.slice(-4);
-  const mappedLatestNews = latestData.map((item) => {
+  const latestData = data.slice(-4);
+  const mappedLatestNews = latestData.map((item: News) => {
     return (
       <NewsCard
         key={item.article_id}
@@ -75,7 +49,7 @@ function Home() {
       />
     );
   });
-  const allData = showAllData ? fetchedData : fetchedData.slice(0, 8);
+  const allData = showAllData ? data : data.slice(0, 8);
   return (
     <>
       <Banner
