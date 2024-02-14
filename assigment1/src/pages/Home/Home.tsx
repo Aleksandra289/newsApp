@@ -30,26 +30,6 @@ function Home() {
     navigate(routes.root);
   }
 
-  let mappedLatestNews;
-  if (data) {
-    const latestData = data.slice(-4);
-    mappedLatestNews = latestData.map((item: News) => {
-      return (
-        <NewsCard
-          key={item.article_id}
-          src={item.image_url}
-          title={item.title}
-          description={item.description}
-          chipText={getFormattedDate(new Date())}
-          isActive={true}
-        />
-      );
-    });
-  }
-  let allData;
-  if (data) {
-    allData = showAllData ? data : data.slice(0, 8);
-  }
   return (
     <PageStateContainer
       isLoading={isLoading}
@@ -62,13 +42,30 @@ function Home() {
         image={image3}
       />
       <Headline title="Latest news" />
-      <LatestNewsWrapper>{mappedLatestNews}</LatestNewsWrapper>
+      <LatestNewsWrapper>
+        {data &&
+          data
+            .slice(-4)
+            .map((item: News) => (
+              <NewsCard
+                key={item.article_id}
+                src={item.image_url}
+                title={item.title}
+                description={item.description}
+                chipText={getFormattedDate(new Date())}
+                isActive={true}
+              />
+            ))}
+      </LatestNewsWrapper>
       <TrustCard
         title="News Recognized for Unparalleled Objectivity"
         description="Our News has been acknowledged for its unparalleled commitment to objectivity, standing out in an era where unbiased reporting is increasingly valued"
       />
       <StyledAllNewsWrapper>
-        <NewsHeaderList headlineTitle="All news" newsList={allData} />
+        <NewsHeaderList
+          headlineTitle="All news"
+          newsList={data && showAllData ? data : data.slice(0, 8)}
+        />
       </StyledAllNewsWrapper>
       <HomeButtonWrapper>
         {!showAllData && (

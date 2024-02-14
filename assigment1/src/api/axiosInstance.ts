@@ -1,11 +1,11 @@
 import axios from "axios";
 import { environmentVariables } from "../env/environmentVariables";
-const { apiKey, apiUrl, language, includeImage } = environmentVariables;
+const { apiKey } = environmentVariables;
 export const axiosInstance = axios.create({
-  baseURL: apiUrl,
+  baseURL: "https://newsdata.io/api/1/news",
   params: {
     apiKey: apiKey,
-    image: includeImage,
-    language: language
+    image: 1,
+    language: "en"
   }
 });
