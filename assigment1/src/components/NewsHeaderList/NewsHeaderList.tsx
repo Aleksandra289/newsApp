@@ -1,7 +1,10 @@
-import { StyledAllNewsContainer } from "./StyledNewsHeaderList";
+import {
+  StyledAllNewsContainer,
+  StyledAllNewsAndHeadingWrapper
+} from "./StyledNewsHeaderList";
 import Headline from "../Headline/Headline";
 import NewsCard from "../Cards/NewsCard/NewsCard";
-import { NewsHeaderListProps } from "../../shared/types/newsHeaderList";
+import { NewsHeaderListProps } from "./newsHeaderListTypes";
 import { getFormattedDate } from "../../helpers/getFormattedDate";
 
 export default function NewsHeaderList({
@@ -10,8 +13,8 @@ export default function NewsHeaderList({
 }: NewsHeaderListProps) {
   const mappedMockedAllNews = newsList.map((item) => (
     <NewsCard
-      key={item.url}
-      src={item.url}
+      key={item.article_id}
+      src={item.image_url}
       title={item.title}
       description={item.description}
       chipText={getFormattedDate(new Date())}
@@ -19,9 +22,9 @@ export default function NewsHeaderList({
     />
   ));
   return (
-    <>
+    <StyledAllNewsAndHeadingWrapper>
       <Headline title={headlineTitle} isAddedLineBelow={false} />
       <StyledAllNewsContainer>{mappedMockedAllNews}</StyledAllNewsContainer>
-    </>
+    </StyledAllNewsAndHeadingWrapper>
   );
 }

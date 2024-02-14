@@ -1,10 +1,4 @@
-type News = {
-  src: string;
-  title: string;
-  description: string;
-  chipText: string;
-  isActive: boolean;
-};
+import { News } from "../../api/responses/news";
 export type NewsHeaderListProps = {
   headlineTitle: string;
   newsList: News[];

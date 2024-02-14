@@ -5,7 +5,7 @@ export const StyledAllNewsContainer = styled.div`
   gap: 1.25rem;
   width: 100%;
 `;
-export const StyledAllNewsWrapper = styled.div`
+export const StyledAllNewsAndHeadingWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
