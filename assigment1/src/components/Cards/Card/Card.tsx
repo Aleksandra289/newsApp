@@ -1,13 +1,13 @@
 import { StyledCard } from "./StyledCard";
 import { BorderRadiusSizes, ThemeColor } from "../../../shared/theme/theme";
-import { PaddingType } from "../../../shared/types/padding";
+import { Padding } from "../../../shared/types/padding";
 
 type CardProps = {
   children: React.ReactNode;
   borderRadius?: BorderRadiusSizes;
   backgroundColor?: ThemeColor;
   borderColor?: ThemeColor;
-  padding?: PaddingType;
+  padding?: Padding;
 };
 
 function Card({
