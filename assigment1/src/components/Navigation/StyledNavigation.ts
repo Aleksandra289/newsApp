@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { breakpoints } from "../../shared/breakpoints/breakpoints";
 
 export const StyledNavDiv = styled.div`
   display: flex;
@@ -8,4 +9,7 @@ export const StyledNavDiv = styled.div`
   gap: 7.5rem;
   box-shadow: 0px 4px 20px 0px rgba(16, 24, 40, 0.1);
   width: 100%;
+  @media ${breakpoints.mobile} {
+    gap: 5rem;
+  }
 `;

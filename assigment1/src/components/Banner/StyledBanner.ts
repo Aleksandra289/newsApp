@@ -29,6 +29,9 @@ export const StyledTextDiv = styled.div`
 `;
 export const StyledImg = styled.img`
   height: 5.9375rem;
+  @media ${breakpoints.mobile} {
+    margin: auto;
+  }
 `;
 export const StyledTextAndImg = styled.div`
   display: flex;

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { breakpoints } from "../../shared/breakpoints/breakpoints";
 
 export const StyledNavItemDiv = styled.div<{ $isActive: boolean }>`
   display: inline-flex;
@@ -12,4 +13,7 @@ export const StyledNavItemDiv = styled.div<{ $isActive: boolean }>`
 export const StyledTextWrapper = styled.div`
   max-width: 6.25rem;
   overflow: hidden;
+  @media ${breakpoints.mobile} {
+    display: none;
+  }
 `;

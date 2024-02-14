@@ -9,7 +9,6 @@ import Input from "../../components/Input/Input";
 import TextArea from "../../components/TextArea/TextArea";
 import Button from "../../components/Button/Button";
 import { useForm } from "react-hook-form";
-import { DevTool } from "@hookform/devtools";
 import { useEffect } from "react";
 import { FormType, FormSchema } from "./schema/createNewPostSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -20,7 +19,6 @@ import { formNames } from "./schema/createNewPostSchema";
 function NewPost() {
   const {
     register,
-    control,
     handleSubmit,
     formState: { errors, isSubmitSuccessful },
     reset
@@ -79,8 +77,6 @@ function NewPost() {
             Create post
           </Button>
         </StyledForm>
-
-        <DevTool control={control}></DevTool>
       </StyledTitleAndFormWrapper>
     </StyledNewPostWrapper>
   );
