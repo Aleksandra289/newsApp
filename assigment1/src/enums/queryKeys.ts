@@ -1,3 +1,3 @@
-export const queryKeys = {
-  newsDataKey: "newsData"
-};
+export enum QueryKeys {
+  LATEST_NEWS = "newsData"
+}

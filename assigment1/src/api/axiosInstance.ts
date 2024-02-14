@@ -1,7 +1,11 @@
 import axios from "axios";
-import { config } from "../config/config";
-const apiKey = import.meta.env.VITE_APP_API_KEY;
-const { apiUrl, language, includeImage } = config;
+import { environmentVariables } from "../env/environmentVariables";
+const { apiKey, apiUrl, language, includeImage } = environmentVariables;
 export const axiosInstance = axios.create({
-  baseURL: `${apiUrl}?apikey=${apiKey}&image=${includeImage}&language=${language}`
+  baseURL: apiUrl,
+  params: {
+    apiKey: apiKey,
+    image: includeImage,
+    language: language
+  }
 });

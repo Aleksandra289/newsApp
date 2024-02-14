@@ -6,12 +6,14 @@ type PageStateContainerProps = {
   isLoading?: boolean;
   isError?: boolean;
   onClickHandler: () => void;
+  children: React.ReactNode;
 };
 
 export default function PageStateContainer({
   isLoading = false,
   isError = false,
-  onClickHandler
+  onClickHandler,
+  children
 }: PageStateContainerProps) {
   if (isLoading)
     return (
@@ -31,4 +33,5 @@ export default function PageStateContainer({
         />
       </LoadingWrapper>
     );
+  return <>{children}</>;
 }

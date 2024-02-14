@@ -15,43 +15,47 @@ import { routes } from "../../Router/routes";
 import { axiosInstance } from "../../api/axiosInstance";
 import { News } from "../../shared/types/news";
 import PageStateContainer from "../../components/PageStateContainer/PageStateContainer";
-import { queryKeys } from "../../enums/queryKeys";
+import { QueryKeys } from "../../enums/queryKeys";
 function Home() {
   const [showAllData, setShowAllData] = useState(false);
-  const { isLoading, isError, data } = useQuery(queryKeys.newsDataKey, () =>
-    axiosInstance.get("").then((response) => response.data.results)
-  );
+  const { isLoading, isError, data } = useQuery({
+    queryKey: QueryKeys.LATEST_NEWS,
+    queryFn: () =>
+      axiosInstance.get("").then((response) => response.data.results)
+  });
+
   const navigate = useNavigate();
 
   function onClickHandler() {
     navigate(routes.root);
   }
-  if (isLoading || isError) {
-    return (
-      <PageStateContainer
-        isLoading={isLoading}
-        isError={isError}
-        onClickHandler={onClickHandler}
-      />
-    );
-  }
 
-  const latestData = data.slice(-4);
-  const mappedLatestNews = latestData.map((item: News) => {
-    return (
-      <NewsCard
-        key={item.article_id}
-        src={item.image_url}
-        title={item.title}
-        description={item.description}
-        chipText={getFormattedDate(new Date())}
-        isActive={true}
-      />
-    );
-  });
-  const allData = showAllData ? data : data.slice(0, 8);
+  let mappedLatestNews;
+  if (data) {
+    const latestData = data.slice(-4);
+    mappedLatestNews = latestData.map((item: News) => {
+      return (
+        <NewsCard
+          key={item.article_id}
+          src={item.image_url}
+          title={item.title}
+          description={item.description}
+          chipText={getFormattedDate(new Date())}
+          isActive={true}
+        />
+      );
+    });
+  }
+  let allData;
+  if (data) {
+    allData = showAllData ? data : data.slice(0, 8);
+  }
   return (
-    <>
+    <PageStateContainer
+      isLoading={isLoading}
+      isError={isError}
+      onClickHandler={onClickHandler}
+    >
       <Banner
         title="The best news always available"
         description="On all devices, always on time"
@@ -78,7 +82,7 @@ function Home() {
           </Button>
         )}
       </HomeButtonWrapper>
-    </>
+    </PageStateContainer>
   );
 }
 export default Home;
