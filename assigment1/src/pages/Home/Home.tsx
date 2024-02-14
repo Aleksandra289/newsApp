@@ -13,12 +13,12 @@ import { getFormattedDate } from "../../helpers/getFormattedDate";
 import { useNavigate } from "react-router-dom";
 import { routes } from "../../Router/routes";
 import { axiosInstance } from "../../api/axiosInstance";
-import { News } from "../../shared/types/news";
+import { News } from "../../api/responses/news";
 import PageStateContainer from "../../components/PageStateContainer/PageStateContainer";
 import { QueryKeys } from "../../enums/queryKeys";
 function Home() {
   const [showAllData, setShowAllData] = useState(false);
-  const { isLoading, isError, data } = useQuery({
+  const { isLoading, isError, data } = useQuery<News[]>({
     queryKey: QueryKeys.LATEST_NEWS,
     queryFn: () =>
       axiosInstance.get("").then((response) => response.data.results)
@@ -29,7 +29,6 @@ function Home() {
   function onClickHandler() {
     navigate(routes.root);
   }
-
   return (
     <PageStateContainer
       isLoading={isLoading}
@@ -42,30 +41,34 @@ function Home() {
         image={image3}
       />
       <Headline title="Latest news" />
-      <LatestNewsWrapper>
-        {data &&
-          data
-            .slice(-4)
-            .map((item: News) => (
-              <NewsCard
-                key={item.article_id}
-                src={item.image_url}
-                title={item.title}
-                description={item.description}
-                chipText={getFormattedDate(new Date())}
-                isActive={true}
-              />
-            ))}
-      </LatestNewsWrapper>
+      {
+        <LatestNewsWrapper>
+          {data &&
+            data
+              .slice(-4)
+              .map((item: News) => (
+                <NewsCard
+                  key={item.article_id}
+                  src={item.image_url}
+                  title={item.title}
+                  description={item.description}
+                  chipText={getFormattedDate(new Date())}
+                  isActive={true}
+                />
+              ))}
+        </LatestNewsWrapper>
+      }
       <TrustCard
         title="News Recognized for Unparalleled Objectivity"
         description="Our News has been acknowledged for its unparalleled commitment to objectivity, standing out in an era where unbiased reporting is increasingly valued"
       />
       <StyledAllNewsWrapper>
-        <NewsHeaderList
-          headlineTitle="All news"
-          newsList={data && showAllData ? data : data.slice(0, 8)}
-        />
+        {data && (
+          <NewsHeaderList
+            headlineTitle="All news"
+            newsList={showAllData ? data : data!.slice(0, 8)}
+          />
+        )}
       </StyledAllNewsWrapper>
       <HomeButtonWrapper>
         {!showAllData && (
